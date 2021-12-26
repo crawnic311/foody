@@ -1,0 +1,20 @@
+.Recipe {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid yellow;
+  width: 410px;
+  height: 424px;
+}
+
+.RecipeImage {
+  width: 405px;
+  height: 320px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.RecipeDescription {
+  border: 2px solid red;
+  width: 405px;
+  min-height: 100px;
+}
