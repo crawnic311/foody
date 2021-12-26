@@ -1,0 +1,100 @@
+/*html {
+  display: flex;
+  background-color: #34353b;
+  align-items: center;
+  justify-content: center;
+}*/
+
+.LoginWrapper {
+  background-color: aliceblue;
+  display: flex;
+  height: 480px;
+  width: 460px;
+  justify-content: center;
+  align-items: center;
+  margin: 28vh auto;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(113, 93%, 48%),
+    #fe4880
+  );
+}
+
+.LoginForm {
+  position: relative;
+  display: block;
+  background-color: aliceblue;
+  padding: 37px 23px;
+  z-index: 1;
+}
+
+.formgroup {
+  background-color: aliceblue;
+  margin: 25px 0px;
+}
+
+#name,
+#email,
+#password {
+  background-color: aliceblue;
+  max-height: 7vh;
+  width: 400px;
+  min-height: 50px;
+  min-width: 276px;
+  text-align: left;
+  font-size: 1.75rem;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.ForgotPassword {
+  background-color: aliceblue;
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 8px;
+  margin-left: 2px;
+}
+
+.loginButton {
+}
+
+#login {
+  text-align: center;
+  max-height: 7vh;
+  min-height: 50px;
+  width: 12rem;
+  margin: 0px 140px;
+  background-color: #43d41a;
+  font-size: 1.75rem;
+  padding-left: 0;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #43d41a, #43d41a, #fe4880);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+#login:hover {
+  background-position: 100% 0%;
+}
+
+.NewHere {
+  background-color: aliceblue;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+}
+
+.ErrorWrapper {
+  background-color: aliceblue;
+  display: inline-block;
+  height: 14px;
+}
+
+.Error {
+  background-color: aliceblue;
+  font-size: 1.5rem;
+  color: red;
+}
