@@ -9,8 +9,12 @@ const Navbar = (props) => {
     setIsOpen(!isOpen)
   }
 
-  const logoutHandler = () => {
-    Logout()
+  const handleLogout = () => {
+    console.log('You have logged out')
+  }
+
+  const handleLogout2 = (e) => {
+    console.log(e)
   }
 
   return (
@@ -52,7 +56,9 @@ const Navbar = (props) => {
             </li>
             <li className={styles.navitem}>
               <Link to="/">
-                <span className={styles.navlink}>Logout</span>
+                <button onClick={handleLogout}>
+                  <span className={styles.navlink}>Logout</span>
+                </button>
               </Link>
             </li>
           </ul>

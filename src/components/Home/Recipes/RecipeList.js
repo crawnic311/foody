@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './RecipeList.module.css'
 
 const RecipeList = () => {
+  const [recipes, setRecipes] = useState([
+    {
+      id: 1,
+      userId: 5,
+      title: 'Curry',
+      instructions: 'Mix everything well or suffer the consquences',
+    },
+    {
+      id: 2,
+      userId: 3,
+      title: 'Fruit Bowl',
+      instructions: 'Mix fruits with vigor',
+    },
+    {
+      id: 3,
+      userId: 7,
+      title: 'Steak',
+      instructions: 'Sear on both sides for 90 seconds on high heat',
+    },
+    {
+      id: 4,
+      userId: 3,
+      title: 'Veggies',
+      instructions: 'Drizzle with olive oil and fry in a pan with a lid',
+    },
+  ])
+
+  const checker = () => {
+    console.log(recipes[0].instructions)
+  }
+
   return (
     <div className={styles.RecipeHolder}>
       <div className={styles.Recipe}>
@@ -11,9 +42,9 @@ const RecipeList = () => {
           className={styles.RecipeImage}
         />
         <div className={styles.RecipeDescription}>
-          This is a recipe that tastes so good. You would love to eat it if I
-          let you. Maybe one day you will be allowed to eat it.
+          {recipes[0].instructions}
         </div>
+        <button onClick={checker}>Instructions</button>
       </div>
     </div>
   )

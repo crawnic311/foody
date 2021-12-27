@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Home from './components/Home/Home'
 import About from './components/About./About'
 import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/LoginForm'
 import PageNotFound from './components/404/PageNotFound'
+import api from './api/post'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -16,7 +17,27 @@ function App() {
   }
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
+  const [recipe, setRecipe] = useState({})
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      try {
+        const response = await api.get('/recipes')
+        setRecipe(response.data)
+      } catch (err) {
+        if (error.response) {
+          console.log(err.response.data)
+          console.log(err.response.status)
+          console.log(err.response.headers)
+        } else {
+          console.log(`Error: ${err.message}`)
+        }
+      }
+    }
+
+    fetchRecipe()
+  }, [])
 
   const Login = (details) => {
     setUser({
