@@ -6,6 +6,13 @@
   height: 424px;
 }
 
+.RecipeTitle {
+  color: aliceblue;
+  text-align: center;
+  font-size: 17.5px;
+  margin-bottom: 10px;
+}
+
 .RecipeImage {
   width: 405px;
   height: 320px;
@@ -19,4 +26,52 @@
   border: 2px solid red;
   width: 405px;
   min-height: 100px;
+}
+
+ul {
+  border: 1px solid red;
+}
+
+.recipe {
+}
+
+.title {
+  border: 1px solid green;
+  color: black;
+}
+
+.instructions {
+  border: 1px solid orange;
+}
+
+.RecipeNavInner {
+  border: 1px solid red;
+  width: 500px;
+  height: 70px;
+}
+
+.RecipeNavInner button {
+  font-size: 1.75rem;
+  border: 1px solid green;
+  border-radius: 7px;
+  margin-top: 20px;
+  height: 30px;
+  width: 75px;
+  background-image: linear-gradient(to right, #43d41a, #43d41a, #fe4880);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.RecipeNavInner button:hover {
+  background-position: 100% 0%;
+}
+
+#recipeBack {
+  float: left;
+}
+
+#recipeForward {
+  float: right;
 }

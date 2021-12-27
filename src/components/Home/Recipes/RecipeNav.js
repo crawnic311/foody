@@ -15,7 +15,12 @@ const RecipeNav = () => {
       <button id={styles.recipeBack} onClick={backHandler}>
         Back
       </button>
-      <button id={styles.recipeForward} onClick={nextHandler}>
+      <button
+        id={styles.recipeForward}
+        onClick={() => {
+          setRecipeID(recipeID + 1)
+        }}
+      >
         Next
       </button>
     </div>

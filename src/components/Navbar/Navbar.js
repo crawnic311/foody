@@ -13,10 +13,6 @@ const Navbar = (props) => {
     console.log('You have logged out')
   }
 
-  const handleLogout2 = (e) => {
-    console.log(e)
-  }
-
   return (
     <>
       <header className={styles.header}>
