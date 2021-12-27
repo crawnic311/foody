@@ -5,6 +5,10 @@
   justify-content: center;
 }*/
 
+.test {
+  background-color: pink;
+}
+
 .LoginWrapper {
   background-color: aliceblue;
   display: flex;

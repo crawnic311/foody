@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const Logout = props.Login
   const [isOpen, setIsOpen] = useState(false)
   const openMenu = () => {
     setIsOpen(!isOpen)
   }
+
+  const logoutHandler = () => {
+    Logout()
+  }
+
   return (
     <>
       <header className={styles.header}>
@@ -42,6 +48,11 @@ const Navbar = () => {
             <li className={styles.navitem}>
               <Link to="/about">
                 <span className={styles.navlink}>About</span>
+              </Link>
+            </li>
+            <li className={styles.navitem}>
+              <Link to="/">
+                <span className={styles.navlink}>Logout</span>
               </Link>
             </li>
           </ul>

@@ -4,6 +4,7 @@ import About from './components/About./About'
 import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/LoginForm'
+import PageNotFound from './components/404/PageNotFound'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -14,7 +15,7 @@ function App() {
     password: '123',
   }
 
-  const [user, setUser] = useState({ name: '', email: '', password: '' })
+  const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
 
   const Login = (details) => {
@@ -38,16 +39,19 @@ function App() {
 
   const Logout = () => {
     console.log('Logout')
+    setUser({ email: '' })
   }
   return (
     <>
       {user.email !== '' ? (
         <div className="App">
-          <Navbar />
+          <Navbar Logout={Logout} />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/create" element={<Create />} />
             <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<Home />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       ) : (
