@@ -5,7 +5,11 @@ import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
-import api from './api/post'
+import FruitBowl from './images/Breakfast-Fruit-Bowl-Recipe.jpeg'
+import Cake from './images/Cake-Recipe.jpeg'
+import Potato from './images/Potatoe-Chives-Recipe-Image.jpeg'
+import Salmon from './images/Salmon-Stew-Recipe.png'
+
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -15,32 +19,58 @@ function App() {
     email: 'dillon.craw@gmail.com',
     password: '123',
   }
-
   const API_URL = 'https://localhost3500/recipes'
-
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
-  const [recipe, setRecipe] = useState({})
   const [error, setError] = useState('')
-  const [newRecipe, setNewRecipe] = useState('')
+  const [newRecipe, setNewRecipe] = useState({
+    id: 0,
+    userid: 0,
+    title: '',
+    image: '',
+    instructions: '',
+  })
 
-  useEffect(() => {
-    const fetchRecipe = async () => {
-      try {
-        const response = await api.get('/recipes')
-        setRecipe(response.data)
-      } catch (err) {
-        if (error.response) {
-          console.log(err.response.data)
-          console.log(err.response.status)
-          console.log(err.response.headers)
-        } else {
-          console.log(`Error: ${err.message}`)
-        }
-      }
-    }
+  const [recipes, setRecipes] = useState([
+    {
+      id: 1,
+      userId: 5,
+      title: 'Curry',
+      image: FruitBowl,
+      instructions: 'Mix everything well or suffer the consquences',
+    },
+    {
+      id: 2,
+      userId: 3,
+      title: 'Fruit Bowl',
+      image: Cake,
+      instructions: 'Mix fruits with vigor',
+    },
+    {
+      id: 3,
+      userId: 7,
+      title: 'Steak',
+      image: Potato,
+      instructions: 'Sear on both sides for 90 seconds on high heat',
+    },
+    {
+      id: 4,
+      userId: 3,
+      title: 'Veggies',
+      image: Salmon,
+      instructions: 'Drizzle with olive oil and fry in a pan with a lid',
+    },
+  ])
 
-    fetchRecipe()
-  }, [])
+  const addRecipe = () => {
+    console.log('finish this funciton')
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    //new funciton
+    console.log(newRecipe)
+    //send recipeDetails to App to setNewRecipe if necessary
+  }
 
   const Login = (details) => {
     setUser({
@@ -79,11 +109,18 @@ function App() {
             exact
             path="/create"
             element={
-              <Create newRecipe={newRecipe} setNewRecipe={setNewRecipe} />
+              <Create
+                newRecipe={newRecipe}
+                setNewRecipe={setNewRecipe}
+                handleSubmit={handleSubmit}
+              />
             }
           />
           <Route exact path="/about" element={<About />} />
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/home"
+            element={<Home recipes={recipes} setRecipes={setRecipes} />}
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

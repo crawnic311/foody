@@ -6,38 +6,8 @@ import Cake from '../../../images/Cake-Recipe.jpeg'
 import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
-const RecipeList = () => {
+const RecipeList = ({ recipes, setRecipes }) => {
   const [recipeID, setRecipeID] = useState(0)
-  const [recipes, setRecipes] = useState([
-    {
-      id: 1,
-      userId: 5,
-      title: 'Curry',
-      image: FruitBowl,
-      instructions: 'Mix everything well or suffer the consquences',
-    },
-    {
-      id: 2,
-      userId: 3,
-      title: 'Fruit Bowl',
-      image: Cake,
-      instructions: 'Mix fruits with vigor',
-    },
-    {
-      id: 3,
-      userId: 7,
-      title: 'Steak',
-      image: Potato,
-      instructions: 'Sear on both sides for 90 seconds on high heat',
-    },
-    {
-      id: 4,
-      userId: 3,
-      title: 'Veggies',
-      image: Salmon,
-      instructions: 'Drizzle with olive oil and fry in a pan with a lid',
-    },
-  ])
 
   return (
     <>
