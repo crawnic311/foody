@@ -3,7 +3,6 @@ import styles from './Create.module.css'
 import { FaPlus } from 'react-icons/fa'
 
 const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
-  let createID = -1
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
@@ -31,7 +30,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
           setNewRecipe({
             ...newRecipe,
             image: e.target.value,
-            id: createID,
+            id: 0,
           })
         }
       ></input>

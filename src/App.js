@@ -22,6 +22,7 @@ function App() {
   const API_URL = 'https://localhost3500/recipes'
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
+  const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
     id: 0,
     title: '',
@@ -40,7 +41,7 @@ function App() {
 
   const setAndSaveRecipes = (newRecipes) => {
     setRecipes(newRecipes)
-    localStorage.setItem('Recipe List', JSON.stringify(newRecipes.splice(0, 1)))
+    localStorage.setItem('Recipe List', JSON.stringify(newRecipes))
     console.log(recipes)
   }
 
@@ -53,6 +54,7 @@ function App() {
       image: recipe.image,
       intructions: recipe.instructions,
     }
+    setRecipeID(myNewRecipe.id)
     const listRecipes = [...recipes, myNewRecipe]
     setAndSaveRecipes(listRecipes)
   }
@@ -125,6 +127,8 @@ function App() {
             path="/home"
             element={
               <Home
+                recipeID={recipeID}
+                setRecipeID={setRecipeID}
                 recipes={recipes}
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}

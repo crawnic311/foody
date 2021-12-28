@@ -6,10 +6,13 @@ import Cake from '../../../images/Cake-Recipe.jpeg'
 import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
-const RecipeList = ({ recipes, setRecipes, handleDelete }) => {
-  const [recipeID, setRecipeID] = useState(0)
-  var displayID = 0
-
+const RecipeList = ({
+  recipeID,
+  setRecipeID,
+  recipes,
+  setRecipes,
+  handleDelete,
+}) => {
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -28,8 +31,9 @@ const RecipeList = ({ recipes, setRecipes, handleDelete }) => {
           <button
             id={styles.recipeBack}
             onClick={() => {
-              if (recipeID > 0) {
+              if (recipeID > 1) {
                 setRecipeID(recipeID - 1)
+                console.log(recipeID)
               }
             }}
           >
@@ -48,6 +52,7 @@ const RecipeList = ({ recipes, setRecipes, handleDelete }) => {
             onClick={() => {
               if (recipeID < recipes.length - 1) {
                 setRecipeID(recipeID + 1)
+                console.log(recipeID)
               }
             }}
           >
