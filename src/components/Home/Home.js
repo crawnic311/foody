@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import styles from './Home.module.css'
 import RecipeList from './Recipes/RecipeList'
 
-const Home = ({ recipes, setRecipes }) => {
+const Home = ({ recipes, setRecipes, handleDelete }) => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.grid}>
-          <RecipeList recipes={recipes} setRecipes={setRecipes} />
+          <RecipeList
+            recipes={recipes}
+            setRecipes={setRecipes}
+            handleDelete={handleDelete}
+          />
         </div>
       </main>
     </div>

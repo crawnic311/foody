@@ -6,8 +6,9 @@ import Cake from '../../../images/Cake-Recipe.jpeg'
 import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
-const RecipeList = ({ recipes, setRecipes }) => {
+const RecipeList = ({ recipes, setRecipes, handleDelete }) => {
   const [recipeID, setRecipeID] = useState(0)
+  var displayID = 0
 
   return (
     <>
@@ -33,6 +34,14 @@ const RecipeList = ({ recipes, setRecipes }) => {
             }}
           >
             Previous
+          </button>
+          <button
+            id={styles.recipeDelete}
+            onClick={() => {
+              handleDelete(recipeID)
+            }}
+          >
+            Delete
           </button>
           <button
             id={styles.recipeForward}

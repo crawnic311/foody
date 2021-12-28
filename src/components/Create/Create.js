@@ -3,14 +3,7 @@ import styles from './Create.module.css'
 import { FaPlus } from 'react-icons/fa'
 
 const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
-  const [recipeDetails, setRecipeDetails] = useState({
-    id: 0,
-    userid: 0,
-    title: '',
-    image: '',
-    instructions: '',
-  })
-
+  let createID = -1
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
@@ -23,7 +16,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       ></input>
       <input
         id={styles.titleInput}
-        placeholder="Recipe Title"
+        placeholder="Recipe Instructions"
         value={newRecipe.instructions}
         required
         onChange={(e) =>
@@ -34,7 +27,13 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         id={styles.titleInput}
         placeholder="Optional: Upload an photo for your recipe"
         value={newRecipe.image}
-        onChange={(e) => setNewRecipe({ ...newRecipe, image: e.target.value })}
+        onChange={(e) =>
+          setNewRecipe({
+            ...newRecipe,
+            image: e.target.value,
+            id: createID,
+          })
+        }
       ></input>
       <button
         type="submit"

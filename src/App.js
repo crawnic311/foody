@@ -24,7 +24,6 @@ function App() {
   const [error, setError] = useState('')
   const [newRecipe, setNewRecipe] = useState({
     id: 0,
-    userid: 0,
     title: '',
     image: '',
     instructions: '',
@@ -32,44 +31,49 @@ function App() {
 
   const [recipes, setRecipes] = useState([
     {
-      id: 1,
-      userId: 5,
-      title: 'Curry',
-      image: FruitBowl,
-      instructions: 'Mix everything well or suffer the consquences',
-    },
-    {
-      id: 2,
-      userId: 3,
-      title: 'Fruit Bowl',
-      image: Cake,
-      instructions: 'Mix fruits with vigor',
-    },
-    {
-      id: 3,
-      userId: 7,
-      title: 'Steak',
-      image: Potato,
-      instructions: 'Sear on both sides for 90 seconds on high heat',
-    },
-    {
-      id: 4,
-      userId: 3,
-      title: 'Veggies',
-      image: Salmon,
-      instructions: 'Drizzle with olive oil and fry in a pan with a lid',
+      id: 0,
+      title: '',
+      image: '',
+      instructions: '',
     },
   ])
 
-  const addRecipe = () => {
-    console.log('finish this funciton')
+  const setAndSaveRecipes = (newRecipes) => {
+    setRecipes(newRecipes)
+    localStorage.setItem('Recipe List', JSON.stringify(newRecipes))
+    console.log(recipes)
+  }
+
+  const addRecipe = (recipe) => {
+    const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
+    const myNewRecipe = {
+      id,
+      userId: recipe.userId,
+      title: recipe.title,
+      image: recipe.image,
+      intructions: recipe.instructions,
+    }
+    const listRecipes = [...recipes, myNewRecipe]
+    setAndSaveRecipes(listRecipes)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    //new funciton
-    console.log(newRecipe)
-    //send recipeDetails to App to setNewRecipe if necessary
+    if (!newRecipe) return
+    addRecipe(newRecipe)
+    setNewRecipe({
+      id: 0,
+      userid: 0,
+      title: '',
+      image: '',
+      instructions: '',
+    })
+  }
+
+  const handleDelete = (id) => {
+    const listRecipes = recipes.filter((recipe) => recipe.id !== id)
+    console.log('listRecipes', listRecipes)
+    setAndSaveRecipes(listRecipes)
   }
 
   const Login = (details) => {
@@ -119,7 +123,13 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route
             path="/home"
-            element={<Home recipes={recipes} setRecipes={setRecipes} />}
+            element={
+              <Home
+                recipes={recipes}
+                setRecipes={setRecipes}
+                handleDelete={handleDelete}
+              />
+            }
           />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
