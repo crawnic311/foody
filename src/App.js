@@ -3,7 +3,7 @@ import Home from './components/Home/Home'
 import About from './components/About./About'
 import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
-import LoginForm from './components/Login/LoginForm'
+import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import api from './api/post'
 import { Routes, Route } from 'react-router-dom'
@@ -16,9 +16,12 @@ function App() {
     password: '123',
   }
 
+  const API_URL = 'https://localhost3500/recipes'
+
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [recipe, setRecipe] = useState({})
   const [error, setError] = useState('')
+  const [newRecipe, setNewRecipe] = useState('')
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -64,20 +67,26 @@ function App() {
   }
   return (
     <>
-      {user.email !== '' ? (
-        <div className="App">
-          <Navbar Logout={Logout} />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/create" element={<Create />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/about" element={<Home />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </div>
-      ) : (
-        <LoginForm Login={Login} error={error} />
-      )}
+      <div className="App">
+        <Navbar Logout={Logout} />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<LoginForm Login={Login} error={error} />}
+          />
+          <Route
+            exact
+            path="/create"
+            element={
+              <Create newRecipe={newRecipe} setNewRecipe={setNewRecipe} />
+            }
+          />
+          <Route exact path="/about" element={<About />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
     </>
   )
 }

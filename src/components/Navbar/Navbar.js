@@ -36,7 +36,7 @@ const Navbar = (props) => {
             }
           >
             <li className={styles.navitem}>
-              <Link to="/">
+              <Link to="/home">
                 <span className={styles.navlink}>Home</span>
               </Link>
             </li>
@@ -52,9 +52,7 @@ const Navbar = (props) => {
             </li>
             <li className={styles.navitem}>
               <Link to="/">
-                <button onClick={handleLogout}>
-                  <span className={styles.navlink}>Logout</span>
-                </button>
+                <span className={styles.navlink}>Logout</span>
               </Link>
             </li>
           </ul>

@@ -1,7 +1,7 @@
 .Recipe {
   display: flex;
   flex-direction: column;
-  border: 2px solid yellow;
+  border: 2px solid aliceblue;
   width: 410px;
   height: 424px;
 }
@@ -18,35 +18,32 @@
   height: 320px;
   object-fit: cover;
   overflow: hidden;
+  border-bottom: 1px solid aliceblue;
 }
 
 .RecipeDescription {
   color: aliceblue;
   font-size: 22px;
-  border: 2px solid red;
+
   width: 405px;
   min-height: 100px;
 }
 
 ul {
-  border: 1px solid red;
 }
 
 .recipe {
 }
 
 .title {
-  border: 1px solid green;
   color: black;
 }
 
 .instructions {
-  border: 1px solid orange;
 }
 
 .RecipeNavInner {
-  border: 1px solid red;
-  width: 500px;
+  width: stretch;
   height: 70px;
 }
 

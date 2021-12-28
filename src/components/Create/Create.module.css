@@ -1,0 +1,42 @@
+.createRecipe {
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0;
+  border-bottom: 1px solid aliceblue;
+}
+
+.createRecipe label {
+  position: absolute;
+  left: -99999px;
+}
+
+.createRecipe input {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 00.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+.createSubmit {
+  height: 48px;
+  width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: aliceblue;
+  color: mediumblue;
+  cursor: pointer;
+}
+
+.createSubmit:focus,
+.createSubmit:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
+}

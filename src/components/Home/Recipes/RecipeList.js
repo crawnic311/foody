@@ -1,40 +1,40 @@
 import React, { useState } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import styles from './RecipeList.module.css'
+import FruitBowl from '../../../images/Breakfast-Fruit-Bowl-Recipe.jpeg'
+import Cake from '../../../images/Cake-Recipe.jpeg'
+import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
+import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
 const RecipeList = () => {
-  let recipeNum = 0
-  let ID = 0
-
   const [recipeID, setRecipeID] = useState(0)
   const [recipes, setRecipes] = useState([
     {
       id: 1,
       userId: 5,
       title: 'Curry',
-      image:
-        'https://images.unsplash.com/photo-1494597564530-871f2b93ac55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1413&q=80',
+      image: FruitBowl,
       instructions: 'Mix everything well or suffer the consquences',
     },
     {
       id: 2,
       userId: 3,
       title: 'Fruit Bowl',
-      image: '',
+      image: Cake,
       instructions: 'Mix fruits with vigor',
     },
     {
       id: 3,
       userId: 7,
       title: 'Steak',
-      image: '',
+      image: Potato,
       instructions: 'Sear on both sides for 90 seconds on high heat',
     },
     {
       id: 4,
       userId: 3,
       title: 'Veggies',
-      image: '',
+      image: Salmon,
       instructions: 'Drizzle with olive oil and fry in a pan with a lid',
     },
   ])
@@ -56,14 +56,20 @@ const RecipeList = () => {
         <div className={styles.RecipeNavInner}>
           <button
             id={styles.recipeBack}
-            onClick={() => setRecipeID(recipeID - 1)}
+            onClick={() => {
+              if (recipeID > 0) {
+                setRecipeID(recipeID - 1)
+              }
+            }}
           >
             Previous
           </button>
           <button
             id={styles.recipeForward}
             onClick={() => {
-              setRecipeID(recipeID + 1)
+              if (recipeID < recipes.length - 1) {
+                setRecipeID(recipeID + 1)
+              }
             }}
           >
             Next
