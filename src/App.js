@@ -32,15 +32,15 @@ function App() {
   const [recipes, setRecipes] = useState([
     {
       id: 0,
-      title: '',
-      image: '',
-      instructions: '',
+      title: 'Your first recipe will display here',
+      image: 'Your first recipe will display here',
+      instructions: 'Instructions for your first recipe will display here',
     },
   ])
 
   const setAndSaveRecipes = (newRecipes) => {
     setRecipes(newRecipes)
-    localStorage.setItem('Recipe List', JSON.stringify(newRecipes))
+    localStorage.setItem('Recipe List', JSON.stringify(newRecipes.splice(0, 1)))
     console.log(recipes)
   }
 
