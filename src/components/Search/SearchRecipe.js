@@ -10,6 +10,8 @@ const SearchRecipe = ({ search, setSearch }) => {
         type="text"
         role="searchbox"
         placeholder="Search Recipes"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </form>
   )

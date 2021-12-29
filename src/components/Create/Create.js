@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import styles from './Create.module.css'
+import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
 const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
+  const inputRef = useRef()
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
       <input
+        autoFocus
+        ref={inputRef}
         id={styles.titleInput}
         placeholder="Recipe Title"
         value={newRecipe.title}
@@ -37,6 +41,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         type="submit"
         aria-label="Create Item"
         className={styles.createSubmit}
+        onClick={() => inputRef.current.focus()}
       >
         <FaPlus />
       </button>

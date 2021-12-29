@@ -107,7 +107,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar Logout={Logout} />
+        <Navbar Logout={Logout} search={search} setSearch={setSearch} />
         <Routes>
           <Route
             exact
@@ -133,6 +133,9 @@ function App() {
                 recipeID={recipeID}
                 setRecipeID={setRecipeID}
                 recipes={recipes}
+                resSearch={recipes.filter((recipe) =>
+                  recipe.title.toLowerCase().includes(search.toLowerCase())
+                )}
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}
               />

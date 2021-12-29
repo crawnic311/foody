@@ -5,6 +5,8 @@ import styles from './Navbar.module.css'
 
 const Navbar = (props) => {
   const Logout = props.Login
+  const search = props.search
+  const setSearch = props.setSearch
   const [isOpen, setIsOpen] = useState(false)
   const openMenu = () => {
     setIsOpen(!isOpen)
@@ -30,7 +32,7 @@ const Navbar = (props) => {
             </span>
           </Link>
           <span className={(styles.navlink, styles.searchBar)}>
-            <SearchRecipe />
+            <SearchRecipe search={search} setSearch={setSearch} />
           </span>
           <ul
             className={
