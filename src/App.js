@@ -24,7 +24,6 @@ function App() {
   const [error, setError] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
-    id: 0,
     title: '',
     image: '',
     instructions: '',
@@ -32,7 +31,6 @@ function App() {
 
   const [recipes, setRecipes] = useState([
     {
-      id: 0,
       title: 'Your first recipe will display here',
       image: 'Your first recipe will display here',
       instructions: 'Instructions for your first recipe will display here',
@@ -46,15 +44,13 @@ function App() {
   }
 
   const addRecipe = (recipe) => {
-    const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
+    //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
-      id,
-      userId: recipe.userId,
       title: recipe.title,
       image: recipe.image,
       intructions: recipe.instructions,
     }
-    setRecipeID(myNewRecipe.id)
+    setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
     setAndSaveRecipes(listRecipes)
   }
@@ -64,8 +60,6 @@ function App() {
     if (!newRecipe) return
     addRecipe(newRecipe)
     setNewRecipe({
-      id: 0,
-      userid: 0,
       title: '',
       image: '',
       instructions: '',
@@ -73,9 +67,10 @@ function App() {
   }
 
   const handleDelete = (id) => {
-    const listRecipes = recipes.filter((recipe) => recipe.id !== id)
-    console.log('listRecipes', listRecipes)
-    setAndSaveRecipes(listRecipes)
+    const indexR = recipes.splice(id, 1)
+    const listR = recipes.filter((recipe) => recipe !== indexR)
+    console.log('listR', listR)
+    setAndSaveRecipes(listR)
   }
 
   const Login = (details) => {

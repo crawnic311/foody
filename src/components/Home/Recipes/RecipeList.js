@@ -33,17 +33,15 @@ const RecipeList = ({
             onClick={() => {
               if (recipeID > 1) {
                 setRecipeID(recipeID - 1)
-                console.log(recipeID)
               }
+              console.log(recipeID)
             }}
           >
             Previous
           </button>
           <button
             id={styles.recipeDelete}
-            onClick={() => {
-              handleDelete(recipeID)
-            }}
+            onClick={() => handleDelete(recipeID)}
           >
             Delete
           </button>
@@ -52,8 +50,8 @@ const RecipeList = ({
             onClick={() => {
               if (recipeID < recipes.length - 1) {
                 setRecipeID(recipeID + 1)
-                console.log(recipeID)
               }
+              console.log(recipeID)
             }}
           >
             Next

@@ -15,6 +15,7 @@ const Home = ({ recipeID, setRecipeID, recipes, setRecipes, handleDelete }) => {
             handleDelete={handleDelete}
           />
         </div>
+        <button className={styles.demo}>Water</button>
       </main>
     </div>
   )

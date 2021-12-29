@@ -30,7 +30,6 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
           setNewRecipe({
             ...newRecipe,
             image: e.target.value,
-            id: 0,
           })
         }
       ></input>
