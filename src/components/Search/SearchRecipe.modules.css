@@ -1,0 +1,19 @@
+.SearchRecipes {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.searchLabel {
+  position: absolute;
+  left: -99999px;
+}
+
+#search {
+  width: 100%;
+  border-radius: 7px;
+  height: 30px;
+  background-color: aliceblue;
+  padding-left: 20px;
+  font-size: 1.5rem;
+}

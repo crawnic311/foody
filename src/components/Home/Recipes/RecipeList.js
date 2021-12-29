@@ -41,7 +41,13 @@ const RecipeList = ({
           </button>
           <button
             id={styles.recipeDelete}
-            onClick={() => handleDelete(recipeID)}
+            onClick={() => {
+              if (recipes.length > 1) {
+                handleDelete(recipeID)
+              } else {
+                alert('cannot delete')
+              }
+            }}
           >
             Delete
           </button>

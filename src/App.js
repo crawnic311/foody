@@ -5,6 +5,7 @@ import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
+import SearchRecipe from './components/Search/SearchRecipe'
 import FruitBowl from './images/Breakfast-Fruit-Bowl-Recipe.jpeg'
 import Cake from './images/Cake-Recipe.jpeg'
 import Potato from './images/Potatoe-Chives-Recipe-Image.jpeg'
@@ -22,6 +23,7 @@ function App() {
   const API_URL = 'https://localhost3500/recipes'
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
+  const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
     title: '',
@@ -48,7 +50,7 @@ function App() {
     const myNewRecipe = {
       title: recipe.title,
       image: recipe.image,
-      intructions: recipe.instructions,
+      instructions: recipe.instructions,
     }
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]

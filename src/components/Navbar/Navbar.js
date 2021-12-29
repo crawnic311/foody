@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SearchRecipe from '../Search/SearchRecipe'
 import styles from './Navbar.module.css'
 
 const Navbar = (props) => {
@@ -28,6 +29,9 @@ const Navbar = (props) => {
               />
             </span>
           </Link>
+          <span className={(styles.navlink, styles.searchBar)}>
+            <SearchRecipe />
+          </span>
           <ul
             className={
               isOpen === false
