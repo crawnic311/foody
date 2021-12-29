@@ -19,22 +19,3 @@
   flex-wrap: wrap;
   max-width: 800px;
 }
-
-.demo {
-  font-size: 90px;
-  color: red;
-  border: 2px Green solid;
-
-  display: inline;
-}
-
-.demo:before {
-  content: 'Demo';
-}
-.demo:before:hover {
-  color: purple;
-}
-
-.demo:after {
-  content: 'After';
-}

@@ -67,9 +67,15 @@ function App() {
   }
 
   const handleDelete = (id) => {
+    if (recipes.length === 2 && recipeID === 1) {
+      setRecipeID(0)
+    } else {
+      setRecipeID(1)
+    }
     const indexR = recipes.splice(id, 1)
     const listR = recipes.filter((recipe) => recipe !== indexR)
     console.log('listR', listR)
+
     setAndSaveRecipes(listR)
   }
 
