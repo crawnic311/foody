@@ -31,13 +31,15 @@ function App() {
     instructions: '',
   })
 
-  const [recipes, setRecipes] = useState([
-    {
-      title: 'Your first recipe will display here',
-      image: 'Your first recipe will display here',
-      instructions: 'Instructions for your first recipe will display here',
-    },
-  ])
+  const [recipes, setRecipes] = useState(
+    JSON.parse(localStorage.getItem('shoppinglist')) || [
+      {
+        title: 'Your first recipe will display here',
+        image: 'Your first recipe will display here',
+        instructions: 'Instructions for your first recipe will display here',
+      },
+    ]
+  )
 
   const setAndSaveRecipes = (newRecipes) => {
     setRecipes(newRecipes)
