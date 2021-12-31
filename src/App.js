@@ -19,7 +19,7 @@ function App() {
     email: 'dillon.craw@gmail.com',
     password: '123',
   }
-  const API_URL = 'https://localhost3500/recipes'
+  const API_URL = 'http://localhost:3500/recipes'
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
@@ -45,10 +45,13 @@ function App() {
         const response = await fetch(API_URL)
         const listRecipes = await response.json()
         setRecipes(listRecipes)
+        console.log(listRecipes)
       } catch (err) {
-        console.log(err)
+        console.log(err.stack)
       }
     }
+
+    ;(async () => await fetchRecipes())()
   }, [])
 
   const addRecipe = (recipe) => {
