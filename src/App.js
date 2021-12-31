@@ -10,7 +10,6 @@ import FruitBowl from './images/Breakfast-Fruit-Bowl-Recipe.jpeg'
 import Cake from './images/Cake-Recipe.jpeg'
 import Potato from './images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from './images/Salmon-Stew-Recipe.png'
-
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
@@ -21,6 +20,7 @@ function App() {
     password: '123',
   }
   const API_URL = 'https://localhost3500/recipes'
+
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [search, setSearch] = useState('')
@@ -31,19 +31,25 @@ function App() {
     instructions: '',
   })
 
-  const [recipes, setRecipes] = useState(
-    JSON.parse(localStorage.getItem('Recipe List')) || [
-      {
-        title: 'Your first recipe will display here',
-        image: 'Your first recipe will display here',
-        instructions: 'Instructions for your first recipe will display here',
-      },
-    ]
-  )
+  const [recipes, setRecipes] = useState([
+    {
+      title: 'Your first recipe will display here',
+      image: 'Your first recipe will display here',
+      instructions: 'Instructions for your first recipe will display here',
+    },
+  ])
 
   useEffect(() => {
-    localStorage.setItem('Recipe List', JSON.stringify(recipes))
-  }, [recipes])
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch(API_URL)
+        const listRecipes = await response.json()
+        setRecipes(listRecipes)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }, [])
 
   const addRecipe = (recipe) => {
     //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
