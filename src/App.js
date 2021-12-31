@@ -32,7 +32,7 @@ function App() {
   })
 
   const [recipes, setRecipes] = useState(
-    JSON.parse(localStorage.getItem('shoppinglist')) || [
+    JSON.parse(localStorage.getItem('Recipe List')) || [
       {
         title: 'Your first recipe will display here',
         image: 'Your first recipe will display here',
@@ -41,11 +41,9 @@ function App() {
     ]
   )
 
-  const setAndSaveRecipes = (newRecipes) => {
-    setRecipes(newRecipes)
-    localStorage.setItem('Recipe List', JSON.stringify(newRecipes))
-    console.log(recipes)
-  }
+  useEffect(() => {
+    localStorage.setItem('Recipe List', JSON.stringify(recipes))
+  }, [recipes])
 
   const addRecipe = (recipe) => {
     //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
@@ -54,9 +52,9 @@ function App() {
       image: recipe.image,
       instructions: recipe.instructions,
     }
-    setRecipeID(1)
+    setRecipeID(0)
     const listRecipes = [...recipes, myNewRecipe]
-    setAndSaveRecipes(listRecipes)
+    setRecipes(listRecipes)
   }
 
   const handleSubmit = (e) => {
@@ -80,7 +78,7 @@ function App() {
     const listR = recipes.filter((recipe) => recipe !== indexR)
     console.log('listR', listR)
 
-    setAndSaveRecipes(listR)
+    setRecipes(listR)
   }
 
   const Login = (details) => {

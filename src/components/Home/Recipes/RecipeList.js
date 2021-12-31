@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import styles from './RecipeList.module.css'
 import FruitBowl from '../../../images/Breakfast-Fruit-Bowl-Recipe.jpeg'
@@ -13,6 +13,11 @@ const RecipeList = ({
   setRecipes,
   handleDelete,
 }) => {
+  useEffect(() => {
+    if (recipes.length > 1) {
+      setRecipeID(recipeID + 1)
+    }
+  }, [])
   return (
     <>
       <div className={styles.RecipeHolder}>
