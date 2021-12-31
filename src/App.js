@@ -23,6 +23,7 @@ function App() {
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
+  const [fetchError, setFetchError] = useState('')
   const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
@@ -43,6 +44,7 @@ function App() {
     const fetchRecipes = async () => {
       try {
         const response = await fetch(API_URL)
+        if (!response.ok) throw Error('Did not recieve expected data')
         const listRecipes = await response.json()
         setRecipes(listRecipes)
         console.log(listRecipes)
