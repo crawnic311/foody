@@ -11,6 +11,7 @@ import Cake from './images/Cake-Recipe.jpeg'
 import Potato from './images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from './images/Salmon-Stew-Recipe.png'
 import { Routes, Route } from 'react-router-dom'
+import apiRequest from './api/apiRequest'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
   const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
+    id: null,
     title: '',
     image: '',
     instructions: '',
@@ -46,17 +48,19 @@ function App() {
         const response = await fetch(API_URL)
         if (!response.ok) throw Error('Did not recieve expected data')
         const listRecipes = await response.json()
-        setRecipes(listRecipes)
         console.log(listRecipes)
+        setRecipes(listRecipes)
+        setFetchError(null)
       } catch (err) {
-        console.log(err.stack)
+        setFetchError(error.message)
       }
     }
-
-    ;(async () => await fetchRecipes())()
+    setTimeout(() => {
+      ;(async () => await fetchRecipes())()
+    }, 2000)
   }, [])
 
-  const addRecipe = (recipe) => {
+  const addRecipe = async (recipe) => {
     //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
       title: recipe.title,
@@ -66,6 +70,14 @@ function App() {
     setRecipeID(0)
     const listRecipes = [...recipes, myNewRecipe]
     setRecipes(listRecipes)
+
+    const postOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(myNewRecipe),
+    }
+    const result = await apiRequest(API_URL, postOptions)
+    if (result) setFetchError(result)
   }
 
   const handleSubmit = (e) => {
@@ -73,6 +85,7 @@ function App() {
     if (!newRecipe) return
     addRecipe(newRecipe)
     setNewRecipe({
+      id: null,
       title: '',
       image: '',
       instructions: '',
