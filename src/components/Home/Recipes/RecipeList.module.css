@@ -45,6 +45,8 @@ ul {
 .RecipeNavInner {
   width: stretch;
   height: 70px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .RecipeNavInner button {
