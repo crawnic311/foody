@@ -1,12 +1,6 @@
 {
   "recipes": [
     {
-      "id": 0,
-      "title": "Curry",
-      "image": "/src/images/Breakfast-Fruit-Bowl-Recipe.jpeg",
-      "instructions": "Mix everything well or suffer the consquences"
-    },
-    {
       "id": 1,
       "title": "Fruit Bowl",
       "image": "/src/images/Cake-Recipe.jpeg",
@@ -17,12 +11,6 @@
       "title": "Steak",
       "image": "/src/images/Potatoe-Chives-Recipe-Image.jpeg",
       "instructions": "Sear on both sides for 90 seconds on high heat"
-    },
-    {
-      "id": 3,
-      "title": "Veggies",
-      "image": "/src/images/Salmon-Stew-Recipe.png",
-      "instructions": "Drizzle with olive oil and fry in a pan with a lid"
     },
     {
       "title": "Peanut Butter",

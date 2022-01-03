@@ -92,7 +92,7 @@ function App() {
     })
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (recipes.length === 2 && recipeID === 1) {
       setRecipeID(0)
     } else {
@@ -103,6 +103,11 @@ function App() {
     console.log('listR', listR)
 
     setRecipes(listR)
+
+    const deleteOptions = { method: 'DELETE' }
+    const reqUrl = `${API_URL}/${id}`
+    const result = await apiRequest(reqUrl, deleteOptions)
+    if (result) setFetchError(result)
   }
 
   const Login = (details) => {
