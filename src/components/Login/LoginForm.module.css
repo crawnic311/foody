@@ -17,11 +17,7 @@
   justify-content: center;
   align-items: center;
   margin: 28vh auto;
-  background-image: linear-gradient(
-    to bottom right,
-    hsl(113, 93%, 48%),
-    #fe4880
-  );
+  background-image: linear-gradient(to bottom right, #b48c59, #fef49d, #92a742);
 }
 
 .LoginForm {
@@ -72,7 +68,7 @@
   font-size: 1.75rem;
   padding-left: 0;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #43d41a, #43d41a, #fe4880);
+  background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -102,3 +98,14 @@
   font-size: 1.5rem;
   color: red;
 }
+
+/* Color Pallete 
+#b48c59
+#fef49d
+#92a742
+#2b4b40
+#143840
+
+
+#34353b
+*/

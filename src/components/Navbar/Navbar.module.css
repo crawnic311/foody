@@ -45,7 +45,7 @@
   border-radius: 7px;
   background-color: #43d41a;
   padding: 0.25rem 0.5rem;
-  background-image: linear-gradient(to right, #43d41a, #43d41a, #fe4880);
+  background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
@@ -113,3 +113,14 @@
 .FoodyLogo {
   padding-top: 7px;
 }
+
+/* Color Pallete 
+#b48c59
+#fef49d
+#92a742
+#2b4b40
+#143840
+
+
+#34353b
+*/

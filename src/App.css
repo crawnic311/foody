@@ -9,7 +9,7 @@ body,
 body * {
   font-family: 'Open Sans', sans-serif;
   color: inherit;
-  background-color: #34353b;
+  background-color: #2b4b40;
   font-size: 62.5%;
 }
 
@@ -31,4 +31,13 @@ button:focus {
   outline: none;
 }
 
-/* Recipe List Styling */
+/* Color Pallete 
+#b48c59
+#fef49d
+#92a742
+#2b4b40
+#143840
+
+
+#34353b
+*/
