@@ -1,6 +1,12 @@
 {
   "recipes": [
     {
+      "title": "No Recipes!",
+      "image": "",
+      "instructions": "You have deleted all of your recipes. Head over to the create page to add a recipe.",
+      "id": 0
+    },
+    {
       "title": "Salmon Stew",
       "image": "https://media.istockphoto.com/photos/barbecued-salmon-fried-potatoes-and-vegetables-on-wooden-background-picture-id1214416414?b=1&k=20&m=1214416414&s=612x612&w=0&h=D3NVDZ34q6DUX11d3ZbcU9EdpPYLE0LbKP0tCora4j0=",
       "instructions": "Sear on both sides for 90 seconds on high heat",
@@ -8,15 +14,27 @@
     },
     {
       "title": "Potato Chives",
-      "image": "https://rasamalaysia.com/wp-content/uploads/2017/05/garlic-chive-butter-roasted-potatoes2.jpg",
-      "instructions": "Everything needs to be baked at 400 degrees for 35 minutes.",
+      "image": "https://rasamalaysia.com/wp-content/uploads/2017/05/garlic-chive-butter-roasted-potatoes-thumb.jpg",
+      "instructions": "Bake everything at 400 for 35 minutes.",
       "id": 2
     },
     {
       "title": "Curry",
       "image": "https://nutritiousminimalist.com/wp-content/uploads/2019/12/IMG_3390-800w-min.jpg",
-      "instructions": "Mix ingredients thouroghly for best results.",
+      "instructions": "Mix ingredients thoroughly.",
       "id": 3
+    },
+    {
+      "title": "Candy",
+      "image": "",
+      "instructions": "Good for you",
+      "id": 4
+    },
+    {
+      "title": "Water",
+      "image": "",
+      "instructions": "Beef",
+      "id": 5
     }
   ]
 }

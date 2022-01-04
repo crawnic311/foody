@@ -13,11 +13,6 @@ const RecipeList = ({
   setRecipes,
   handleDelete,
 }) => {
-  useEffect(() => {
-    if (recipes.length > 1) {
-      setRecipeID(recipeID + 1)
-    }
-  }, [])
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -47,8 +42,9 @@ const RecipeList = ({
           <button
             id={styles.recipeDelete}
             onClick={() => {
+              console.log(recipes.length)
               if (recipes.length > 1) {
-                handleDelete(recipeID)
+                handleDelete(recipes[recipeID].id)
               } else {
                 alert('cannot delete')
               }

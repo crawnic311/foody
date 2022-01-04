@@ -50,6 +50,7 @@ function App() {
         const listRecipes = await response.json()
         console.log(listRecipes)
         setRecipes(listRecipes)
+        setRecipeID(1)
         setFetchError(null)
       } catch (err) {
         setFetchError(error.message)
@@ -67,7 +68,7 @@ function App() {
       image: recipe.image,
       instructions: recipe.instructions,
     }
-    setRecipeID(0)
+    setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
     setRecipes(listRecipes)
 
