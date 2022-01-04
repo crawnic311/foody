@@ -16,7 +16,9 @@ const RecipeList = ({
   return (
     <>
       <div className={styles.RecipeHolder}>
-        <div className={styles.RecipeTitle}>{recipes[recipeID].title}</div>
+        <div className={styles.RecipeTitle} id="title">
+          {recipes[recipeID].title}
+        </div>
         <div className={styles.Recipe}>
           <img
             src={recipes[recipeID].image}
@@ -42,9 +44,11 @@ const RecipeList = ({
           <button
             id={styles.recipeDelete}
             onClick={() => {
-              console.log(recipes.length)
+              console.log(recipes.id)
               if (recipes.length > 1) {
-                handleDelete(recipes[recipeID].id)
+                let title = document.getElementById('title').innerHTML
+                console.log(title)
+                handleDelete(title)
               } else {
                 alert('cannot delete')
               }

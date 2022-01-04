@@ -93,20 +93,21 @@ function App() {
     })
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (title) => {
     if (recipes.length === 2 && recipeID === 1) {
       setRecipeID(0)
     } else {
       setRecipeID(1)
     }
-    const indexR = recipes.splice(id, 1)
-    const listR = recipes.filter((recipe) => recipe !== indexR)
+    const findRID = recipes.find((recipe) => recipe.title === title)
+    const listR = recipes.filter((recipe) => recipe.title !== title)
     console.log('listR', listR)
+    console.log('findRID', findRID)
 
     setRecipes(listR)
 
     const deleteOptions = { method: 'DELETE' }
-    const reqUrl = `${API_URL}/${id}`
+    const reqUrl = `${API_URL}/${findRID.id}`
     const result = await apiRequest(reqUrl, deleteOptions)
     if (result) setFetchError(result)
   }
