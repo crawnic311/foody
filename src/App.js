@@ -6,12 +6,9 @@ import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import SearchRecipe from './components/Search/SearchRecipe'
-import FruitBowl from './images/Breakfast-Fruit-Bowl-Recipe.jpeg'
-import Cake from './images/Cake-Recipe.jpeg'
-import Potato from './images/Potatoe-Chives-Recipe-Image.jpeg'
-import Salmon from './images/Salmon-Stew-Recipe.png'
 import { Routes, Route } from 'react-router-dom'
 import apiRequest from './api/apiRequest'
+import axios from 'axios'
 import './App.css'
 
 function App() {
@@ -119,6 +116,15 @@ function App() {
       password: details.password,
     })
     console.log(details)
+
+    axios
+      .post('http://localhost:3700/api/register', {
+        name: details.name,
+        email: details.email,
+        password: details.password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
 
     if (
       details.email === adminUser.email &&
