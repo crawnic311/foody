@@ -27,11 +27,6 @@ button {
   padding: 0;
 }
 
-button:hover,
-button:focus {
-  background: transparent;
-}
-
 button:focus {
   outline: none;
 }
