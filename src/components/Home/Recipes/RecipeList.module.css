@@ -51,11 +51,10 @@ ul {
 
 .RecipeNavInner button {
   font-size: 1.75rem;
-  border: 1px solid green;
   border-radius: 7px;
   margin-top: 20px;
   height: 30px;
-  width: 75px;
+  width: 80px;
   background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
   background-size: 200%;
   background-position: 0%;

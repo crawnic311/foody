@@ -23,7 +23,7 @@ const Navbar = (props) => {
           <Link to="/">
             <span className={styles.navlogo}>
               <img
-                src="/foody-logo.png"
+                src="/foodylogo.png"
                 alt="logo"
                 width="150"
                 height="69"
