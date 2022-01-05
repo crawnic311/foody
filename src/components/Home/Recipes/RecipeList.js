@@ -37,6 +37,11 @@ const RecipeList = ({
               <br />
               {recipes[recipeID].description}
             </div>
+            <div className={styles.RecipeInstructions}>
+              <span className={styles.Instructions}>Instructions:</span> <br />
+              <br />
+              {recipes[recipeID].instructions}
+            </div>
           </div>
           <img
             src={recipes[recipeID].image}

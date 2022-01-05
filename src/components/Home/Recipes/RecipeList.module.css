@@ -66,6 +66,23 @@
   font-weight: 700;
 }
 
+.RecipeInstructions {
+  color: black;
+  font-size: 14px;
+  background-color: aliceblue;
+  width: 405px;
+  min-height: 100px;
+  margin: 25px 0px;
+  padding: 0px 25px;
+}
+
+.Instructions {
+  color: black;
+  font-size: 17.5px;
+  background-color: aliceblue;
+  font-weight: 700;
+}
+
 .recipe {
 }
 
