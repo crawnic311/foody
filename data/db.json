@@ -3,25 +3,37 @@
     {
       "title": "No Recipes!",
       "image": "",
-      "instructions": "You have deleted all of your recipes. Head over to the create page to add a recipe.",
+      "description": "You have deleted all of your recipes. Head over to the create page to add a recipe.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
       "id": 0
     },
     {
       "title": "Lemon Pepper Salmon with Rice",
       "image": "https://mariamarlowe.com/wp-content/uploads/2017/10/Lemon-Pepper-Salmon-Maria-Marlowe-5.jpg",
-      "instructions": "Tender, flaky salmon is spiced simply but sublimely, then baked in the oven in foil. This lemon pepper salmon is exactly the kind of recipe you and I need more of in our lives.",
+      "description": "Tender, flaky salmon is spiced simply but sublimely, then baked in the oven in foil. This lemon pepper salmon is exactly the kind of recipe you and I need more of in our lives.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 15,
       "id": 1
     },
     {
       "title": "Easy Twice Baked Potatoes",
       "image": "https://i2.wp.com/thesuburbansoapbox.com/wp-content/uploads/2018/11/Twice-Baked-Potatoes-4.jpg",
-      "instructions": "Crispy on the outside, light and fluffy on the inside. Easy Twice Baked Potatoes are super simple to make and a great prep ahead side dish for every occasion. Loaded with cheddar cheese and chives, this simple recipe turns the humble potato into something hearty and comforting.",
+      "description": "Crispy on the outside, light and fluffy on the inside. Easy Twice Baked Potatoes are super simple to make and a great prep ahead side dish for every occasion. Loaded with cheddar cheese and chives, this simple recipe turns the humble potato into something hearty and comforting.",
+      "servings": 8,
+      "prepTime": 30,
+      "cookTime": 60,
       "id": 2
     },
     {
       "title": "Thai Yellow Curry",
       "image": "https://maddysavenue.com/wp-content/uploads/2017/03/Thai-Yellow-Curry-with-Chicken-1.jpg",
-      "instructions": "There's no need for takeout from your local Thai restaurant when you can make an authentic-tasting curry this good at home. This yellow curry is hearty yet healthy comfort food that’s layered with Thai-inspired flavors and is naturally gluten-free.",
+      "description": "There's no need for takeout from your local Thai restaurant when you can make an authentic-tasting curry this good at home. This yellow curry is hearty yet healthy comfort food that’s layered with Thai-inspired flavors and is naturally gluten-free.",
+      "servings": 6,
+      "prepTime": 65,
+      "cookTime": 45,
       "id": 3
     }
   ]

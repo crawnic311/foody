@@ -19,16 +19,40 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       ></input>
       <input
         id={styles.titleInput}
-        placeholder="Recipe Instructions"
-        value={newRecipe.instructions}
+        placeholder="Recipe Description"
+        value={newRecipe.description}
         required
         onChange={(e) =>
-          setNewRecipe({ ...newRecipe, instructions: e.target.value })
+          setNewRecipe({ ...newRecipe, description: e.target.value })
         }
       ></input>
       <input
         id={styles.titleInput}
-        placeholder="Optional: Upload an photo for your recipe"
+        placeholder="Servings"
+        value={newRecipe.servings}
+        onChange={(e) =>
+          setNewRecipe({ ...newRecipe, servings: e.target.value })
+        }
+      ></input>
+      <input
+        id={styles.titleInput}
+        placeholder="Prep Time (minutes)"
+        value={newRecipe.prep_time}
+        onChange={(e) =>
+          setNewRecipe({ ...newRecipe, prep_time: e.target.value })
+        }
+      ></input>
+      <input
+        id={styles.titleInput}
+        placeholder="Cook Time (minutes)"
+        value={newRecipe.cook_time}
+        onChange={(e) =>
+          setNewRecipe({ ...newRecipe, cook_time: e.target.value })
+        }
+      ></input>
+      <input
+        id={styles.titleInput}
+        placeholder="Optional: Upload a photo for your recipe"
         value={newRecipe.image}
         onChange={(e) =>
           setNewRecipe({

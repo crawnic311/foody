@@ -21,8 +21,21 @@ const RecipeList = ({
             <div className={styles.RecipeTitle} id="title">
               {recipes[recipeID].title}
             </div>
+            <div className={styles.TimeHolder}>
+              <span className={styles.rTime}>
+                Servings: {recipes[recipeID].servings}
+              </span>
+              <span className={styles.rTime}>
+                Prep Time: {recipes[recipeID].prepTime}
+              </span>
+              <span className={styles.rTime}>
+                Cook Time: {recipes[recipeID].cookTime}
+              </span>
+            </div>
             <div className={styles.RecipeDescription}>
-              {recipes[recipeID].instructions}
+              <span className={styles.Description}>Description:</span> <br />
+              <br />
+              {recipes[recipeID].description}
             </div>
           </div>
           <img
@@ -64,7 +77,9 @@ const RecipeList = ({
               if (recipeID < recipes.length - 1) {
                 setRecipeID(recipeID + 1)
               }
-              console.log(recipeID)
+              console.log(recipes[recipeID].servings)
+              console.log(recipes[recipeID].prepTime)
+              console.log(recipes[recipeID].cookTime)
             }}
           >
             Next

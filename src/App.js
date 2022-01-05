@@ -28,14 +28,20 @@ function App() {
     id: null,
     title: '',
     image: '',
-    instructions: '',
+    description: '',
+    servings: null,
+    prepTime: null,
+    cookTime: null,
   })
 
   const [recipes, setRecipes] = useState([
     {
       title: 'Your first recipe will display here',
       image: 'Your first recipe will display here',
-      instructions: 'Instructions for your first recipe will display here',
+      description: 'A description of your first recipe will display here',
+      servings: 0,
+      prepTime: 0,
+      cookTime: 0,
     },
   ])
 
@@ -63,7 +69,10 @@ function App() {
     const myNewRecipe = {
       title: recipe.title,
       image: recipe.image,
-      instructions: recipe.instructions,
+      description: recipe.description,
+      servings: recipe.servings,
+      prepTime: recipe.prepTime,
+      cookTime: recipe.cookTime,
     }
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
@@ -86,7 +95,10 @@ function App() {
       id: null,
       title: '',
       image: '',
-      instructions: '',
+      description: '',
+      servings: null,
+      prepTime: null,
+      cookTime: null,
     })
   }
 
