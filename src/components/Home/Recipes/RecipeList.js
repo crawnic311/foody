@@ -16,18 +16,20 @@ const RecipeList = ({
   return (
     <>
       <div className={styles.RecipeHolder}>
-        <div className={styles.RecipeTitle} id="title">
-          {recipes[recipeID].title}
-        </div>
         <div className={styles.Recipe}>
+          <div className={styles.RecipeTextHolder}>
+            <div className={styles.RecipeTitle} id="title">
+              {recipes[recipeID].title}
+            </div>
+            <div className={styles.RecipeDescription}>
+              {recipes[recipeID].instructions}
+            </div>
+          </div>
           <img
             src={recipes[recipeID].image}
             alt=""
             className={styles.RecipeImage}
           />
-          <div className={styles.RecipeDescription}>
-            {recipes[recipeID].instructions}
-          </div>
         </div>
         <div className={styles.RecipeNavInner}>
           <button
