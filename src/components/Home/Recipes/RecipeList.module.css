@@ -1,9 +1,10 @@
 .Recipe {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   border: 2px solid aliceblue;
-  width: 410px;
-  height: 424px;
+  width: 810px;
+  height: 624px;
+  background-color: aliceblue;
 }
 
 .RecipeTitle {
@@ -15,18 +16,23 @@
 
 .RecipeImage {
   width: 405px;
-  height: 320px;
-  object-fit: cover;
+  height: 624px;
+  align-self: center;
   overflow: hidden;
   border-bottom: 1px solid aliceblue;
+  background-color: aliceblue;
+  padding: 25px;
 }
 
 .RecipeDescription {
-  color: aliceblue;
-  font-size: 22px;
-
+  color: black;
+  font-size: 14px;
+  background-color: aliceblue;
   width: 405px;
   min-height: 100px;
+  margin: 25px 0px;
+  padding: 0px 25px;
+  border-right: 1px solid black;
 }
 
 ul {
@@ -46,7 +52,7 @@ ul {
   width: stretch;
   height: 70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .RecipeNavInner button {

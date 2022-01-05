@@ -55,7 +55,7 @@ function App() {
     }
     setTimeout(() => {
       ;(async () => await fetchRecipes())()
-    }, 2000)
+    }, 1000)
   }, [])
 
   const addRecipe = async (recipe) => {
