@@ -3,8 +3,15 @@ import styles from './Create.module.css'
 import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
-const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
+const Create = ({
+  newRecipe,
+  setNewRecipe,
+  handleSubmit,
+  instructions,
+  setInstructions,
+}) => {
   const inputRef = useRef()
+
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
@@ -18,7 +25,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         onChange={(e) => setNewRecipe({ ...newRecipe, title: e.target.value })}
       ></input>
       <input
-        id={styles.titleInput}
+        id={styles.descriptionInput}
         placeholder="Recipe Description"
         value={newRecipe.description}
         required
@@ -37,17 +44,17 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       <input
         id={styles.titleInput}
         placeholder="Prep Time (minutes)"
-        value={newRecipe.prep_time}
+        value={newRecipe.prepTime}
         onChange={(e) =>
-          setNewRecipe({ ...newRecipe, prep_time: e.target.value })
+          setNewRecipe({ ...newRecipe, prepTime: e.target.value })
         }
       ></input>
       <input
         id={styles.titleInput}
         placeholder="Cook Time (minutes)"
-        value={newRecipe.cook_time}
+        value={newRecipe.cookTime}
         onChange={(e) =>
-          setNewRecipe({ ...newRecipe, cook_time: e.target.value })
+          setNewRecipe({ ...newRecipe, cookTime: e.target.value })
         }
       ></input>
       <input
@@ -57,9 +64,17 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         onChange={(e) =>
           setNewRecipe({
             ...newRecipe,
-            instructions: newRecipe.instructions.push(e.target.value),
+            instructions: e.target.value,
           })
         }
+      ></input>
+      <input
+        id={styles.titleInput}
+        placeholder="Instructions"
+        onChange={(e) => {
+          let instructions = [...newRecipe.instructions, e.target.value]
+          setInstructions(instructions)
+        }}
       ></input>
       <input
         id={styles.titleInput}

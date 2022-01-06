@@ -22,16 +22,17 @@ function App() {
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [fetchError, setFetchError] = useState('')
+  const [instructions, setInstructions] = useState([])
   const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
-    id: null,
+    id: '',
     title: '',
     image: '',
     description: '',
-    servings: null,
-    prepTime: null,
-    cookTime: null,
+    servings: '',
+    prepTime: '',
+    cookTime: '',
     instructions: [],
   })
 
@@ -67,15 +68,16 @@ function App() {
   }, [])
 
   const addRecipe = async (recipe) => {
-    //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
+    const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
+      id: id,
       title: recipe.title,
       image: recipe.image,
       description: recipe.description,
       servings: recipe.servings,
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
-      instructions: [],
+      instructions: recipe.instructions,
     }
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
@@ -95,13 +97,13 @@ function App() {
     if (!newRecipe) return
     addRecipe(newRecipe)
     setNewRecipe({
-      id: null,
+      id: '',
       title: '',
       image: '',
       description: '',
-      servings: null,
-      prepTime: null,
-      cookTime: null,
+      servings: '',
+      prepTime: '',
+      cookTime: '',
       instructions: [],
     })
   }
@@ -175,6 +177,8 @@ function App() {
                 newRecipe={newRecipe}
                 setNewRecipe={setNewRecipe}
                 handleSubmit={handleSubmit}
+                instructions={instructions}
+                setInstructions={setInstructions}
               />
             }
           />

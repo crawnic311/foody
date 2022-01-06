@@ -110,10 +110,8 @@ const RecipeList = ({
             onClick={() => {
               if (recipeID < recipes.length - 1) {
                 setRecipeID(recipeID + 1)
+                console.log(recipeID)
               }
-              console.log(recipes[recipeID].servings)
-              console.log(recipes[recipeID].prepTime)
-              console.log(recipes[recipeID].cookTime)
             }}
           >
             Next
