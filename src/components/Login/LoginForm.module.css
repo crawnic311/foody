@@ -12,12 +12,19 @@
 .LoginWrapper {
   background-color: aliceblue;
   display: flex;
+  flex-direction: column;
   height: 480px;
   width: 460px;
   justify-content: center;
   align-items: center;
   margin: 28vh auto;
   background-image: linear-gradient(to bottom right, #b48c59, #fef49d, #92a742);
+}
+
+.foodylogo {
+  position: absolute;
+  top: 140px;
+  right: 810px;
 }
 
 .LoginForm {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+//import foody from '../../../public/foodylogo.png'
 import styles from './loginform.module.css'
 
 const LoginForm = (props) => {
@@ -15,6 +16,13 @@ const LoginForm = (props) => {
 
   return (
     <div className={styles.LoginWrapper}>
+      <img
+        src="/foodylogo.png"
+        alt="logo"
+        width="300"
+        height="138"
+        className={styles.foodylogo}
+      />
       <form className={styles.LoginForm} onSubmit={submitHandler}>
         <div className={styles.ErrorWrapper}>
           {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
