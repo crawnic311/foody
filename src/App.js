@@ -5,6 +5,7 @@ import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
+import { useNavigate } from 'react-router-dom'
 import SearchRecipe from './components/Search/SearchRecipe'
 import { Routes, Route } from 'react-router-dom'
 import apiRequest from './api/apiRequest'
@@ -12,6 +13,7 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
+  let navigate = useNavigate()
   const adminUser = {
     name: '',
     email: 'dillon.craw@gmail.com',
@@ -19,7 +21,7 @@ function App() {
   }
   const API_URL = 'http://localhost:3500/recipes'
 
-  const [user, setUser] = useState({ name: '', email: 'j', password: '' })
+  const [user, setUser] = useState({ name: '', email: '', password: '' })
   const [error, setError] = useState('')
   const [fetchError, setFetchError] = useState('')
   const [instruct, setInstruct] = useState('')
@@ -135,20 +137,21 @@ function App() {
     })
     console.log(details)
 
-    axios
+    /*axios
       .post('http://localhost:3700/api/register', {
         name: details.name,
         email: details.email,
         password: details.password,
       })
       .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err))*/
 
     if (
       details.email === adminUser.email &&
       details.password === adminUser.password
     ) {
       console.log('Logged in')
+      navigate('/home')
     } else {
       console.log('Details do not match!')
       setError('Details do not match!')
@@ -162,7 +165,11 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar Logout={Logout} search={search} setSearch={setSearch} />
+        {user.email !== '' ? (
+          <Navbar Logout={Logout} search={search} setSearch={setSearch} />
+        ) : (
+          <div></div>
+        )}
         <Routes>
           <Route
             exact
