@@ -46,6 +46,7 @@
   width: stretch;
   text-align: center;
   border-radius: 7px;
+  border: 1px solid aliceblue;
   background-color: #43d41a;
   padding: 0.25rem 0.5rem;
   background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);

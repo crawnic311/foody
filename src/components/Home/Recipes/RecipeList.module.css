@@ -124,6 +124,7 @@
   border-radius: 7px;
   margin-top: 20px;
   text-transform: uppercase;
+  border: 1px solid aliceblue;
   height: 30px;
   width: 100px;
   background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
