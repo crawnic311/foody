@@ -22,7 +22,7 @@ function App() {
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [fetchError, setFetchError] = useState('')
-  const [instructions, setInstructions] = useState([])
+  const [instruct, setInstruct] = useState('')
   const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
@@ -104,7 +104,7 @@ function App() {
       servings: '',
       prepTime: '',
       cookTime: '',
-      instructions: [],
+      instructions: ['', ''],
     })
   }
 
@@ -177,8 +177,8 @@ function App() {
                 newRecipe={newRecipe}
                 setNewRecipe={setNewRecipe}
                 handleSubmit={handleSubmit}
-                instructions={instructions}
-                setInstructions={setInstructions}
+                instruct={instruct}
+                setInstruct={setInstruct}
               />
             }
           />

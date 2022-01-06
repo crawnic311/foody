@@ -7,8 +7,8 @@ const Create = ({
   newRecipe,
   setNewRecipe,
   handleSubmit,
-  instructions,
-  setInstructions,
+  instruct,
+  setInstruct,
 }) => {
   const inputRef = useRef()
 
@@ -60,22 +60,27 @@ const Create = ({
       <input
         id={styles.titleInput}
         placeholder="Instructions for: (ex. soup, rice, etc)"
-        value={newRecipe.instructions}
+        value={newRecipe.instructions[0]}
         onChange={(e) =>
           setNewRecipe({
             ...newRecipe,
-            instructions: e.target.value,
+            instructions: [e.target.value],
           })
         }
       ></input>
       <input
         id={styles.titleInput}
         placeholder="Instructions"
+        value={newRecipe.instructions[1]}
         onChange={(e) => {
-          let instructions = [...newRecipe.instructions, e.target.value]
-          setInstructions(instructions)
+          let array = [newRecipe.instructions[0], e.target.value]
+          setNewRecipe({
+            ...newRecipe,
+            instructions: array,
+          })
         }}
       ></input>
+
       <input
         id={styles.titleInput}
         placeholder="Optional: Upload a photo for your recipe"
