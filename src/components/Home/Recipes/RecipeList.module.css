@@ -55,8 +55,9 @@
   background-color: aliceblue;
   width: 405px;
   min-height: 100px;
-  margin: 25px 0px;
-  padding: 0px 25px;
+  margin: 25px 25px;
+  padding: 0px 0px 30px;
+  border-bottom: 1px solid black;
 }
 
 .Description {
@@ -64,6 +65,7 @@
   font-size: 17.5px;
   background-color: aliceblue;
   font-weight: 700;
+  padding-bottom: 7px;
 }
 
 .RecipeInstructions {
@@ -83,7 +85,24 @@
   font-weight: 700;
 }
 
-.recipe {
+.InstructionsFor {
+  background-color: aliceblue;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.RecipeDetails {
+  background-color: aliceblue;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.InstructionsP {
+  background-color: aliceblue;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .title {

@@ -52,6 +52,17 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       ></input>
       <input
         id={styles.titleInput}
+        placeholder="Instructions for: (ex. soup, rice, etc)"
+        value={newRecipe.instructions}
+        onChange={(e) =>
+          setNewRecipe({
+            ...newRecipe,
+            instructions: newRecipe.instructions.push(e.target.value),
+          })
+        }
+      ></input>
+      <input
+        id={styles.titleInput}
         placeholder="Optional: Upload a photo for your recipe"
         value={newRecipe.image}
         onChange={(e) =>

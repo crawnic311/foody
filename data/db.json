@@ -7,15 +7,24 @@
       "servings": null,
       "prepTime": null,
       "cookTime": null,
+      "instructions": [],
       "id": 0
     },
     {
-      "title": "Lemon Pepper Salmon with Rice",
+      "title": "Lemon Pepper Salmon w Rice & Broccoli",
       "image": "https://mariamarlowe.com/wp-content/uploads/2017/10/Lemon-Pepper-Salmon-Maria-Marlowe-5.jpg",
       "description": "Tender, flaky salmon is spiced simply but sublimely, then baked in the oven in foil. This lemon pepper salmon is exactly the kind of recipe you and I need more of in our lives.",
       "servings": 4,
       "prepTime": 15,
       "cookTime": 15,
+      "instructions": [
+        "Rice",
+        "Add 1 1/2 cups of water to a pot and bring to a boil. Add rice and seasonings and mix for 10 seconds then bring to simmer. Simmer for 40 minutes.",
+        "Salmon",
+        "Thaw the salmon in warm water. Season generously with lemmon pepper and fresh cut lemons circles. Bake at 400 for 14 minutes or until the salmon flakes easily with a fork.",
+        "Broccoli",
+        "Season the broccoli with garlic salt and olive oil and bake at 400 for 20-25 mintues. Baking time will vary depending on the size of your broccoli flourets"
+      ],
       "id": 1
     },
     {
@@ -25,6 +34,10 @@
       "servings": 8,
       "prepTime": 30,
       "cookTime": 60,
+      "instructions": [
+        "Potatos",
+        "Preheat the oven to 425 degrees. Arrange the potatoes on a baking sheet lined with foil. Brush the outside of the potatoes with olive oil to coat and sprinkle liberally with kosher salt. Bake until fork tender. Allow the potatoes to cool to room temperature or until cool enough to handle. Cut the top of the potato and press the sides to open. Using a spoon, scoop out the inside of the potato being careful not to break the skin and place the potato in a bowl. Arrange the potato skins back on the baking sheet. Place the butter, sour cream, cheddar and chives in the bowl with the potato. Season with salt and pepper. Using a hand mixer, blend the potatoes together with the other ingredients until fluffy. Spoon the potato mixture back into the potato skins or fill a pastry bag with the filling and pipe the mixture into the shells. Top the potatoes with the remaining cheese and return to the oven. Turn the heat down to 375 degrees and bake the potatoes for 25-30 minutes. Sprinkle with chives and serve immediately."
+      ],
       "id": 2
     },
     {
@@ -34,6 +47,7 @@
       "servings": 6,
       "prepTime": 65,
       "cookTime": 45,
+      "instructions": [],
       "id": 3
     }
   ]

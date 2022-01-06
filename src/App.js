@@ -32,6 +32,7 @@ function App() {
     servings: null,
     prepTime: null,
     cookTime: null,
+    instructions: [],
   })
 
   const [recipes, setRecipes] = useState([
@@ -42,6 +43,7 @@ function App() {
       servings: 0,
       prepTime: 0,
       cookTime: 0,
+      instructions: [],
     },
   ])
 
@@ -73,6 +75,7 @@ function App() {
       servings: recipe.servings,
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
+      instructions: [],
     }
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
@@ -99,6 +102,7 @@ function App() {
       servings: null,
       prepTime: null,
       cookTime: null,
+      instructions: [],
     })
   }
 

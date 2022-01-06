@@ -33,14 +33,43 @@ const RecipeList = ({
               </span>
             </div>
             <div className={styles.RecipeDescription}>
-              <span className={styles.Description}>Description:</span> <br />
-              <br />
-              {recipes[recipeID].description}
+              <span className={styles.Description}>Description:</span>
+              <p className={styles.RecipeDetails}>
+                {recipes[recipeID].description}
+              </p>
             </div>
             <div className={styles.RecipeInstructions}>
-              <span className={styles.Instructions}>Instructions:</span> <br />
-              <br />
-              {recipes[recipeID].instructions}
+              <span className={styles.Instructions}>Instructions:</span>
+              <p className={styles.InstructionsFor}>
+                {recipes[recipeID].instructions.length >= 1
+                  ? `For the ` + recipes[recipeID].instructions[0] + `: `
+                  : 'No instructions added'}
+              </p>
+              <p className={styles.InstructionsP}>
+                {recipes[recipeID].instructions.length >= 2
+                  ? recipes[recipeID].instructions[1]
+                  : 'No instrucitons added'}
+              </p>
+              <p className={styles.InstructionsFor}>
+                {recipes[recipeID].instructions.length >= 3
+                  ? `For the ` + recipes[recipeID].instructions[2] + `: `
+                  : ''}
+              </p>
+              <p className={styles.InstructionsP}>
+                {recipes[recipeID].instructions.length >= 4
+                  ? recipes[recipeID].instructions[3]
+                  : ''}
+              </p>
+              <p className={styles.InstructionsFor}>
+                {recipes[recipeID].instructions.length >= 5
+                  ? `For the ` + recipes[recipeID].instructions[4] + `: `
+                  : ''}
+              </p>
+              <p className={styles.InstructionsP}>
+                {recipes[recipeID].instructions.length >= 6
+                  ? recipes[recipeID].instructions[5]
+                  : ''}
+              </p>
             </div>
           </div>
           <img
