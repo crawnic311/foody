@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid aliceblue;
   color: #482ff7;
 }
 
@@ -34,13 +34,16 @@
 
 .navitem {
   margin-left: 5rem;
+  width: 100px;
 }
 
 .navlink {
+  display: block;
   font-size: 1.75rem;
   font-weight: 400;
   color: black;
   text-transform: uppercase;
+  width: stretch;
   text-align: center;
   border-radius: 7px;
   background-color: #43d41a;
@@ -50,6 +53,7 @@
   background-position: 0%;
   transition: 0.4s;
   cursor: pointer;
+  width: 100px;
 }
 
 .navlink:hover {

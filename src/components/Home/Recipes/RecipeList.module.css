@@ -3,6 +3,7 @@
   border: 2px solid aliceblue;
   height: 624px;
   background-color: aliceblue;
+  border-radius: 7px;
 }
 
 .RecipeTextHolder {
@@ -43,6 +44,7 @@
   align-self: center;
   overflow: hidden;
   border-bottom: 1px solid aliceblue;
+  border-radius: 7px;
   background-color: aliceblue;
   padding: 25px;
 }
@@ -121,6 +123,7 @@
   font-size: 1.75rem;
   border-radius: 7px;
   margin-top: 20px;
+  text-transform: uppercase;
   height: 30px;
   width: 100px;
   background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
