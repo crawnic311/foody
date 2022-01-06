@@ -1,7 +1,6 @@
 .Recipe {
   display: flex;
   border: 2px solid aliceblue;
-  width: 810px;
   height: 624px;
   background-color: aliceblue;
 }
@@ -18,8 +17,7 @@
   background-color: aliceblue;
   color: black;
   text-transform: uppercase;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 25px;
   margin: 0px 25px;
   border-bottom: 1px solid black;
 }
@@ -89,14 +87,14 @@
   background-color: aliceblue;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .RecipeDetails {
   background-color: aliceblue;
   font-size: 14px;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .InstructionsP {
@@ -142,4 +140,10 @@
 
 #recipeForward {
   float: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .Recipe {
+    width: 500px;
+  }
 }

@@ -48,7 +48,7 @@ const RecipeList = ({
               <p className={styles.InstructionsP}>
                 {recipes[recipeID].instructions.length >= 2
                   ? recipes[recipeID].instructions[1]
-                  : 'No instrucitons added'}
+                  : ''}
               </p>
               <p className={styles.InstructionsFor}>
                 {recipes[recipeID].instructions.length >= 3
