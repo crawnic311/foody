@@ -41,6 +41,16 @@
         "Place the butter, sour cream, cheddar and chives in the bowl with the potato. Season with salt and pepper. Using a hand mixer, blend the potatoes together with the other ingredients until fluffy. Spoon the potato mixture back into the potato skins or fill a pastry bag with the filling and pipe the mixture into the shells. Top the potatoes with the remaining cheese. "
       ],
       "id": 2
+    },
+    {
+      "title": "Thai Yellow Curry",
+      "image": "https://maddysavenue.com/wp-content/uploads/2017/03/Thai-Yellow-Curry-with-Chicken-1.jpg",
+      "description": "There's no need for takeout from your local Thai restaurant when you can make an authentic-tasting curry this good at home. This yellow curry is hearty yet healthy comfort food that’s layered with Thai-inspired flavors and is naturally gluten-free.",
+      "servings": 6,
+      "prepTime": 65,
+      "cookTime": 45,
+      "instructions": [],
+      "id": 3
     }
   ]
 }
