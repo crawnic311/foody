@@ -20,11 +20,9 @@ const SearchRecipe = ({
         onChange={(e) => {
           setSearch(e.target.value)
           let recipeTitles = recipes.map((recipe) => recipe.title.toLowerCase())
-          let sought = String(search)
-          let recipeSought = recipeTitles.indexOf(String(search))
-          console.log('sought', sought)
-          console.log('recipeTitles', recipeTitles)
-          console.log('recipeSought', recipeSought)
+          let recipeSought = recipeTitles.indexOf(search.toLowerCase())
+          console.log(recipeSought)
+          console.log(recipeTitles)
           if (recipeSought !== -1) {
             setRecipeID(recipeSought)
           }
