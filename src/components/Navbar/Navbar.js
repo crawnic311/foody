@@ -8,6 +8,9 @@ const Navbar = (props) => {
   const search = props.search
   const setSearch = props.setSearch
   const [isOpen, setIsOpen] = useState(false)
+  const recipeID = props.recipeID
+  const setRecipeID = props.setRecipeID
+  const recipes = props.recipes
   const openMenu = () => {
     setIsOpen(!isOpen)
   }
@@ -32,7 +35,13 @@ const Navbar = (props) => {
             </span>
           </Link>
           <span className={(styles.navlink, styles.searchBar)}>
-            <SearchRecipe search={search} setSearch={setSearch} />
+            <SearchRecipe
+              search={search}
+              setSearch={setSearch}
+              recipeID={recipeID}
+              setRecipeID={setRecipeID}
+              recipes={recipes}
+            />
           </span>
           <ul
             className={

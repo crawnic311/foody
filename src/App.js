@@ -166,7 +166,14 @@ function App() {
     <>
       <div className="App">
         {user.email !== '' ? (
-          <Navbar Logout={Logout} search={search} setSearch={setSearch} />
+          <Navbar
+            Logout={Logout}
+            search={search}
+            setSearch={setSearch}
+            recipeID={recipeID}
+            setRecipeID={setRecipeID}
+            recipes={recipes}
+          />
         ) : (
           <div></div>
         )}
