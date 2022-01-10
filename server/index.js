@@ -19,4 +19,6 @@ app.post('/api/register', controller.addUser)
 
 app.post('/api/recipes', controller.addRecipe)
 
+app.get('/api/recipes', controller.getRecipe)
+
 app.listen(PORT, () => console.log(`Running on ${PORT}`))

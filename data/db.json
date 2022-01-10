@@ -77,19 +77,6 @@
         "s",
         "c"
       ]
-    },
-    {
-      "id": 5,
-      "title": "b",
-      "image": "rt",
-      "description": "b",
-      "servings": "22",
-      "prepTime": "12",
-      "cookTime": "33",
-      "instructions": [
-        "tp",
-        "tot"
-      ]
     }
   ]
 }

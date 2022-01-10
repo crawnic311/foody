@@ -30,8 +30,9 @@ module.exports = {
         `insert into users (name, email, password)
         values ('${name}', '${email}', '${password}')`
       )
-      .then((dbRes) => res.status(200).send(dbRes))
+      .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
+    console.log(res)
   },
 
   addRecipe: async (req, res) => {
@@ -51,19 +52,20 @@ module.exports = {
         `insert into recipes (title, image, description, servings, prepTime, cookTime, instructions, user_id)
     values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions}"}', '${user_id}')`
       )
-      .then((dbRes) => res.status(200).send(dbRes))
+      .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
+    console.log(res)
   },
 
-  getPendingAppointments: (req, res) => {
+  getRecipe: async (req, res) => {
     sequelize
       .query(
-        `select * from cc_appointments
-        where approved = false
-        order by date desc;`
+        `select * from recipes
+        where id = 2`
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
+    console.log(res)
   },
 
   getUpcomingAppointments: (req, res) => {
