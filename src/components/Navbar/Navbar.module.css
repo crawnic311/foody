@@ -1,6 +1,7 @@
 .header {
   border-bottom: 1px solid aliceblue;
   color: #482ff7;
+  width: 100vw;
 }
 
 .navbar {
