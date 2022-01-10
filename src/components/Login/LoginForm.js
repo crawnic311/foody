@@ -16,14 +16,14 @@ const LoginForm = (props) => {
 
   return (
     <div className={styles.LoginMaster}>
+      <img
+        src="/foodylogo.png"
+        alt="logo"
+        width="300"
+        height="138"
+        className={styles.foodylogo}
+      />
       <div className={styles.LoginWrapper}>
-        <img
-          src="/foodylogo.png"
-          alt="logo"
-          width="300"
-          height="138"
-          className={styles.foodylogo}
-        />
         <form className={styles.LoginForm} onSubmit={submitHandler}>
           <div className={styles.ErrorWrapper}>
             {error !== '' ? <p className={styles.Error}>{error}</p> : ''}

@@ -10,6 +10,10 @@
 }
 
 .LoginMaster {
+  width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .LoginWrapper {
@@ -25,6 +29,8 @@
 }
 
 .foodylogo {
+  background-color: #2b4b40;
+  align-self: center;
 }
 
 .LoginForm {

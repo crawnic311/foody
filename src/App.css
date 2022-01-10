@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.App {
+  background-color: black;
+}
+
 html,
 body,
 body * {
@@ -11,6 +15,12 @@ body * {
   color: inherit;
   background-color: #2b4b40;
   font-size: 62.5%;
+}
+
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 li {
