@@ -81,6 +81,21 @@ function App() {
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
     }
+
+    axios
+      .post('http://localhost:3700/api/recipes', {
+        title: myNewRecipe.title,
+        image: myNewRecipe.image,
+        description: myNewRecipe.description,
+        servings: myNewRecipe.servings,
+        prepTime: myNewRecipe.prepTime,
+        cookTime: myNewRecipe.cookTime,
+        instructions: myNewRecipe.instructions,
+        user_id: 2,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
     setRecipes(listRecipes)
@@ -98,6 +113,8 @@ function App() {
     e.preventDefault()
     if (!newRecipe) return
     addRecipe(newRecipe)
+
+    //Resets defualt values for create recipe form
     setNewRecipe({
       id: '',
       title: '',
@@ -137,14 +154,14 @@ function App() {
     })
     console.log(details)
 
-    /*axios
+    axios
       .post('http://localhost:3700/api/register', {
         name: details.name,
         email: details.email,
         password: details.password,
       })
       .then((res) => console.log(res))
-      .catch((err) => console.log(err))*/
+      .catch((err) => console.log(err))
 
     if (
       details.email === adminUser.email &&

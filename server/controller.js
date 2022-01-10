@@ -20,14 +20,36 @@ module.exports = {
     const { id } = req.params
 
     const { name, email, password } = req.body
-    const result = await sequelize.query(
+    //Can't remember what this does??
+    /*const result = await sequelize.query(
       `insert into users (name, email, password)
         values ('${name}', '${email}', '${password}')`
-    )
+    )*/
     sequelize
       .query(
         `insert into users (name, email, password)
         values ('${name}', '${email}', '${password}')`
+      )
+      .then((dbRes) => res.status(200).send(dbRes))
+      .catch((err) => console.log(err))
+  },
+
+  addRecipe: async (req, res) => {
+    console.log(111, req.body)
+    const {
+      title,
+      image,
+      description,
+      servings,
+      prepTime,
+      cookTime,
+      instructions,
+      user_id,
+    } = req.body
+    sequelize
+      .query(
+        `insert into recipes (title, image, description, servings, prepTime, cookTime, instructions, user_id)
+    values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions}"}', '${user_id}')`
       )
       .then((dbRes) => res.status(200).send(dbRes))
       .catch((err) => console.log(err))

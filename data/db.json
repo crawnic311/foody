@@ -84,6 +84,45 @@
       "prepTime": "",
       "cookTime": "",
       "instructions": []
+    },
+    {
+      "id": 7,
+      "title": "Pizza",
+      "image": "Candy",
+      "description": "s",
+      "servings": "12",
+      "prepTime": "23",
+      "cookTime": "24",
+      "instructions": [
+        "Toppings:",
+        "Cheese, Pepperoni, Sausage"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Chicken",
+      "image": "Okay",
+      "description": "The best breast in town",
+      "servings": "22",
+      "prepTime": "35",
+      "cookTime": "34",
+      "instructions": [
+        "Cook",
+        "dumplings and candy"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "c",
+      "image": "f",
+      "description": "c",
+      "servings": "1",
+      "prepTime": "3",
+      "cookTime": "4",
+      "instructions": [
+        "s",
+        "c"
+      ]
     }
   ]
 }
