@@ -1,4 +1,6 @@
 import React from 'react'
+import { Select } from 'react-select'
+
 import styles from './SearchRecipe.modules.css'
 
 const SearchRecipe = ({
