@@ -15,58 +15,62 @@ const LoginForm = (props) => {
   }
 
   return (
-    <div className={styles.LoginWrapper}>
-      <img
-        src="/foodylogo.png"
-        alt="logo"
-        width="300"
-        height="138"
-        className={styles.foodylogo}
-      />
-      <form className={styles.LoginForm} onSubmit={submitHandler}>
-        <div className={styles.ErrorWrapper}>
-          {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
-        </div>
-        <div className={styles.formgroup}>
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            id={styles.name}
-            onChange={(e) => setDetails({ ...details, name: e.target.value })}
-            value={details.name}
-          />
-        </div>
-        <div className={styles.formgroup}>
-          <input
-            type="text"
-            placeholder="Email"
-            name="email"
-            id={styles.email}
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-        </div>
-        <div className={styles.formgroup}>
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            id={styles.password}
-            onChange={(e) =>
-              setDetails({ ...details, password: e.target.value })
-            }
-            value={details.password}
-          />
-          <span className={styles.ForgotPassword}>Forgot Password?</span>
-        </div>
-        <div className={styles.formgroup} id={styles.loginButton}>
-          <input type="submit" value="LOGIN" id={styles.login} />
-          <span href="" className={styles.NewHere}>
-            New here? Create an account.
-          </span>
-        </div>
-      </form>
+    <div className={styles.LoginMaster}>
+      <div className={styles.LoginWrapper}>
+        <img
+          src="/foodylogo.png"
+          alt="logo"
+          width="300"
+          height="138"
+          className={styles.foodylogo}
+        />
+        <form className={styles.LoginForm} onSubmit={submitHandler}>
+          <div className={styles.ErrorWrapper}>
+            {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
+          </div>
+          <div className={styles.formgroup}>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id={styles.name}
+              onChange={(e) => setDetails({ ...details, name: e.target.value })}
+              value={details.name}
+            />
+          </div>
+          <div className={styles.formgroup}>
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              id={styles.email}
+              onChange={(e) =>
+                setDetails({ ...details, email: e.target.value })
+              }
+              value={details.email}
+            />
+          </div>
+          <div className={styles.formgroup}>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              id={styles.password}
+              onChange={(e) =>
+                setDetails({ ...details, password: e.target.value })
+              }
+              value={details.password}
+            />
+            <span className={styles.ForgotPassword}>Forgot Password?</span>
+          </div>
+          <div className={styles.formgroup} id={styles.loginButton}>
+            <input type="submit" value="LOGIN" id={styles.login} />
+            <span href="" className={styles.NewHere}>
+              New here? Create an account.
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

@@ -21,7 +21,7 @@ function App() {
   }
   const API_URL = 'http://localhost:3500/recipes'
 
-  const [user, setUser] = useState({ name: '', email: 'j', password: '' })
+  const [user, setUser] = useState({ name: '', email: '', password: '' })
   const [error, setError] = useState('')
   const [fetchError, setFetchError] = useState('')
   const [instruct, setInstruct] = useState('')

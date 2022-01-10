@@ -9,6 +9,9 @@
   background-color: pink;
 }
 
+.LoginMaster {
+}
+
 .LoginWrapper {
   background-color: aliceblue;
   display: flex;
@@ -22,9 +25,6 @@
 }
 
 .foodylogo {
-  position: absolute;
-  top: 140px;
-  right: 810px;
 }
 
 .LoginForm {
