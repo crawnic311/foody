@@ -59,10 +59,7 @@ module.exports = {
 
   getRecipe: async (req, res) => {
     sequelize
-      .query(
-        `select * from recipes
-        where id = 2`
-      )
+      .query(`select * from recipes`)
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
     console.log(res)

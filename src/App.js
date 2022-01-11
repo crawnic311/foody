@@ -51,6 +51,21 @@ function App() {
   ])
 
   useEffect(() => {
+    const fetchRecipesDB = async () => {
+      axios
+        .get('http://localhost:3700/api/recipes')
+        .then((res) => {
+          console.log(res)
+          setRecipes(res.data)
+        })
+        .catch((err) => console.log(err))
+    }
+
+    fetchRecipesDB()
+  }, [])
+
+  /*
+  useEffect(() => {
     const fetchRecipes = async () => {
       try {
         const response = await fetch(API_URL)
@@ -68,6 +83,7 @@ function App() {
       ;(async () => await fetchRecipes())()
     }, 1000)
   }, [])
+  */
 
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
