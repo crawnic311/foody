@@ -150,6 +150,13 @@ function App() {
       setRecipeID(1)
     }
     const findRID = recipes.find((recipe) => recipe.title === title)
+
+    axios
+      .delete(`http://localhost3700/api/recipes/${findRID}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+
+    /*
     const listR = recipes.filter((recipe) => recipe.title !== title)
     console.log('listR', listR)
     console.log('findRID', findRID)
@@ -160,6 +167,7 @@ function App() {
     const reqUrl = `${API_URL}/${findRID.id}`
     const result = await apiRequest(reqUrl, deleteOptions)
     if (result) setFetchError(result)
+    */
   }
 
   const Login = (details) => {

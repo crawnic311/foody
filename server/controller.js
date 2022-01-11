@@ -65,6 +65,14 @@ module.exports = {
     console.log(res)
   },
 
+  deleteRecipe: async (req, res) => {
+    const { id } = req.params
+    sequelize
+      .query(`delete from recipes where id = '${id}`)
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err))
+  },
+
   getUpcomingAppointments: (req, res) => {
     sequelize
       .query(
