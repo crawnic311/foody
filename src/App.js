@@ -95,7 +95,7 @@ function App() {
       })
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
-
+    /*
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
     setRecipes(listRecipes)
@@ -106,7 +106,7 @@ function App() {
       body: JSON.stringify(myNewRecipe),
     }
     const result = await apiRequest(API_URL, postOptions)
-    if (result) setFetchError(result)
+    if (result) setFetchError(result)*/
   }
 
   const handleSubmit = (e) => {
