@@ -67,8 +67,9 @@ module.exports = {
 
   deleteRecipe: async (req, res) => {
     const { id } = req.params
+    console.log(id)
     sequelize
-      .query(`delete from recipes where id = '${id}`)
+      .query(`delete from recipes where id = ${id}`)
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
   },

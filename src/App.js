@@ -150,9 +150,9 @@ function App() {
       setRecipeID(1)
     }
     const findRID = recipes.find((recipe) => recipe.title === title)
-
+    console.log(findRID.id)
     axios
-      .delete(`http://localhost3700/api/recipes/${findRID}`)
+      .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
 
