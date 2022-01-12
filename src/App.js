@@ -35,7 +35,7 @@ function App() {
     servings: '',
     prepTime: '',
     cookTime: '',
-    instructions: [],
+    instructions: ['', ''],
   })
 
   const [recipes, setRecipes] = useState([
@@ -49,6 +49,20 @@ function App() {
       instructions: [],
     },
   ])
+
+  useEffect(() => {
+    const fetchRecipesDB = async () => {
+      axios
+        .get('http://localhost:3700/api/recipes')
+        .then((res) => {
+          console.log(res)
+          setRecipes(res.data)
+        })
+        .catch((err) => console.log(err))
+    }
+
+    fetchRecipesDB()
+  }, [])
 
   useEffect(() => {
     const fetchRecipesDB = async () => {
