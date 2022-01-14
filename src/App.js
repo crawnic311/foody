@@ -50,43 +50,22 @@ function App() {
     },
   ])
 
-  useEffect(() => {
-    const fetchRecipesDB = async () => {
-      axios
-        .get('http://localhost:3700/api/recipes')
-        .then((res) => {
-          console.log(res)
-          setRecipes(res.data)
-          setRecipeID(1)
-        })
-        .catch((err) => console.log(err))
-      if (recipes.length > 1) {
-      }
+  const fetchRecipesDB = async () => {
+    axios
+      .get('http://localhost:3700/api/recipes')
+      .then((res) => {
+        console.log(res)
+        setRecipes(res.data)
+        setRecipeID(1)
+      })
+      .catch((err) => console.log(err))
+    if (recipes.length > 1) {
     }
+  }
 
+  useEffect(() => {
     fetchRecipesDB()
   }, [])
-
-  /*
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const response = await fetch(API_URL)
-        if (!response.ok) throw Error('Did not recieve expected data')
-        const listRecipes = await response.json()
-        console.log(listRecipes)
-        setRecipes(listRecipes)
-        setRecipeID(1)
-        setFetchError(null)
-      } catch (err) {
-        setFetchError(error.message)
-      }
-    }
-    setTimeout(() => {
-      ;(async () => await fetchRecipes())()
-    }, 1000)
-  }, [])
-  */
 
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
@@ -149,13 +128,17 @@ function App() {
   }
 
   const handleDelete = async (title) => {
-    setRecipeID(1)
+    if (recipes.length > 0) {
+      setRecipeID(1)
+    } else {
+      setRecipeID(0)
+    }
 
     const findRID = recipes.find((recipe) => recipe.title === title)
     console.log(findRID.id)
     axios
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
-      .then((res) => console.log(res))
+      .then((res) => fetchRecipesDB())
       .catch((err) => console.log(err))
 
     /*
