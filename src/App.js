@@ -62,21 +62,7 @@ function App() {
     }
 
     fetchRecipesDB()
-  }, [])
-
-  useEffect(() => {
-    const fetchRecipesDB = async () => {
-      axios
-        .get('http://localhost:3700/api/recipes')
-        .then((res) => {
-          console.log(res)
-          setRecipes(res.data)
-        })
-        .catch((err) => console.log(err))
-    }
-
-    fetchRecipesDB()
-  }, [])
+  }, [recipeID])
 
   /*
   useEffect(() => {
@@ -125,6 +111,8 @@ function App() {
       })
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
+
+    setNewRecipe(recipes.length)
     /*
     setRecipeID(1)
     const listRecipes = [...recipes, myNewRecipe]
@@ -158,11 +146,8 @@ function App() {
   }
 
   const handleDelete = async (title) => {
-    if (recipes.length === 2 && recipeID === 1) {
-      setRecipeID(0)
-    } else {
-      setRecipeID(1)
-    }
+    setRecipeID(0)
+
     const findRID = recipes.find((recipe) => recipe.title === title)
     console.log(findRID.id)
     axios
