@@ -10,7 +10,22 @@ const SearchRecipe = ({
   setRecipeID,
   recipes,
 }) => {
+  const searchList = recipes.map(({ recipe }) => {
+    return {
+      value: recipe,
+      label: recipe,
+    }
+  })
+
+  const handleChange = (selectedOption) => {
+    setSearch({ selectedOption })
+  }
   return (
+    <div className={styles.searchLabel}>
+      <Select />
+    </div>
+
+    /*
     <form className={styles.SearchRecipe} onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="search" className={styles.searchLabel}></label>
       <input
@@ -31,6 +46,7 @@ const SearchRecipe = ({
         }}
       />
     </form>
+    */
   )
 }
 

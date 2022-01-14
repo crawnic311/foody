@@ -22,7 +22,7 @@ function App() {
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(null)
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
     id: '',
@@ -55,8 +55,6 @@ function App() {
         setRecipes(res.data)
       })
       .catch((err) => console.log(err))
-    if (recipes.length > 1) {
-    }
   }
 
   useEffect(() => {
@@ -88,6 +86,7 @@ function App() {
         user_id: 2,
       })
       .then((res) => fetchRecipesDB())
+      .then(() => setRecipeID(1))
       .catch((err) => console.log(err))
 
     setNewRecipe(recipes.length)
@@ -112,10 +111,10 @@ function App() {
   }
 
   const handleDelete = async (title) => {
-    if (recipes.length > 0) {
-      setRecipeID(1)
-    } else {
+    if (recipes.length == 2) {
       setRecipeID(0)
+    } else {
+      setRecipeID(1)
     }
 
     const findRID = recipes.find((recipe) => recipe.title === title)
