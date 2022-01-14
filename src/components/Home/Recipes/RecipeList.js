@@ -94,7 +94,7 @@ const RecipeList = ({
             id={styles.recipeDelete}
             onClick={() => {
               console.log(recipes.id)
-              if (recipes.length > 1) {
+              if (recipes.length > 1 && recipeID != 0) {
                 let title = document.getElementById('title').innerHTML
                 console.log(title)
                 handleDelete(title)
