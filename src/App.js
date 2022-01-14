@@ -57,12 +57,15 @@ function App() {
         .then((res) => {
           console.log(res)
           setRecipes(res.data)
+          setRecipeID(1)
         })
         .catch((err) => console.log(err))
+      if (recipes.length > 1) {
+      }
     }
 
     fetchRecipesDB()
-  }, [recipeID])
+  }, [])
 
   /*
   useEffect(() => {
@@ -146,7 +149,7 @@ function App() {
   }
 
   const handleDelete = async (title) => {
-    setRecipeID(0)
+    setRecipeID(1)
 
     const findRID = recipes.find((recipe) => recipe.title === title)
     console.log(findRID.id)

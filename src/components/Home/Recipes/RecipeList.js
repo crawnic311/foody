@@ -82,7 +82,7 @@ const RecipeList = ({
           <button
             id={styles.recipeBack}
             onClick={() => {
-              if (recipeID > 0) {
+              if (recipeID > 1) {
                 setRecipeID(recipeID - 1)
               }
               console.log(recipeID)
