@@ -198,9 +198,6 @@ function App() {
                 recipeID={recipeID}
                 setRecipeID={setRecipeID}
                 recipes={recipes}
-                resSearch={recipes.filter((recipe) =>
-                  recipe.title.toLowerCase().includes(search.toLowerCase())
-                )}
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}
               />

@@ -41,6 +41,7 @@ const Navbar = (props) => {
               recipeID={recipeID}
               setRecipeID={setRecipeID}
               recipes={recipes}
+              placeholder={'Search for a recipe...'}
             />
           </span>
           <ul
