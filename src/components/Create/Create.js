@@ -3,13 +3,7 @@ import styles from './Create.module.css'
 import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
-const Create = ({
-  newRecipe,
-  setNewRecipe,
-  handleSubmit,
-  instruct,
-  setInstruct,
-}) => {
+const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
   const inputRef = useRef()
 
   return (

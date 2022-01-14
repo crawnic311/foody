@@ -8,7 +8,6 @@ import PageNotFound from './components/404/PageNotFound'
 import { useNavigate } from 'react-router-dom'
 import SearchRecipe from './components/Search/SearchRecipe'
 import { Routes, Route } from 'react-router-dom'
-import apiRequest from './api/apiRequest'
 import axios from 'axios'
 import './App.css'
 
@@ -23,8 +22,6 @@ function App() {
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
-  const [fetchError, setFetchError] = useState('')
-  const [instruct, setInstruct] = useState('')
   const [search, setSearch] = useState('')
   const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
@@ -56,7 +53,6 @@ function App() {
       .then((res) => {
         console.log(res)
         setRecipes(res.data)
-        setRecipeID(1)
       })
       .catch((err) => console.log(err))
     if (recipes.length > 1) {
@@ -91,22 +87,10 @@ function App() {
         instructions: myNewRecipe.instructions,
         user_id: 2,
       })
-      .then((res) => console.log(res))
+      .then((res) => fetchRecipesDB())
       .catch((err) => console.log(err))
 
     setNewRecipe(recipes.length)
-    /*
-    setRecipeID(1)
-    const listRecipes = [...recipes, myNewRecipe]
-    setRecipes(listRecipes)
-
-    const postOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(myNewRecipe),
-    }
-    const result = await apiRequest(API_URL, postOptions)
-    if (result) setFetchError(result)*/
   }
 
   const handleSubmit = (e) => {
@@ -140,19 +124,6 @@ function App() {
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
       .then((res) => fetchRecipesDB())
       .catch((err) => console.log(err))
-
-    /*
-    const listR = recipes.filter((recipe) => recipe.title !== title)
-    console.log('listR', listR)
-    console.log('findRID', findRID)
-
-    setRecipes(listR)
-
-    const deleteOptions = { method: 'DELETE' }
-    const reqUrl = `${API_URL}/${findRID.id}`
-    const result = await apiRequest(reqUrl, deleteOptions)
-    if (result) setFetchError(result)
-    */
   }
 
   const Login = (details) => {
@@ -217,8 +188,6 @@ function App() {
                 newRecipe={newRecipe}
                 setNewRecipe={setNewRecipe}
                 handleSubmit={handleSubmit}
-                instruct={instruct}
-                setInstruct={setInstruct}
               />
             }
           />
