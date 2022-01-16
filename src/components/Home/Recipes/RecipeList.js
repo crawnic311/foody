@@ -6,13 +6,7 @@ import Cake from '../../../images/Cake-Recipe.jpeg'
 import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
-const RecipeList = ({
-  recipeID,
-  setRecipeID,
-  recipes,
-  setRecipes,
-  handleDelete,
-}) => {
+const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
   return (
     <>
       <div className={styles.RecipeHolder}>

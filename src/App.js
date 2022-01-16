@@ -6,7 +6,6 @@ import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import { useNavigate } from 'react-router-dom'
-import SearchRecipe from './components/Search/SearchRecipe'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import './App.css'
@@ -18,7 +17,6 @@ function App() {
     email: 'dillon.craw@gmail.com',
     password: '123',
   }
-  const API_URL = 'http://localhost:3500/recipes'
 
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
