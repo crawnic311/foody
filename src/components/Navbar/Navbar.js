@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom'
 import SearchRecipe from '../Search/SearchRecipe'
 import styles from './Navbar.module.css'
 
-const Navbar = (props) => {
+const Navbar = ({ search, setSearch, recipeID, setRecipeID, recipes }) => {
   const Logout = props.Login
-  const search = props.search
+
   const setSearch = props.setSearch
   const [isOpen, setIsOpen] = useState(false)
-  const recipeID = props.recipeID
-  const setRecipeID = props.setRecipeID
-  const recipes = props.recipes
+
   const openMenu = () => {
     setIsOpen(!isOpen)
   }
