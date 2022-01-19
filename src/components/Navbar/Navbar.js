@@ -4,8 +4,6 @@ import SearchRecipe from '../Search/SearchRecipe'
 import styles from './Navbar.module.css'
 
 const Navbar = ({ search, setSearch, recipeID, setRecipeID, recipes }) => {
-  const Logout = props.Login
-
   const [isOpen, setIsOpen] = useState(false)
 
   const openMenu = () => {
