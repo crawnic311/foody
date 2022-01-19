@@ -13,7 +13,7 @@ const Navbar = ({ search, setSearch, recipeID, setRecipeID, recipes }) => {
   }
 
   const handleLogout = () => {
-    console.log('You have logged out')
+    console.log('You have logged out.')
   }
 
   return (
