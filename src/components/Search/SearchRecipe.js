@@ -1,11 +1,15 @@
 import React from 'react'
-import styles from './SearchRecipe.modules.css'
+import styles from './SearchRecipe.module.css'
 
 const SearchRecipe = ({ placeholder, data }) => {
   return (
-    <div className={styles.SearchRecipe}>
-      <div className={styles.searchInput}>
-        <input type="text" placeholder={placeholder} />
+    <div className={styles.SearchRecipes}>
+      <div className={styles.searchWrapper}>
+        <input
+          type="text"
+          placeholder={placeholder}
+          className={styles.searchInput}
+        />
         <div className={styles.searchIcon}></div>
       </div>
       <div className={styles.searchResult} />

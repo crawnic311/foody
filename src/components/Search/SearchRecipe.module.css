@@ -4,12 +4,7 @@
   border: 1px solid red;
 }
 
-.searchLabel {
-  position: absolute;
-  left: -99999px;
-}
-
-#search {
+.searchInput {
   border-radius: 7px;
   height: 30px;
   background-color: aliceblue;
