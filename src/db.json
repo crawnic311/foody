@@ -1,0 +1,69 @@
+{
+  "recipes": [
+    {
+      "title": "No Recipes!",
+      "image": "",
+      "description": "You have deleted all of your recipes. Head over to the create page to add a recipe.",
+      "servings": null,
+      "prepTime": null,
+      "cookTime": null,
+      "instructions": [],
+      "id": 0
+    },
+    {
+      "title": "Lemon Pepper Salmon w Rice & Broccoli",
+      "image": "https://mariamarlowe.com/wp-content/uploads/2017/10/Lemon-Pepper-Salmon-Maria-Marlowe-5.jpg",
+      "description": "Tender, flaky salmon is spiced simply but sublimely, then baked in the oven in foil. This lemon pepper salmon is exactly the kind of recipe you and I need more of in our lives.",
+      "servings": 4,
+      "prepTime": 15,
+      "cookTime": 15,
+      "instructions": [
+        "Rice",
+        "Add 1 1/2 cups of water to a pot and bring to a boil. Add rice and seasonings and mix for 10 seconds then bring to simmer. Simmer for 40 minutes.",
+        "Salmon",
+        "Thaw the salmon in warm water. Season generously with lemmon pepper and fresh cut lemons circles. Bake at 400 for 14 minutes or until the salmon flakes easily with a fork.",
+        "Broccoli",
+        "Season the broccoli with garlic salt and olive oil and bake at 400 for 20-25 mintues. Baking time will vary depending on the size of your broccoli flourets"
+      ],
+      "id": 1
+    },
+    {
+      "title": "Easy Twice Baked Potatoes",
+      "image": "https://i2.wp.com/thesuburbansoapbox.com/wp-content/uploads/2018/11/Twice-Baked-Potatoes-4.jpg",
+      "description": "Crispy on the outside, light and fluffy on the inside. Easy Twice Baked Potatoes are super simple to make and a great prep ahead side dish for every occasion. Loaded with cheddar cheese and chives, this simple recipe turns the humble potato into something hearty and comforting.",
+      "servings": 8,
+      "prepTime": 30,
+      "cookTime": 60,
+      "instructions": [
+        "Potatos",
+        "Arrange the potatoes on a baking sheet lined with foil. Brush the potatoes with olive oil and sprinkle liberally with salt. Bake at 450 until fork tender. Cut the top of the potato and scoop out the inside. After applying the topping, bake again at 375 degrees for 25-30 minutes. Sprinkle with chives and serve immediately.",
+        "Topping",
+        "Place the butter, sour cream, cheddar and chives in the bowl with the potato. Season with salt and pepper. Using a hand mixer, blend the potatoes together with the other ingredients until fluffy. Spoon the potato mixture back into the potato skins or fill a pastry bag with the filling and pipe the mixture into the shells. Top the potatoes with the remaining cheese. "
+      ],
+      "id": 2
+    },
+    {
+      "title": "Thai Yellow Curry",
+      "image": "https://maddysavenue.com/wp-content/uploads/2017/03/Thai-Yellow-Curry-with-Chicken-1.jpg",
+      "description": "There's no need for takeout from your local Thai restaurant when you can make an authentic-tasting curry this good at home. This yellow curry is hearty yet healthy comfort food that’s layered with Thai-inspired flavors and is naturally gluten-free.",
+      "servings": 6,
+      "prepTime": 65,
+      "cookTime": 45,
+      "instructions": [],
+      "id": 3
+    },
+    {
+      "id": 4,
+      "title": "Megan'$ $pecial $exy Time No Bake Cookie$",
+      "image": "https://scontent-den4-1.xx.fbcdn.net/v/t1.18169-9/19977_255629406446_7817008_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=cdbe9c&_nc_ohc=vMYm7-3aWdwAX-bbe5x&_nc_ht=scontent-den4-1.xx&oh=00_AT9tvC3L0YLMKcX8LUvxoWwR6gCCAyd4J_pn2z2_lbIDqw&oe=61FE05C4",
+      "description": "My grandma gave me this recipe as an heirloom. Her love and goodness is remembered with each bite.",
+      "servings": "45",
+      "prepTime": "18",
+      "cookTime": "0",
+      "instructions": [
+        "Cookies",
+        "1. Start by asking alexa to play sexy time playist. 2. Strip down to just your apron ;) 3. Mix all the dry ingredients in the bowl. 4. Come to Jesus 5. Don't bake them. 6. Make into a penis shape and leave on boys beds."
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import recipeData from './db.json'
 import Home from './components/Home/Home'
 import About from './components/About./About'
 import Create from './components/Create/Create'
@@ -167,6 +168,7 @@ function App() {
             recipeID={recipeID}
             setRecipeID={setRecipeID}
             recipes={recipes}
+            recipeData={recipeData}
           />
         ) : (
           <div></div>
