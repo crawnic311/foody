@@ -4,6 +4,14 @@ import SearchIcon from '@mui/icons-material/Search'
 
 const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
   const [filteredData, setFilteredData] = useState([])
+
+  const handleFilter = (e) => {
+    const searchWord = e.target.value
+    const newFilter = data.filter((value) => {
+      return value.title.includes(searchWord)
+    })
+    setFilteredData(newFilter)
+  }
   return (
     <div className={styles.SearchRecipes}>
       <div className={styles.searchWrapper}>
