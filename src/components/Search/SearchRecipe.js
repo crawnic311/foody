@@ -12,10 +12,13 @@ const SearchRecipe = ({ placeholder, data }) => {
           className={styles.searchInput}
         />
         <div className={styles.searchIcon}>
-          <searchIcon />
+          <SearchIcon />
         </div>
       </div>
       <div className={styles.searchResult} />
+      {data.recipes.map((value, key) => {
+        return <div>{value.title}</div>
+      })}
     </div>
   )
 }
