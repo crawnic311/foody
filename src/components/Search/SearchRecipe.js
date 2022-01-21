@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './SearchRecipe.module.css'
 import SearchIcon from '@mui/icons-material/Search'
 
-const SearchRecipe = ({ placeholder, data }) => {
+const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
+  const [filteredData, setFilteredData] = useState([])
   return (
     <div className={styles.SearchRecipes}>
       <div className={styles.searchWrapper}>
@@ -17,7 +18,11 @@ const SearchRecipe = ({ placeholder, data }) => {
       </div>
       <div className={styles.searchResult} />
       {data.recipes.map((value, key) => {
-        return <div>{value.title}</div>
+        return (
+          <button className={styles.dataItem}>
+            <p>{value.title}</p>
+          </button>
+        )
       })}
     </div>
   )

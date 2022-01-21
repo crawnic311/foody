@@ -1,7 +1,23 @@
+.searchWrapper {
+  display: flex;
+}
+
 .SearchRecipes {
   display: flex;
   width: 100%;
   border: 1px solid red;
+}
+
+.searchIcon {
+  height: 60px;
+  width: 50px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+.searchIcon svg {
+  font-size: 25x;
 }
 
 .searchInput {
@@ -11,4 +27,30 @@
   padding-left: 20px;
   font-size: 1.5rem;
   width: 100%;
+}
+
+.searchResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: aliceblue;
+  box-shadow: black;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.searchResult::-webkit-scrollbar {
+  display: none;
+}
+
+.searchResult .searchItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.searchItem p {
+  margin-left: 5px;
 }
