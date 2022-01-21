@@ -26,7 +26,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
         </div>
       </div>
       <div className={styles.searchResult} />
-      {data.recipes.map((value, key) => {
+      {data.recipes.slice(0, 10).map((value, key) => {
         return (
           <button className={styles.dataItem}>
             <p>{value.title}</p>

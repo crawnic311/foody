@@ -43,3 +43,7 @@ input:focus {
   width: 300px;
   display: inline-block;
 }
+
+.dataItem p {
+  color: aliceblue;
+}
