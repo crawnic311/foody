@@ -8,7 +8,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
   const handleFilter = (e) => {
     const searchWord = e.target.value
     const newFilter = data.filter((value) => {
-      return value.title.includes(searchWord)
+      return value.title.tolowercase.includes(searchWord.tolowercase)
     })
     setFilteredData(newFilter)
   }
@@ -19,6 +19,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
           type="text"
           placeholder={placeholder}
           className={styles.searchInput}
+          onChange={handleFilter}
         />
         <div className={styles.searchIcon}>
           <SearchIcon />
