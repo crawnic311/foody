@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './SearchRecipe.module.css'
+import SearchIcon from '@mui/icons-material/Search'
 
 const SearchRecipe = ({ placeholder, data }) => {
   return (
@@ -10,7 +11,9 @@ const SearchRecipe = ({ placeholder, data }) => {
           placeholder={placeholder}
           className={styles.searchInput}
         />
-        <div className={styles.searchIcon}></div>
+        <div className={styles.searchIcon}>
+          <searchIcon />
+        </div>
       </div>
       <div className={styles.searchResult} />
     </div>
