@@ -29,7 +29,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
       {data.recipes.slice(0, 10).map((value, key) => {
         return (
           <button className={styles.dataItem}>
-            <p>{value.id}</p>
+            <p>{value.title}</p>
           </button>
         )
       })}
