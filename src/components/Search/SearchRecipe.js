@@ -6,9 +6,10 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
   const [filteredData, setFilteredData] = useState([])
 
   const handleFilter = (e) => {
+    console.log('does this work?')
     const searchWord = e.target.value
-    const newFilter = data.filter((value) => {
-      return value.title.tolowercase.includes(searchWord.tolowercase)
+    const newFilter = data.recipes.filter((value) => {
+      return value.title.tolowercase().includes(searchWord.tolowercase())
     })
     setFilteredData(newFilter)
   }
