@@ -40,7 +40,10 @@ input:focus {
 .searchResult {
   background-color: aliceblue;
   width: 300px;
+
+  border: red solid 1px;
   display: inline-block;
+  overflow: hidden;
 }
 
 .dataItem p {

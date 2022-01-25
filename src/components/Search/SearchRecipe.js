@@ -25,14 +25,15 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
           <SearchIcon />
         </div>
       </div>
-      <div className={styles.searchResult} />
-      {data.recipes.slice(0, 10).map((value, key) => {
-        return (
-          <button className={styles.dataItem}>
-            <p>{value.title}</p>
-          </button>
-        )
-      })}
+      <div className={styles.searchResult}>
+        {data.recipes.slice(0, 10).map((value, key) => {
+          return (
+            <button className={styles.dataItem}>
+              <p>{value.title}</p>
+            </button>
+          )
+        })}
+      </div>
     </div>
   )
 }
