@@ -28,7 +28,7 @@
   border-radius: 7px 0px 0px 7px;
   height: 30px;
   background-color: aliceblue;
-  padding-left: 20px;
+  padding-left: 10px;
   font-size: 1.5rem;
   width: 90%;
 }
@@ -39,13 +39,36 @@ input:focus {
 
 .searchResult {
   background-color: aliceblue;
+  margin-top: 2px;
   width: 300px;
-
+  height: 40px;
   border: red solid 1px;
   display: inline-block;
   overflow: hidden;
+  overflow-y: auto;
+  z-index: 5;
+  border-radius: 7px;
+}
+
+.searchResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataItem {
+  display: flex;
 }
 
 .dataItem p {
-  color: aliceblue;
+  color: black;
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  margin-left: 10px;
+}
+
+button {
+  text-align: left;
+}
+
+button:hover {
+  background-color: lightgrey;
 }
