@@ -31,11 +31,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
       {filteredData.length != 0 && (
         <div className={styles.searchResult}>
           {filteredData.slice(0, 10).map((value, key) => {
-            return (
-              <button className={styles.dataItem}>
-                <p>{value.title}</p>
-              </button>
-            )
+            return <button className={styles.dataItem}>{value.title}</button>
           })}
         </div>
       )}
