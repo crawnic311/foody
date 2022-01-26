@@ -7,7 +7,9 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
 
   const handleFilter = (e) => {
     const searchWord = e.target.value
+    console.log('searchWord', searchWord)
     const newFilter = data.recipes.filter((value) => {
+      console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()))
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
     if (searchWord === '') {
@@ -28,7 +30,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
       </div>
       {filteredData.length != 0 && (
         <div className={styles.searchResult}>
-          {data.recipes.slice(0, 10).map((value, key) => {
+          {filteredData.slice(0, 10).map((value, key) => {
             return (
               <button className={styles.dataItem}>
                 <p>{value.title}</p>
