@@ -18,6 +18,8 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
       setFilteredData(newFilter)
     }
   }
+
+  //const handleClick = e
   return (
     <div className={styles.SearchRecipes}>
       <div className={styles.searchWrapper}>
@@ -28,10 +30,21 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
           onChange={handleFilter}
         />
       </div>
-      {filteredData.length != 0 && (
+      {filteredData.length !== 0 && (
         <div className={styles.searchResult}>
-          {filteredData.slice(0, 10).map((value, key) => {
-            return <button className={styles.dataItem}>{value.title}</button>
+          {filteredData.slice(0, 10).map((value) => {
+            return (
+              <button
+                className={styles.dataItem}
+                id={value.id}
+                onClick={(e) => {
+                  setRecipeID(e.target.id)
+                  setFilteredData([])
+                }}
+              >
+                {value.title}
+              </button>
+            )
           })}
         </div>
       )}
