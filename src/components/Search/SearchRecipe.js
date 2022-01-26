@@ -25,9 +25,6 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
           className={styles.searchInput}
           onChange={handleFilter}
         />
-        <div className={styles.searchIcon}>
-          <SearchIcon />
-        </div>
       </div>
       {filteredData.length != 0 && (
         <div className={styles.searchResult}>

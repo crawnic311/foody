@@ -31,7 +31,7 @@ const Navbar = ({ recipeData, setRecipeID }) => {
           </Link>
           <span className={(styles.navlink, styles.searchBar)}>
             <SearchRecipe
-              placeholder={'Enter a recipe name...'}
+              placeholder={'Search for a recipe... 🔍'}
               data={recipeData}
               setRecipeID={setRecipeID}
             />
