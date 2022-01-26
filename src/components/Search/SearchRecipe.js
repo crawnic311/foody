@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search'
 
 const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
   const [filteredData, setFilteredData] = useState([])
+  const [wordEntered, setWordEntered] = useState('')
 
   const handleFilter = (e) => {
     const searchWord = e.target.value
@@ -19,12 +20,16 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
     }
   }
 
-  //const handleClick = e
+  const clearInput = () => {
+    setFilteredData([])
+    setWordEntered('')
+  }
   return (
     <div className={styles.SearchRecipes}>
       <div className={styles.searchWrapper}>
         <input
           type="text"
+          value={wordEntered}
           placeholder={placeholder}
           className={styles.searchInput}
           onChange={handleFilter}
@@ -39,7 +44,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
                 id={value.id}
                 onClick={(e) => {
                   setRecipeID(e.target.id)
-                  setFilteredData([])
+                  clearInput()
                 }}
               >
                 {value.title}
