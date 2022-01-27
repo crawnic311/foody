@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import styles from './SearchRecipe.module.css'
-import SearchIcon from '@mui/icons-material/Search'
 
-const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
+const SearchRecipe = ({ placeholder, data, setRecipeID, recipes }) => {
   const [filteredData, setFilteredData] = useState([])
-  const [wordEntered, setWordEntered] = useState('')
+  const [wordEntered, setWordEntered] = useState()
 
   const handleFilter = (e) => {
     const searchWord = e.target.value
-    console.log('searchWord', searchWord)
-    const newFilter = data.recipes.filter((value) => {
+    const newFilter = recipes.filter((value) => {
       console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()))
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
@@ -43,7 +41,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID }) => {
                 className={styles.dataItem}
                 id={value.id}
                 onClick={(e) => {
-                  setRecipeID(e.target.id)
+                  setRecipeID(e.target.id - 1)
                   clearInput()
                 }}
               >
