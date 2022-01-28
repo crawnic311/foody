@@ -6,6 +6,14 @@ import { FaPlus } from 'react-icons/fa'
 const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
   const inputRef = useRef()
 
+  const fileSelectHandler = (e) => {
+    console.log(e.target.files[0])
+    setNewRecipe({
+      ...newRecipe,
+      image: e.target.value,
+    })
+  }
+
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
@@ -77,14 +85,10 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
 
       <input
         id={styles.titleInput}
+        type="file"
         placeholder="Optional: Upload a photo for your recipe"
         value={newRecipe.image}
-        onChange={(e) =>
-          setNewRecipe({
-            ...newRecipe,
-            image: e.target.value,
-          })
-        }
+        onChange={(e) => fileSelectHandler(e)}
       ></input>
       <button
         type="submit"
