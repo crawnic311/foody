@@ -85,7 +85,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       ></input>
 
       <input
-        id={styles.titleInput}
+        id={styles.photoInput}
         type="file"
         placeholder="Optional: Upload a photo for your recipe"
         value={newRecipe.image}

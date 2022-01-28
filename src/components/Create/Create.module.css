@@ -28,6 +28,11 @@
   outline: none;
 }
 
+#photoInput {
+  padding-top: 10px;
+  padding-left: 350px;
+}
+
 #descriptionInput {
 }
 
