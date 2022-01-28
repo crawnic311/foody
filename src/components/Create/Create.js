@@ -7,12 +7,13 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
   const inputRef = useRef()
 
   const fileSelectHandler = (e) => {
-    console.log(e.target.files[0])
     setNewRecipe({
       ...newRecipe,
       image: e.target.value,
     })
   }
+
+  const fileUploadHandler = (e) => {}
 
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
