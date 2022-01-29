@@ -41,7 +41,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID, recipes }) => {
                 className={styles.dataItem}
                 id={value.id}
                 onClick={(e) => {
-                  setRecipeID(e.target.id - 1)
+                  setRecipeID(e.target.id)
                   clearInput()
                 }}
               >
