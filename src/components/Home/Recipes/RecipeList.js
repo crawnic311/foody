@@ -20,10 +20,10 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
                 Servings: {recipes[recipeID].servings}
               </span>
               <span className={styles.rTime}>
-                Prep Time: {recipes[recipeID].prepTime}
+                Prep Time: {recipes[recipeID].preptime}
               </span>
               <span className={styles.rTime}>
-                Cook Time: {recipes[recipeID].cookTime}
+                Cook Time: {recipes[recipeID].cooktime}
               </span>
             </div>
             <div className={styles.RecipeDescription}>
