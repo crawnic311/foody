@@ -50,7 +50,7 @@ module.exports = {
     sequelize
       .query(
         `insert into recipes (title, image, description, servings, prepTime, cookTime, instructions, user_id)
-    values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions}"}', '${user_id}')`
+    values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions[0]}","${instructions[1]}"}', '${user_id}')`
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
