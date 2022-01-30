@@ -75,10 +75,8 @@ module.exports = {
   },
 
   updateRecipesIDs: async (req, res) => {
-    sequelize
-    .query(`update recipes set `)
-  }
-
+    sequelize.query(`update recipes set `)
+  },
   getUpcomingAppointments: (req, res) => {
     sequelize
       .query(
