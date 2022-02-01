@@ -13,8 +13,6 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
     })
   }
 
-  const fileUploadHandler = (e) => {}
-
   return (
     <form className={styles.createRecipe} onSubmit={handleSubmit}>
       <label htmlFor="createRecipe">Create Recipe</label>
