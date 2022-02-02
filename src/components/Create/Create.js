@@ -90,7 +90,6 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         onChange={(e) => fileSelectHandler(e)}
       ></input>
       <button
-        className={styles.CreateButton}
         type="submit"
         aria-label="Create Item"
         className={styles.createSubmit}
