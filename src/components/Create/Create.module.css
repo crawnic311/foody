@@ -54,7 +54,15 @@
   outline: none;
 }
 
+.CreateButton {
+  color: black;
+}
+
 .FaPlus {
   color: orange;
   background-color: pink;
+}
+
+.FaPlus:hover {
+  color: blue;
 }
