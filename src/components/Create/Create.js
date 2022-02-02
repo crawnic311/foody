@@ -95,7 +95,7 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
         className={styles.createSubmit}
         onClick={() => inputRef.current.focus()}
       >
-        <FaPlus />
+        <FaPlus className={styles.FaPlus} />
       </button>
     </form>
   )
