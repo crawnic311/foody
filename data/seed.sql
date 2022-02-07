@@ -17,6 +17,7 @@ servings integer,
 prepTime integer,
 cookTime integer,
 instructions text [],
+nav_id integer,
 user_id integer,
 constraint fk_user foreign key(user_id) references users(id)
 );

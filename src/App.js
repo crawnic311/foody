@@ -32,6 +32,7 @@ function App() {
     prepTime: '',
     cookTime: '',
     instructions: ['', ''],
+    nav_id: 0,
   })
 
   const [recipes, setRecipes] = useState([
@@ -43,6 +44,7 @@ function App() {
       prepTime: 0,
       cookTime: 0,
       instructions: [],
+      nav_id: 0,
     },
   ])
 
@@ -71,6 +73,7 @@ function App() {
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
+      nav_id: recipe.nav_id,
     }
 
     axios
