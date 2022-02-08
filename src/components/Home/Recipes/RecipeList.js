@@ -102,11 +102,16 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           <button
             id={styles.recipeForward}
             onClick={() => {
+              let nextID = 0
               if (recipeID < recipes.length - 1) {
-                recipes.forEach((element) => {
-                  console.log(element.id)
-                })
-                setRecipeID(recipeID + 1)
+                for (let i = 0; i < recipes.length; i++) {
+                  if (recipes[i].id > recipeID) {
+                    nextID = recipes[i].id
+                    console.log(nextID)
+                    break
+                  }
+                }
+                setRecipeID(nextID)
                 console.log(recipeID)
               }
             }}
