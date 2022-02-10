@@ -8,8 +8,8 @@ import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
 const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
   const [displayRecipe, setDisplayRecipe] = useState({
-    id: '',
-    title: '',
+    id: 0,
+    title: 'display test',
     image: '',
     description: '',
     servings: '',
@@ -24,7 +24,10 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
         <div className={styles.Recipe}>
           <div className={styles.RecipeTextHolder}>
             <div className={styles.RecipeTitle} id="title">
-              {recipes[recipeID].title}
+              {
+                //recipes[recipeID].title
+                displayRecipe.title
+              }
             </div>
             <div className={styles.TimeHolder}>
               <span className={styles.rTime}>
@@ -99,7 +102,7 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
             id={styles.recipeDelete}
             onClick={() => {
               console.log(recipes.id)
-              if (recipes.length > 1 && recipeID != 0) {
+              if (recipes.length > 1 && recipeID !== 0) {
                 let title = document.getElementById('title').innerHTML
                 console.log(title)
                 handleDelete(title)
@@ -110,7 +113,22 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           >
             Delete
           </button>
-          <button id={styles.recipeForward} onClick={() => {}}>
+          <button
+            id={styles.recipeForward}
+            onClick={() => {
+              if (recipes.length > 1)
+                console.log('displayRecipe', displayRecipe)
+              //setRecipeID(recipeID + 1)
+              for (let i = 0; recipes.length < i; i++) {
+                if (recipes[i].id > displayRecipe.id) {
+                  setDisplayRecipe(recipes[i])
+                  console.log('displayRecipe', displayRecipe)
+                  console.log('Break')
+                  break
+                }
+              }
+            }}
+          >
             Next
           </button>
         </div>
