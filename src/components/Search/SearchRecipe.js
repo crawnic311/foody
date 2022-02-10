@@ -47,7 +47,16 @@ const SearchRecipe = ({
                 className={styles.dataItem}
                 id={value.id}
                 onClick={(e) => {
-                  setDisplayRecipe(e.target.id)
+                  var targetRecipe = 0
+                  for (let i = 0; recipes.length > i; i++) {
+                    console.log('For entered')
+                    if (recipes[i].id == e.target.id) {
+                      targetRecipe = recipes[i]
+                      console.log(targetRecipe, 'targetRecipe')
+                      break
+                    }
+                  }
+                  setDisplayRecipe(targetRecipe)
                   clearInput()
                 }}
               >
