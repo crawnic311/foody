@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import styles from './SearchRecipe.module.css'
 
-const SearchRecipe = ({ placeholder, data, setRecipeID, recipes }) => {
+const SearchRecipe = ({
+  placeholder,
+  data,
+  displayRecipe,
+  setDisplayRecipe,
+  recipes,
+}) => {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState()
 
@@ -41,7 +47,7 @@ const SearchRecipe = ({ placeholder, data, setRecipeID, recipes }) => {
                 className={styles.dataItem}
                 id={value.id}
                 onClick={(e) => {
-                  setRecipeID(e.target.id)
+                  setDisplayRecipe(e.target.id)
                   clearInput()
                 }}
               >

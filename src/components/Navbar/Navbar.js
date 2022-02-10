@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import SearchRecipe from '../Search/SearchRecipe'
 import styles from './Navbar.module.css'
 
-const Navbar = ({ recipeData, setRecipeID, recipes }) => {
+const Navbar = ({ recipeData, displayRecipe, setDisplayRecipe, recipes }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const openMenu = () => {
@@ -33,7 +33,7 @@ const Navbar = ({ recipeData, setRecipeID, recipes }) => {
             <SearchRecipe
               placeholder={'Search for a recipe... 🔍'}
               data={recipeData}
-              setRecipeID={setRecipeID}
+              setDisplayRecipe={setDisplayRecipe}
               recipes={recipes}
             />
           </span>

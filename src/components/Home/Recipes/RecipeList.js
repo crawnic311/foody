@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import styles from './RecipeList.module.css'
-import FruitBowl from '../../../images/Breakfast-Fruit-Bowl-Recipe.jpeg'
-import Cake from '../../../images/Cake-Recipe.jpeg'
-import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
-import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
-const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
-  const [displayRecipe, setDisplayRecipe] = useState({
-    id: 0,
-    title: 'display test',
-    image: '',
-    description: 'display test',
-    servings: '99',
-    prepTime: '99',
-    cookTime: '99',
-    instructions: ['Inst', 'Ruct'],
-  })
-
+const RecipeList = ({
+  displayRecipe,
+  setDisplayRecipe,
+  recipes,
+  handleDelete,
+}) => {
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -78,7 +68,7 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
             </div>
           </div>
           <img
-            src={recipes[recipeID].image}
+            src={displayRecipe.image}
             alt=""
             className={styles.RecipeImage}
           />
@@ -87,12 +77,12 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           <button
             id={styles.recipeBack}
             onClick={() => {
+              console.log('Next Clicked')
               if (recipes.length > 1) {
+                console.log('If Passed')
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
-                    console.log('displayRecipe', displayRecipe)
-                    console.log('Break')
                     break
                   }
                 }
@@ -104,8 +94,7 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           <button
             id={styles.recipeDelete}
             onClick={() => {
-              console.log(recipes.id)
-              if (recipes.length > 1 && recipeID !== 0) {
+              if (recipes.length > 1) {
                 let title = document.getElementById('title').innerHTML
                 console.log(title)
                 handleDelete(title)
@@ -119,15 +108,14 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           <button
             id={styles.recipeForward}
             onClick={() => {
-              if (recipes.length > 1)
-                console.log('recipesLength Greater than 1')
-              console.log('displayRecipe', displayRecipe)
-              //setRecipeID(recipeID + 1)
+              console.log('Next Clicked')
+              if (recipes.length > 1) console.log('If Passed')
               for (let i = 0; recipes.length > i; i++) {
+                console.log('For entered')
+                console.log(displayRecipe)
                 if (recipes[i].id > displayRecipe.id) {
+                  console.log('Does this work?')
                   setDisplayRecipe(recipes[i])
-                  console.log('displayRecipe', displayRecipe)
-                  console.log('Break')
                   break
                 }
               }

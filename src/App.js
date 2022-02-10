@@ -22,7 +22,6 @@ function App() {
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
-  const [recipeID, setRecipeID] = useState(0)
   const [newRecipe, setNewRecipe] = useState({
     id: '',
     title: '',
@@ -32,7 +31,18 @@ function App() {
     prepTime: '',
     cookTime: '',
     instructions: ['', ''],
-    nav_id: 0,
+  })
+
+  const [displayRecipe, setDisplayRecipe] = useState({
+    id: 0,
+    title: 'Your first recipe will display here',
+    image:
+      'https://natashaskitchen.com/wp-content/uploads/2019/02/Meatloaf-Recipe-5.jpg',
+    description: 'A description of your recipe will appear here.',
+    servings: 0,
+    prepTime: 0,
+    cookTime: 0,
+    instructions: [],
   })
 
   const [recipes, setRecipes] = useState([
@@ -44,7 +54,6 @@ function App() {
       prepTime: 0,
       cookTime: 0,
       instructions: [],
-      nav_id: 0,
     },
   ])
 
@@ -88,7 +97,7 @@ function App() {
         user_id: 2,
       })
       .then((res) => fetchRecipesDB())
-      .then(() => setRecipeID(1))
+      .then(() => setDisplayRecipe(recipes[0]))
       .catch((err) => console.log(err))
 
     setNewRecipe(recipes.length)
@@ -121,9 +130,9 @@ function App() {
 
   const handleDelete = async (title) => {
     if (recipes.length == 2) {
-      setRecipeID(0)
+      setDisplayRecipe(recipes[0])
     } else {
-      setRecipeID(1)
+      setDisplayRecipe(recipes[1])
     }
 
     const findRID = recipes.find((recipe) => recipe.title === title)
@@ -177,8 +186,8 @@ function App() {
             Logout={Logout}
             search={search}
             setSearch={setSearch}
-            recipeID={recipeID}
-            setRecipeID={setRecipeID}
+            displayRecipe={displayRecipe}
+            setDisplayRecipe={setDisplayRecipe}
             recipes={recipes}
             recipeData={recipeData}
           />
@@ -207,8 +216,8 @@ function App() {
             path="/home"
             element={
               <Home
-                recipeID={recipeID}
-                setRecipeID={setRecipeID}
+                displayRecipe={displayRecipe}
+                setDisplayRecipe={setDisplayRecipe}
                 recipes={recipes}
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}
