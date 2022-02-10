@@ -7,6 +7,17 @@ import Potato from '../../../images/Potatoe-Chives-Recipe-Image.jpeg'
 import Salmon from '../../../images/Salmon-Stew-Recipe.png'
 
 const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
+  const [displayRecipe, setDisplayRecipe] = useState({
+    id: '',
+    title: '',
+    image: '',
+    description: '',
+    servings: '',
+    prepTime: '',
+    cookTime: '',
+    instructions: ['', ''],
+  })
+
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -99,23 +110,7 @@ const RecipeList = ({ recipeID, setRecipeID, recipes, handleDelete }) => {
           >
             Delete
           </button>
-          <button
-            id={styles.recipeForward}
-            onClick={() => {
-              let nextID = 0
-              if (recipeID < recipes.length - 1) {
-                for (let i = 0; i < recipes.length; i++) {
-                  if (recipes[i].id > recipeID) {
-                    nextID = recipes[i].id
-                    console.log(nextID)
-                    break
-                  }
-                }
-                setRecipeID(nextID)
-                console.log(recipeID)
-              }
-            }}
-          >
+          <button id={styles.recipeForward} onClick={() => {}}>
             Next
           </button>
         </div>
