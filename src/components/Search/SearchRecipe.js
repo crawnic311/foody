@@ -46,6 +46,7 @@ const SearchRecipe = ({
               <button
                 className={styles.dataItem}
                 id={value.id}
+                key="{filteredData.id}"
                 onClick={(e) => {
                   var targetRecipe = 0
                   for (let i = 0; recipes.length > i; i++) {
