@@ -46,14 +46,12 @@ const SearchRecipe = ({
               <button
                 className={styles.dataItem}
                 id={value.id}
-                key="{filteredData.id}"
+                key={value.title}
                 onClick={(e) => {
                   var targetRecipe = 0
                   for (let i = 0; recipes.length > i; i++) {
-                    console.log('For entered')
                     if (recipes[i].id == e.target.id) {
                       targetRecipe = recipes[i]
-                      console.log(targetRecipe, 'targetRecipe')
                       break
                     }
                   }

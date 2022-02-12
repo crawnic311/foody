@@ -121,13 +121,6 @@ function App() {
     })
   }
 
-  const handleIDUpdate = async () => {
-    axios
-      .put(`http://localhost:3700/api/recipes/`)
-      .then((res) => fetchRecipesDB())
-      .catch((err) => console.log(err))
-  }
-
   const handleDelete = async (title) => {
     if (recipes.length == 2) {
       setDisplayRecipe(recipes[0])
@@ -141,8 +134,6 @@ function App() {
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
       .then((res) => fetchRecipesDB())
       .catch((err) => console.log(err))
-
-    handleIDUpdate()
   }
 
   const Login = (details) => {

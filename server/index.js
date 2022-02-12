@@ -21,8 +21,6 @@ app.post('/api/recipes', controller.addRecipe)
 
 app.get('/api/recipes', controller.getRecipe)
 
-app.put('/api/recipes', controller.updateRecipesIDs)
-
 app.delete('/api/recipes/:id', controller.deleteRecipe)
 
 app.listen(PORT, () => console.log(`Running on ${PORT}`))

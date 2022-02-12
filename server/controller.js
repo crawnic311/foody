@@ -74,9 +74,6 @@ module.exports = {
       .catch((err) => console.log(err))
   },
 
-  updateRecipesIDs: async (req, res) => {
-    sequelize.query(`update recipes set `)
-  },
   getUpcomingAppointments: (req, res) => {
     sequelize
       .query(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import styles from './RecipeList.module.css'
 
@@ -77,9 +77,7 @@ const RecipeList = ({
           <button
             id={styles.recipeBack}
             onClick={() => {
-              console.log('Next Clicked')
               if (recipes.length > 1) {
-                console.log('If Passed')
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
@@ -108,17 +106,14 @@ const RecipeList = ({
           <button
             id={styles.recipeForward}
             onClick={() => {
-              console.log('Next Clicked')
-              if (recipes.length > 1) console.log('If Passed')
-              for (let i = 0; recipes.length > i; i++) {
-                console.log('For entered')
-                console.log(displayRecipe)
-                if (recipes[i].id > displayRecipe.id) {
-                  console.log('Does this work?')
-                  setDisplayRecipe(recipes[i])
-                  break
+              if (recipes.length > 1)
+                for (let i = 0; recipes.length > i; i++) {
+                  console.log(displayRecipe)
+                  if (recipes[i].id > displayRecipe.id) {
+                    setDisplayRecipe(recipes[i])
+                    break
+                  }
                 }
-              }
             }}
           >
             Next
