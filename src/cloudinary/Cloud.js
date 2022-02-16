@@ -16,9 +16,24 @@ const Cloud = () => {
     reader.readAsDataURL(changeEvent.target.files[0])
   }
 
-  async function handleOnSubmit(event) {
-    event.preventDefault()
-    console.log(event.currentTarget)
+  async function handleOnSubmit(e) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const fileInput = Array.from(form.elements).find(
+      ({ name }) => name === 'file'
+    )
+
+    const formData = new FormData()
+
+    for (const file of fileInput.files) {
+      formData.append('file', file)
+    }
+
+    const data = await.fetch('https://api.cloudinary.com/v1_1/doybhneia/image/upload', {
+      method: 'POST', 
+      body: formData
+    }).then(r => r.json())
+
   }
 
   return (
