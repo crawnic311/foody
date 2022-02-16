@@ -1,7 +1,12 @@
 import React from 'react'
+import Cloud from '../../cloudinary/Cloud'
 
 const About = () => {
-  return <div>This is the about page.</div>
+  return (
+    <div>
+      <Cloud />
+    </div>
+  )
 }
 
 export default About
