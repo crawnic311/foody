@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 
-const Cloud = () => {
-  const [imageSrc, setImageSrc] = useState()
-  const [uploadData, setUploadData] = useState()
-
-  const handleOnChange = (changeEvent) => {
+const Cloud = ({ imageSrc, setImageSrc, uploadData, setUploadData }) => {
+  const handleOnChange = (e) => {
     const reader = new FileReader()
 
-    reader.onload = function (onLoadEvent) {
-      setImageSrc(onLoadEvent.target.result)
+    reader.onload = (e) => {
+      console.log(e.target.result)
+      setImageSrc(e.target.result)
       setUploadData(undefined)
     }
 
-    reader.readAsDataURL(changeEvent.target.files[0])
+    reader.readAsDataURL(e.target.files[0])
   }
 
   async function handleOnSubmit(e) {
@@ -43,6 +40,7 @@ const Cloud = () => {
     setUploadData(data)
 
     console.log(data, 'data')
+    console.log(data.secure_url, 'Secure_url')
   }
 
   return (

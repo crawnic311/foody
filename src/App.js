@@ -22,6 +22,8 @@ function App() {
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
+  const [imageSrc, setImageSrc] = useState()
+  const [uploadData, setUploadData] = useState()
   const [newRecipe, setNewRecipe] = useState({
     id: '',
     title: '',
@@ -61,7 +63,6 @@ function App() {
     axios
       .get('http://localhost:3700/api/recipes')
       .then((res) => {
-        console.log(res)
         setRecipes(res.data)
       })
       .catch((err) => console.log(err))
@@ -199,10 +200,25 @@ function App() {
                 newRecipe={newRecipe}
                 setNewRecipe={setNewRecipe}
                 handleSubmit={handleSubmit}
+                imageSrc={imageSrc}
+                setImageSrc={setImageSrc}
+                uploadData={uploadData}
+                setUploadData={setUploadData}
               />
             }
           />
-          <Route exact path="/about" element={<About />} />
+          <Route
+            exact
+            path="/about"
+            element={
+              <About
+                imageSrc={imageSrc}
+                setImageSrc={setImageSrc}
+                uploadData={uploadData}
+                setUploadData={setUploadData}
+              />
+            }
+          />
           <Route
             path="/home"
             element={

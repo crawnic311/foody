@@ -3,14 +3,27 @@ import styles from './Create.module.css'
 import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
-const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
+const Create = ({
+  newRecipe,
+  setNewRecipe,
+  handleSubmit,
+  setImageSrc,
+  imageSrc,
+  uploadData,
+  setUploadData,
+}) => {
   const inputRef = useRef()
 
-  const fileSelectHandler = (e) => {
-    setNewRecipe({
-      ...newRecipe,
-      image: e.target.value,
-    })
+  const handleFileChange = (e) => {
+    const reader = new FileReader()
+
+    reader.onload = (e) => {
+      console.log(e.target.result)
+      setImageSrc(e.target.result)
+      setUploadData(undefined)
+    }
+
+    reader.readAsDataURL(e.target.files[0])
   }
 
   return (
@@ -85,10 +98,12 @@ const Create = ({ newRecipe, setNewRecipe, handleSubmit }) => {
       <input
         id={styles.photoInput}
         type="file"
+        name="file"
         placeholder="Optional: Upload a photo for your recipe"
-        value={newRecipe.image}
-        onChange={(e) => fileSelectHandler(e)}
+        //value={newRecipe.image}
+        onChange={(e) => handleFileChange(e)}
       ></input>
+      <img src={imageSrc} className={styles.uploadImage} />
       <button
         type="submit"
         aria-label="Create Item"

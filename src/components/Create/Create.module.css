@@ -33,6 +33,13 @@
   padding-left: 350px;
 }
 
+.uploadImage {
+  height: 150px;
+  width: 150px;
+  margin-top: 20px;
+  align-self: center;
+}
+
 .createSubmit {
   height: 48px;
   width: 48px;
