@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Create.module.css'
 import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
+import axios from 'axios'
 
 const Create = ({
   newRecipe,
@@ -11,6 +12,7 @@ const Create = ({
   imageSrc,
   uploadData,
   setUploadData,
+  recipes,
 }) => {
   const inputRef = useRef()
 

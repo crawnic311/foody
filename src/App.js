@@ -204,6 +204,7 @@ function App() {
                 setImageSrc={setImageSrc}
                 uploadData={uploadData}
                 setUploadData={setUploadData}
+                recipes={recipes}
               />
             }
           />
