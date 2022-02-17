@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+/*import React, { useState } from 'react'
 
-const Cloud = ({ imageSrc, setImageSrc, uploadData, setUploadData }) => {
+const Cloud = () => {
   const handleOnChange = (e) => {
     const reader = new FileReader()
 
@@ -69,3 +69,4 @@ const Cloud = ({ imageSrc, setImageSrc, uploadData, setUploadData }) => {
 }
 
 export default Cloud
+*/

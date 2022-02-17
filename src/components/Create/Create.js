@@ -18,7 +18,6 @@ const Create = ({
     const reader = new FileReader()
 
     reader.onload = (e) => {
-      console.log(e.target.result)
       setImageSrc(e.target.result)
       setUploadData(undefined)
     }
@@ -103,7 +102,7 @@ const Create = ({
         //value={newRecipe.image}
         onChange={(e) => handleFileChange(e)}
       ></input>
-      <img src={imageSrc} className={styles.uploadImage} />
+      {imageSrc && <img src={imageSrc} className={styles.uploadImage} />}
       <button
         type="submit"
         aria-label="Create Item"

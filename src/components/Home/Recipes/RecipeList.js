@@ -94,7 +94,6 @@ const RecipeList = ({
             onClick={() => {
               if (recipes.length > 1) {
                 let title = document.getElementById('title').innerHTML
-                console.log(title)
                 handleDelete(title)
               } else {
                 alert('cannot delete')
@@ -108,7 +107,6 @@ const RecipeList = ({
             onClick={() => {
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
-                  console.log(displayRecipe)
                   if (recipes[i].id > displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
                     break

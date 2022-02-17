@@ -104,8 +104,37 @@ function App() {
     setNewRecipe(recipes.length)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    if (imageSrc) {
+      const form = e.currentTarget
+      const fileInput = Array.from(form.elements).find(
+        ({ name }) => name === 'file'
+      )
+
+      const formData = new FormData()
+
+      for (const file of fileInput.files) {
+        formData.append('file', file)
+      }
+
+      formData.append('upload_preset', 'my-uploads')
+
+      const data = await fetch(
+        'https://api.cloudinary.com/v1_1/doybhneia/image/upload',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      ).then((r) => r.json())
+
+      setImageSrc(data.secure_url)
+      setUploadData(data)
+
+      console.log(data, 'data')
+      console.log(data.secure_url, 'Secure_url')
+    }
+
     if (!newRecipe) return
     addRecipe(newRecipe)
 
@@ -130,7 +159,6 @@ function App() {
     }
 
     const findRID = recipes.find((recipe) => recipe.title === title)
-    console.log(findRID.id)
     axios
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
       .then((res) => fetchRecipesDB())

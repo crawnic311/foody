@@ -38,6 +38,9 @@
   width: 150px;
   margin-top: 20px;
   align-self: center;
+  overflow: hidden;
+  border-bottom: 1px solid aliceblue;
+  border-radius: 7px;
 }
 
 .createSubmit {
