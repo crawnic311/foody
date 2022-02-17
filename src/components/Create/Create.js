@@ -23,6 +23,9 @@ const Create = ({
     }
 
     reader.readAsDataURL(e.target.files[0])
+
+    const form = e.currentTarget
+    console.log(form, 'form Onchange')
   }
 
   return (

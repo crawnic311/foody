@@ -106,35 +106,37 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (imageSrc) {
-      const form = e.currentTarget
-      const fileInput = Array.from(form.elements).find(
-        ({ name }) => name === 'file'
-      )
 
-      const formData = new FormData()
+    const form = e.currentTarget
+    const fileInput = Array.from(form.elements).find(
+      ({ name }) => name === 'file'
+    )
 
-      for (const file of fileInput.files) {
-        formData.append('file', file)
-      }
+    const formData = new FormData()
 
-      formData.append('upload_preset', 'my-uploads')
-
-      const data = await fetch(
-        'https://api.cloudinary.com/v1_1/doybhneia/image/upload',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      ).then((r) => r.json())
-
-      setImageSrc(data.secure_url)
-      setUploadData(data)
-
-      console.log(data, 'data')
-      console.log(data.secure_url, 'Secure_url')
+    for (const file of fileInput.files) {
+      formData.append('file', file)
+      console.log(formData)
     }
 
+    formData.append('upload_preset', 'my-uploads')
+
+    const data = await fetch(
+      'https://api.cloudinary.com/v1_1/doybhneia/image/upload',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    ).then((r) => r.json())
+
+    setImageSrc(data.secure_url)
+    setUploadData(data)
+    setNewRecipe({ ...newRecipe, image: data.secure_url })
+
+    clearForm()
+  }
+
+  const clearForm = () => {
     if (!newRecipe) return
     addRecipe(newRecipe)
 
