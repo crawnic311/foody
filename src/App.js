@@ -72,7 +72,7 @@ function App() {
     fetchRecipesDB()
   }, [])
 
-  const addRecipe = async (recipe) => {
+  const addRecipe = async (recipe, URL) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
       id: id,
@@ -104,41 +104,11 @@ function App() {
     setNewRecipe(recipes.length)
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
-    const form = e.currentTarget
-    const fileInput = Array.from(form.elements).find(
-      ({ name }) => name === 'file'
-    )
-
-    const formData = new FormData()
-
-    for (const file of fileInput.files) {
-      formData.append('file', file)
-      console.log(formData)
-    }
-
-    formData.append('upload_preset', 'my-uploads')
-
-    const data = await fetch(
-      'https://api.cloudinary.com/v1_1/doybhneia/image/upload',
-      {
-        method: 'POST',
-        body: formData,
-      }
-    ).then((r) => r.json())
-
-    setImageSrc(data.secure_url)
-    setUploadData(data)
-    setNewRecipe({ ...newRecipe, image: data.secure_url })
-
-    clearForm()
-  }
-
-  const clearForm = () => {
     if (!newRecipe) return
-    addRecipe(newRecipe)
+    addRecipe(newRecipe, URL)
 
     //Resets defualt values for create recipe form
     setNewRecipe({

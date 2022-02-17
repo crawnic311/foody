@@ -29,7 +29,13 @@ const Create = ({
   }
 
   return (
-    <form className={styles.createRecipe} onSubmit={handleSubmit}>
+    <form
+      className={styles.createRecipe}
+      onSubmit={(e) => {
+        let title = newRecipe.title
+        handleSubmit(e, title)
+      }}
+    >
       <label htmlFor="createRecipe">Create Recipe</label>
       <input
         autoFocus
@@ -80,7 +86,7 @@ const Create = ({
         onChange={(e) =>
           setNewRecipe({
             ...newRecipe,
-            instructions: [e.target.value],
+            instructions: [e.target.value, ''],
           })
         }
       ></input>
@@ -102,7 +108,7 @@ const Create = ({
         type="file"
         name="file"
         placeholder="Optional: Upload a photo for your recipe"
-        //value={newRecipe.image}
+        value={newRecipe.image}
         onChange={(e) => handleFileChange(e)}
       ></input>
       {imageSrc && <img src={imageSrc} className={styles.uploadImage} />}

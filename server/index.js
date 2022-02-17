@@ -21,6 +21,8 @@ app.post('/api/recipes', controller.addRecipe)
 
 app.get('/api/recipes', controller.getRecipe)
 
+app.patch('/api/recipes/:id', controller.setImage)
+
 app.delete('/api/recipes/:id', controller.deleteRecipe)
 
 app.listen(PORT, () => console.log(`Running on ${PORT}`))
