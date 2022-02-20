@@ -8,20 +8,8 @@ import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
-import { search, mapImageResources } from './lib/cloudinary'
 import axios from 'axios'
 import './App.css'
-
-export async function getStaticProps() {
-  const results = await search()
-
-  const { resources } = results
-
-  const images = mapImageResources(resources)
-  return (props = {
-    images,
-  })
-}
 
 function App() {
   let navigate = useNavigate()
