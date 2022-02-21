@@ -8,6 +8,7 @@ import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
+import { getImages } from './api'
 import axios from 'axios'
 import './App.css'
 
@@ -19,6 +20,7 @@ function App() {
     password: '123',
   }
 
+  const [imageList, setImageList] = useState([])
   const [user, setUser] = useState({ name: '', email: 'j', password: '' })
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
@@ -70,6 +72,15 @@ function App() {
 
   useEffect(() => {
     fetchRecipesDB()
+  }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const responseJSON = await getImages()
+      setImageList(responseJSON.resources)
+    }
+
+    fetchData()
   }, [])
 
   const addRecipe = async (recipe, URL) => {
