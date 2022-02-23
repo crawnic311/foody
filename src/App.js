@@ -121,7 +121,6 @@ function App() {
     if (!newRecipe) return
     addRecipe(newRecipe, URL)
 
-    //Resets defualt values for create recipe form
     setNewRecipe({
       id: '',
       title: '',
