@@ -43,6 +43,14 @@
   margin: 44px 2px;
 }
 
+.ForgotPasswordRegister {
+  background-color: aliceblue;
+  display: block;
+  margin-top: 8px;
+  margin-left: 2px;
+  height: 18px;
+}
+
 #name,
 #email,
 #password {
@@ -107,6 +115,16 @@
   background-color: aliceblue;
   font-size: 1.5rem;
   color: red;
+}
+
+.toRegister {
+  background-color: aliceblue;
+  color: blue;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Color Pallete 

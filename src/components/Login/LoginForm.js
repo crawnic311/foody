@@ -11,6 +11,7 @@ const LoginForm = (props) => {
   const [registerPassword, setRegisterPassword] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
+  const [displayLogin, setDisplayLogin] = useState(true)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -34,38 +35,89 @@ const LoginForm = (props) => {
         className={styles.foodylogo}
       />
       <div className={styles.LoginWrapper}>
-        <form className={styles.LoginForm} onSubmit={submitHandler}>
-          <div className={styles.ErrorWrapper}>
-            {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
-          </div>
-          <div className={styles.formgroup}>
-            <input
-              type="text"
-              placeholder="Email"
-              name="email"
-              id={styles.email}
-              onChange={(e) => setLoginEmail(e.target.value)}
-              value={details.email}
-            />
-          </div>
-          <div className={styles.formgroup}>
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              id={styles.password}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              value={details.password}
-            />
-            <span className={styles.ForgotPassword}>Forgot Password?</span>
-          </div>
-          <div className={styles.formgroup} id={styles.loginButton}>
-            <input type="submit" value="LOGIN" id={styles.login} />
-            <span href="" className={styles.NewHere}>
-              New here? Create an account.
-            </span>
-          </div>
-        </form>
+        {displayLogin == true ? (
+          <form className={styles.LoginForm} onSubmit={submitHandler}>
+            <div className={styles.ErrorWrapper}>
+              {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
+            </div>
+            <div className={styles.formgroup}>
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                id={styles.email}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                value={loginEmail}
+              />
+            </div>
+            <div className={styles.formgroup}>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                id={styles.password}
+                onChange={(e) => setLoginPassword(e.target.value)}
+                value={loginPassword}
+              />
+              <span className={styles.ForgotPassword}>Forgot Password?</span>
+            </div>
+            <div className={styles.formgroup} id={styles.loginButton}>
+              <input type="submit" value="LOGIN" id={styles.login} />
+              <span href="" className={styles.NewHere}>
+                New here?{' '}
+                <a
+                  className={styles.toRegister}
+                  onClick={() => {
+                    setDisplayLogin(false)
+                  }}
+                >
+                  Create an account.
+                </a>
+              </span>
+            </div>
+          </form>
+        ) : (
+          <form className={styles.LoginForm} onSubmit={submitHandler}>
+            <div className={styles.ErrorWrapper}>
+              {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
+            </div>
+            <div className={styles.formgroup}>
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                id={styles.email}
+                onChange={(e) => setRegisterEmail(e.target.value)}
+                value={registerEmail}
+              />
+            </div>
+            <div className={styles.formgroup}>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                id={styles.password}
+                onChange={(e) => setRegisterPassword(e.target.value)}
+                value={registerPassword}
+              />
+              <span className={styles.ForgotPasswordRegister}></span>
+            </div>
+            <div className={styles.formgroup} id={styles.loginButton}>
+              <input type="submit" value="CREATE" id={styles.login} />
+              <span href="" className={styles.NewHere}>
+                Already have an account?{' '}
+                <a
+                  className={styles.toRegister}
+                  onClick={() => {
+                    setDisplayLogin(true)
+                  }}
+                >
+                  Login here.
+                </a>
+              </span>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   )
