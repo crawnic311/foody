@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styles from './Create.module.css'
 import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
-import axios from 'axios'
 
 const Create = ({
   newRecipe,

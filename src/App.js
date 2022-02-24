@@ -83,7 +83,7 @@ function App() {
     fetchData()
   }, [])
 
-  const addRecipe = async (recipe, URL) => {
+  const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
       id: id,
@@ -108,7 +108,7 @@ function App() {
         instructions: myNewRecipe.instructions,
         user_id: 2,
       })
-      .then((res) => fetchRecipesDB())
+      .then(() => fetchRecipesDB())
       .then(() => setDisplayRecipe(recipes[0]))
       .catch((err) => console.log(err))
 
@@ -143,7 +143,7 @@ function App() {
     const findRID = recipes.find((recipe) => recipe.title === title)
     axios
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
-      .then((res) => fetchRecipesDB())
+      .then(() => fetchRecipesDB())
       .catch((err) => console.log(err))
   }
 
