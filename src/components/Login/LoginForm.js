@@ -41,16 +41,6 @@ const LoginForm = (props) => {
           <div className={styles.formgroup}>
             <input
               type="text"
-              placeholder="Name"
-              name="name"
-              id={styles.name}
-              onChange={(e) => setDetails({ ...details, name: e.target.value })}
-              value={details.name}
-            />
-          </div>
-          <div className={styles.formgroup}>
-            <input
-              type="text"
               placeholder="Email"
               name="email"
               id={styles.email}
