@@ -7,12 +7,22 @@ const LoginForm = (props) => {
   const error = props.error
 
   const [details, setDetails] = useState({ name: '', email: '', password: '' })
+  const [registerEmail, setRegisterEmail] = useState('')
+  const [registerPassword, setRegisterPassword] = useState('')
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
 
   const submitHandler = (e) => {
     e.preventDefault()
 
     Login(details)
   }
+
+  const register = async () => {}
+
+  const login = async () => {}
+
+  const logout = async () => {}
 
   return (
     <div className={styles.LoginMaster}>
@@ -44,9 +54,7 @@ const LoginForm = (props) => {
               placeholder="Email"
               name="email"
               id={styles.email}
-              onChange={(e) =>
-                setDetails({ ...details, email: e.target.value })
-              }
+              onChange={(e) => setLoginEmail(e.target.value)}
               value={details.email}
             />
           </div>
@@ -56,9 +64,7 @@ const LoginForm = (props) => {
               placeholder="Password"
               name="password"
               id={styles.password}
-              onChange={(e) =>
-                setDetails({ ...details, password: e.target.value })
-              }
+              onChange={(e) => setLoginPassword(e.target.value)}
               value={details.password}
             />
             <span className={styles.ForgotPassword}>Forgot Password?</span>
