@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 //import foody from '../../../public/foodylogo.png'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 
 const LoginForm = (props) => {
@@ -19,7 +21,18 @@ const LoginForm = (props) => {
     Login(details)
   }
 
-  const register = async () => {}
+  const register = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      )
+      console.log(user)
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 
   const login = async () => {}
 
@@ -77,7 +90,7 @@ const LoginForm = (props) => {
             </div>
           </form>
         ) : (
-          <form className={styles.LoginForm} onSubmit={submitHandler}>
+          <div className={styles.LoginForm}>
             <div className={styles.ErrorWrapper}>
               {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
             </div>
@@ -96,6 +109,8 @@ const LoginForm = (props) => {
                 type="password"
                 placeholder="Password"
                 name="password"
+                pattern=".{6,}"
+                title="Must contain at least 6 characters"
                 id={styles.password}
                 onChange={(e) => setRegisterPassword(e.target.value)}
                 value={registerPassword}
@@ -103,7 +118,9 @@ const LoginForm = (props) => {
               <span className={styles.ForgotPasswordRegister}></span>
             </div>
             <div className={styles.formgroup} id={styles.loginButton}>
-              <input type="submit" value="CREATE" id={styles.login} />
+              <button id={styles.login} onClick={register}>
+                CREATE
+              </button>
               <span href="" className={styles.NewHere}>
                 Already have an account?{' '}
                 <a
@@ -116,7 +133,7 @@ const LoginForm = (props) => {
                 </a>
               </span>
             </div>
-          </form>
+          </div>
         )}
       </div>
     </div>
