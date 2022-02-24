@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
 import styles from './RecipeList.module.css'
 
 const RecipeList = ({
