@@ -235,6 +235,8 @@ function App() {
             path="/home"
             element={
               <Home
+                imageList={imageList}
+                setImageList={setImageList}
                 displayRecipe={displayRecipe}
                 setDisplayRecipe={setDisplayRecipe}
                 recipes={recipes}
