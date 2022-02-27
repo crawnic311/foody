@@ -61,11 +61,4 @@
   outline: none;
 }
 
-.FaPlus {
-  color: orange;
-  background-color: pink;
-}
 
-.FaPlus:hover {
-  color: blue;
-}
