@@ -4,9 +4,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 
-const LoginForm = (props) => {
-  const Login = props.Login
-  const error = props.error
+const LoginForm = ({Login, error}) => {
+
 
   const [details, setDetails] = useState({ name: '', email: '', password: '' })
   const [registerEmail, setRegisterEmail] = useState('')
