@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 //import foody from '../../../public/foodylogo.png'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 
-const LoginForm = ({Login, error}) => {
+const LoginForm = ({Login, error, user, setUser}) => {
 
 
   const [details, setDetails] = useState({ name: '', email: '', password: '' })
@@ -13,6 +13,12 @@ const LoginForm = ({Login, error}) => {
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [displayLogin, setDisplayLogin] = useState(true)
+
+  
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser)
+  })
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -94,6 +100,7 @@ const LoginForm = ({Login, error}) => {
             </div>
           </form>
         ) : (
+          <form>
           <div className={styles.LoginForm}>
             <div className={styles.ErrorWrapper}>
               {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
@@ -138,6 +145,7 @@ const LoginForm = ({Login, error}) => {
               </span>
             </div>
           </div>
+          </form>
         )}
       </div>
     </div>

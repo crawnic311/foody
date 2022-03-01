@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {onAuthStateChanged } from 'firebase/auth'
 import recipeData from './db.json'
 import Home from './components/Home/Home'
 import About from './components/About./About'
@@ -19,7 +20,8 @@ function App() {
     password: '123',
   }
 
-  const [user, setUser] = useState({ name: '', email: 'j', password: '' })
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
   const [uploadData, setUploadData] = useState()
@@ -172,7 +174,7 @@ function App() {
   return (
     <>
       <div className="App">
-        {user.email !== '' ? (
+        {loggedIn != false ? (
           <Navbar
             Logout={Logout}
             search={search}
@@ -189,7 +191,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm Login={Login} error={error} />}
+            element={<LoginForm Login={Login} error={error} user={user} setUser={setUser} />}
           />
           <Route
             exact
