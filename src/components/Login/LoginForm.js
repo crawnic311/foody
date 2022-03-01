@@ -23,7 +23,7 @@ const LoginForm = ({Login, error}) => {
   const register = async () => {
     if (registerPassword.length < 6) {
       return console.log('Insufficient Password Length')
-    }
+    } 
     try {
       const user = await createUserWithEmailAndPassword(
         auth,
@@ -31,6 +31,8 @@ const LoginForm = ({Login, error}) => {
         registerPassword
       )
       console.log(user)
+      setRegisterEmail('')
+      setRegisterPassword('')
     } catch (error) {
       console.log(error.message)
     }
