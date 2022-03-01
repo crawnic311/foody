@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/aut
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 
-const LoginForm = ({Login, error, user, setUser}) => {
+const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
 
 
   const [details, setDetails] = useState({ name: '', email: '', password: '' })
@@ -22,7 +22,7 @@ const LoginForm = ({Login, error, user, setUser}) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-
+    register()
     Login(details)
   }
 
@@ -39,6 +39,8 @@ const LoginForm = ({Login, error, user, setUser}) => {
       console.log(user)
       setRegisterEmail('')
       setRegisterPassword('')
+      setLoggedIn(true)
+      console.log(loggedIn)
     } catch (error) {
       console.log(error.message)
     }
@@ -100,7 +102,7 @@ const LoginForm = ({Login, error, user, setUser}) => {
             </div>
           </form>
         ) : (
-          <form>
+          <form className={styles.loginForm} onSubmit={submitHandler}>
           <div className={styles.LoginForm}>
             <div className={styles.ErrorWrapper}>
               {error !== '' ? <p className={styles.Error}>{error}</p> : ''}
@@ -129,9 +131,9 @@ const LoginForm = ({Login, error, user, setUser}) => {
               <span className={styles.ForgotPasswordRegister}></span>
             </div>
             <div className={styles.formgroup} id={styles.loginButton}>
-              <button id={styles.login} onClick={register}>
-                CREATE
-              </button>
+              <input type="submit" value="CREATE" id={styles.login} onSubmit={submitHandler}>
+                
+              </input>
               <span href="" className={styles.NewHere}>
                 Already have an account?{' '}
                 <a

@@ -191,7 +191,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm Login={Login} error={error} user={user} setUser={setUser} />}
+            element={<LoginForm Login={Login} error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
           />
           <Route
             exact
