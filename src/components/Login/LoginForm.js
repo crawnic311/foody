@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-//import foody from '../../../public/foodylogo.png'
 import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
