@@ -44,7 +44,6 @@ const Create = ({
     for (const file of fileInput.files) {
       formData.append('file', file)
     }
-    //error
     console.log(formData)
 
     formData.append('upload_preset', 'my-uploads')
