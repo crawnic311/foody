@@ -6,7 +6,7 @@ import styles from './loginform.module.css'
 const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
 
 
-  const [details, setDetails] = useState({ name: '', email: '', password: '' })
+  
   const [registerEmail, setRegisterEmail] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
   const [loginEmail, setLoginEmail] = useState('')
@@ -22,7 +22,6 @@ const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
   const submitHandler = (e) => {
     e.preventDefault()
     register()
-    Login(details)
   }
 
   const register = async () => {

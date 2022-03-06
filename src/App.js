@@ -136,34 +136,7 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-  const Login = (details) => {
-    setUser({
-      name: details.name,
-      email: details.email,
-      password: details.password,
-    })
-    console.log(details)
-
-    axios
-      .post('http://localhost:3700/api/register', {
-        name: details.name,
-        email: details.email,
-        password: details.password,
-      })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
-
-    if (
-      details.email === adminUser.email &&
-      details.password === adminUser.password
-    ) {
-      console.log('Logged in')
-      navigate('/home')
-    } else {
-      console.log('Details do not match!')
-      setError('Details do not match!')
-    }
-  }
+  
 
   const Logout = () => {
     console.log('Logout')
@@ -190,7 +163,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm Login={Login} error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+            element={<LoginForm/>} error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
           />
           <Route
             exact
