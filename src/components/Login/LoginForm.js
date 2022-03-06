@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
 
-
+let navigate = useNavigate()
   
   const [registerEmail, setRegisterEmail] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
@@ -39,6 +40,7 @@ const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
       setRegisterPassword('')
       setLoggedIn(true)
       console.log(loggedIn)
+      navigate("/home")
     } catch (error) {
       console.log(error.message)
     }

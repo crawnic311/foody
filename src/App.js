@@ -6,6 +6,7 @@ import Create from './components/Create/Create'
 import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
+import recipeData from './db.json'
 import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
@@ -13,17 +14,13 @@ import './App.css'
 
 function App() {
   let navigate = useNavigate()
-  const adminUser = {
-    name: '',
-    email: 'dillon.craw@gmail.com',
-    password: '123',
-  }
+
 
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
-  const [uploadData, setUploadData] = useState()
+  const [uploadData, setUploadData] = useState() 
   const [newRecipe, setNewRecipe] = useState({
     id: '',
     title: '',
