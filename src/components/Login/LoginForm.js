@@ -80,6 +80,7 @@ const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
                 type="password"
                 placeholder="Password"
                 name="password"
+                autoComplete='on'
                 id={styles.password}
                 onChange={(e) => setLoginPassword(e.target.value)}
                 value={loginPassword}
@@ -122,6 +123,7 @@ const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
                 type="password"
                 placeholder="Password"
                 name="password"
+                autoComplete='on'
                 pattern=".{6,}"
                 title="Must contain at least 6 characters"
                 id={styles.password}

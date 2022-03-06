@@ -163,7 +163,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm/>} error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+            element={<LoginForm error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
           />
           <Route
             exact
