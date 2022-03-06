@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 
@@ -47,7 +47,9 @@ const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
 
   const login = async () => {}
 
-  const logout = async () => {}
+  const logout = async () => {
+    await signOut(auth)
+  }
 
   return (
     <div className={styles.LoginMaster}>
