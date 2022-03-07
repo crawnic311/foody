@@ -48,7 +48,6 @@ const LoginForm = ({
       console.log(user)
       setRegisterEmail('')
       setRegisterPassword('')
-      console.log(loggedIn)
       navigate('/home')
     } catch (error) {
       console.log(error.message)
@@ -56,7 +55,7 @@ const LoginForm = ({
   }
 
   const login = async () => {
-    if (registerPassword.length < 6) {
+    if (loginPassword.length < 6) {
       return console.log('Insufficient Password Length')
     }
     try {
@@ -68,7 +67,6 @@ const LoginForm = ({
       console.log(user)
       setLoginEmail('')
       setLoginPassword('')
-      console.log(loggedIn)
       navigate('/home')
     } catch (error) {
       console.log(error.message)
