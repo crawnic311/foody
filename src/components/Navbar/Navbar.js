@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import SearchRecipe from '../Search/SearchRecipe'
 import styles from './Navbar.module.css'
 
-const Navbar = ({ recipeData, displayRecipe, setDisplayRecipe, recipes }) => {
+const Navbar = ({ recipeData, displayRecipe, setDisplayRecipe, recipes, logout }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const openMenu = () => {
@@ -61,7 +61,7 @@ const Navbar = ({ recipeData, displayRecipe, setDisplayRecipe, recipes }) => {
             </li>
             <li className={styles.navitem}>
               <Link to="/">
-                <span className={styles.navlink}>Logout</span>
+                <button className={styles.navlink} onClick={logout}>Logout</button>
               </Link>
             </li>
           </ul>

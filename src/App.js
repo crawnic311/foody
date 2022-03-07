@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import {onAuthStateChanged } from 'firebase/auth'
 import Home from './components/Home/Home'
 import About from './components/About./About'
 import Create from './components/Create/Create'
@@ -7,6 +6,8 @@ import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import recipeData from './db.json'
+import {auth} from './firebase.config'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
@@ -140,12 +141,18 @@ function App() {
     setUser({ email: '' })
   }
 
+   const logout = async () => {
+    console.log(user.email)
+    await signOut(auth)
+    console.log(user.email)
+  }
+
   return (
     <>
       <div className="App">
-        {loggedIn != false ? (
+        {user?.email ? (
           <Navbar
-            Logout={Logout}
+            logout={logout}
             search={search}
             setSearch={setSearch}
             displayRecipe={displayRecipe}
@@ -160,7 +167,7 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+            element={<LoginForm error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} logout={logout} createUserWithEmailAndPassword={createUserWithEmailAndPassword} onAuthStateChanged={onAuthStateChanged} signOut={signOut} />}
           />
           <Route
             exact

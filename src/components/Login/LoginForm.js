@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 import { useNavigate } from 'react-router-dom'
 
-const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn}) => {
+const LoginForm = ({Login, error, user, setUser, loggedIn, setLoggedIn, logout, createUserWithEmailAndPassword, onAuthStateChanged, signOut}) => {
 
 let navigate = useNavigate()
   
@@ -48,9 +47,7 @@ let navigate = useNavigate()
 
   const login = async () => {}
 
-  const logout = async () => {
-    await signOut(auth)
-  }
+ 
 
   return (
     <div className={styles.LoginMaster}>
@@ -147,6 +144,7 @@ let navigate = useNavigate()
                   }}
                 >
                   Login here.
+                 
                 </a>
               </span>
             </div>
