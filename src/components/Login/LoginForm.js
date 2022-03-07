@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { auth } from '../../firebase.config'
 import styles from './loginform.module.css'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const LoginForm = ({
   Login,
@@ -38,6 +39,17 @@ const LoginForm = ({
   const register = async () => {
     if (registerPassword.length < 6) {
       return console.log('Insufficient Password Length')
+    }
+    try {
+      axios
+        .post(`http://localhost:3700/api/register`, {
+          email: registerEmail,
+          password: registerPassword,
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
+    } catch (error) {
+      console.log(error.message)
     }
     try {
       const user = await createUserWithEmailAndPassword(

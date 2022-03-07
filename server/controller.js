@@ -19,7 +19,7 @@ module.exports = {
     //console.log(req)
     const { id } = req.params
 
-    const { name, email, password } = req.body
+    const { email, password } = req.body
     //Can't remember what this does??
     /*const result = await sequelize.query(
       `insert into users (name, email, password)
@@ -27,8 +27,8 @@ module.exports = {
     )*/
     sequelize
       .query(
-        `insert into users (name, email, password)
-        values ('${name}', '${email}', '${password}')`
+        `insert into users ( email, password)
+        values ('${email}', '${password}')`
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
