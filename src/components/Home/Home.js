@@ -12,7 +12,9 @@ const Home = ({
 }) => {
   return (
     <div className={styles.container}>
-      <p className={styles.userDisplay}>Welcome, {user.email}</p>
+      <p className={styles.userDisplay}>
+        Welcome, {user.email}, {user.id}
+      </p>
       <main className={styles.main}>
         <div className={styles.grid}>
           <RecipeList

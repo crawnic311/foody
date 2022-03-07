@@ -65,6 +65,18 @@ module.exports = {
     console.log(res)
   },
 
+  getUserID: async (req, res) => {
+    const { email } = req.body
+    sequelize
+      .query(
+        `select * from users
+        where email = ${email}`
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((err) => console.log(err))
+    console.log(res)
+  },
+
   setImage: async (req, res) => {
     const { id } = req.params
     const { image } = req.body
