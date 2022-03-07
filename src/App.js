@@ -6,8 +6,13 @@ import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import recipeData from './db.json'
-import {auth} from './firebase.config'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth } from './firebase.config'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
@@ -16,12 +21,10 @@ import './App.css'
 function App() {
   let navigate = useNavigate()
 
-
-  const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
-  const [uploadData, setUploadData] = useState() 
+  const [uploadData, setUploadData] = useState()
   const [newRecipe, setNewRecipe] = useState({
     id: '',
     title: '',
@@ -134,14 +137,12 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-  
-
   const Logout = () => {
     console.log('Logout')
     setUser({ email: '' })
   }
 
-   const logout = async () => {
+  const logout = async () => {
     console.log(user.email)
     await signOut(auth)
     console.log(user.email)
@@ -167,7 +168,18 @@ function App() {
           <Route
             exact
             path="/"
-            element={<LoginForm error={error} user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn} logout={logout} createUserWithEmailAndPassword={createUserWithEmailAndPassword} onAuthStateChanged={onAuthStateChanged} signOut={signOut} />}
+            element={
+              <LoginForm
+                error={error}
+                user={user}
+                setUser={setUser}
+                logout={logout}
+                createUserWithEmailAndPassword={createUserWithEmailAndPassword}
+                signInWithEmailAndPassword={signInWithEmailAndPassword}
+                onAuthStateChanged={onAuthStateChanged}
+                signOut={signOut}
+              />
+            }
           />
           <Route
             exact
