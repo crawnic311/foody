@@ -96,7 +96,6 @@ function App() {
         prepTime: myNewRecipe.prepTime,
         cookTime: myNewRecipe.cookTime,
         instructions: myNewRecipe.instructions,
-        user_id: 2,
       })
       .then(() => fetchRecipesDB())
       .then(() => setDisplayRecipe(recipes[0]))
@@ -135,11 +134,6 @@ function App() {
       .delete(`http://localhost:3700/api/recipes/${findRID.id}`)
       .then(() => fetchRecipesDB())
       .catch((err) => console.log(err))
-  }
-
-  const Logout = () => {
-    console.log('Logout')
-    setUser({ email: '' })
   }
 
   const logout = async () => {
@@ -211,6 +205,7 @@ function App() {
                 recipes={recipes}
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}
+                user={user}
               />
             }
           />

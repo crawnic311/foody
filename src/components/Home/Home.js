@@ -8,9 +8,11 @@ const Home = ({
   recipes,
   setRecipes,
   handleDelete,
+  user,
 }) => {
   return (
     <div className={styles.container}>
+      <p className={styles.userDisplay}>Welcome, {user.email}</p>
       <main className={styles.main}>
         <div className={styles.grid}>
           <RecipeList
