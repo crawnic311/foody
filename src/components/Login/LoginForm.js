@@ -87,10 +87,12 @@ const LoginForm = ({
           console.log(res.data)
           console.log(user2.user.email, 'Map Email')
           const currentID = res.data.filter((user) => {
-            console.log(user, 'user')
-            user.id == 1
+            console.log(user.email)
+            if (user.email == user2.user.email) {
+              return user
+            }
           })
-          console.log(currentID, 'currentID')
+          console.log(currentID[0].id, 'currentID')
         })
         .catch((err) => console.log(err))
       navigate('/home')
