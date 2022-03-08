@@ -77,17 +77,14 @@ const LoginForm = ({
         loginPassword
       )
       console.log(user)
-      console.log(user.email)
+      console.log(user.user.email)
       setLoginEmail('')
       setLoginPassword('')
+      axios
+        .get(`http://localhost:3700/api/users`)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err))
       navigate('/home')
-    } catch (error) {
-      console.log(error.message)
-    }
-    try {
-      console.log(user)
-      const userEmail = user
-      axios.get(`http://localhost:3700/api/users/${user.email}`)
     } catch (error) {
       console.log(error.message)
     }

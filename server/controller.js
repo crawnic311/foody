@@ -66,12 +66,8 @@ module.exports = {
   },
 
   getUserID: async (req, res) => {
-    const { email } = req.body
     sequelize
-      .query(
-        `select * from users
-        where email = ${email}`
-      )
+      .query(`select * from users`)
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))
     console.log(res)

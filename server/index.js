@@ -27,7 +27,7 @@ app.post('/api/recipes', controller.addRecipe)
 
 app.get('/api/recipes', controller.getRecipe)
 
-app.get('/api/users/:id', controller.getUserID)
+app.get('/api/users', controller.getUserID)
 
 app.patch('/api/recipes/:id', controller.setImage)
 
