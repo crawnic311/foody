@@ -78,11 +78,20 @@ const LoginForm = ({
       )
       console.log(user)
       console.log(user.user.email)
+      const user2 = user
       setLoginEmail('')
       setLoginPassword('')
       axios
         .get(`http://localhost:3700/api/users`)
-        .then((res) => console.log(res))
+        .then((res) => {
+          console.log(res.data)
+          console.log(user2.user.email, 'Map Email')
+          const currentID = res.data.filter((user) => {
+            console.log(user, 'user')
+            user.id == 1
+          })
+          console.log(currentID, 'currentID')
+        })
         .catch((err) => console.log(err))
       navigate('/home')
     } catch (error) {
