@@ -20,7 +20,7 @@ import './App.css'
 
 function App() {
   let navigate = useNavigate()
-
+  const [currentUserID, setCurrentUserID] = useState()
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
@@ -172,6 +172,8 @@ function App() {
                 signInWithEmailAndPassword={signInWithEmailAndPassword}
                 onAuthStateChanged={onAuthStateChanged}
                 signOut={signOut}
+                currentUserID={currentUserID}
+                setCurrentUserID={setCurrentUserID}
               />
             }
           />

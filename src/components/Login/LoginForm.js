@@ -14,6 +14,8 @@ const LoginForm = ({
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  currentUserID,
+  setCurrentUserID,
 }) => {
   let navigate = useNavigate()
 
@@ -93,6 +95,7 @@ const LoginForm = ({
             }
           })
           console.log(currentID[0].id, 'currentID')
+          setCurrentUserID(currentID[0].id)
         })
         .catch((err) => console.log(err))
       navigate('/home')
