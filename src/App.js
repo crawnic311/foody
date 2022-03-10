@@ -119,6 +119,7 @@ function App() {
       prepTime: '',
       cookTime: '',
       instructions: ['', ''],
+      user_id: currentUserID,
     })
   }
 
@@ -188,6 +189,8 @@ function App() {
                 uploadData={uploadData}
                 setUploadData={setUploadData}
                 recipes={recipes}
+                currentUserID={currentUserID}
+                setCurrentUserID={setCurrentUserID}
               />
             }
           />
@@ -208,6 +211,8 @@ function App() {
                 setRecipes={setRecipes}
                 handleDelete={handleDelete}
                 user={user}
+                currentUserID={currentUserID}
+                setCurrentUserID={setCurrentUserID}
               />
             }
           />

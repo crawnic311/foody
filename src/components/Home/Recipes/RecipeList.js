@@ -6,6 +6,8 @@ const RecipeList = ({
   setDisplayRecipe,
   recipes,
   handleDelete,
+  currentUserID,
+  setCurrentUserID,
 }) => {
   return (
     <>

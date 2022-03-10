@@ -12,6 +12,8 @@ const Create = ({
   uploadData,
   setUploadData,
   recipes,
+  currentUserID,
+  setCurrentUserID,
 }) => {
   const inputRef = useRef()
 

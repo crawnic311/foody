@@ -9,11 +9,13 @@ const Home = ({
   setRecipes,
   handleDelete,
   user,
+  currentUserID,
+  setCurrentUserID,
 }) => {
   return (
     <div className={styles.container}>
       <p className={styles.userDisplay}>
-        Welcome, {user.email}, {user.id}
+        Welcome, {user.email}, {currentUserID}
       </p>
       <main className={styles.main}>
         <div className={styles.grid}>
@@ -23,6 +25,8 @@ const Home = ({
             recipes={recipes}
             setRecipes={setRecipes}
             handleDelete={handleDelete}
+            currentUserID={currentUserID}
+            setCurrentUserID={setCurrentUserID}
           />
         </div>
       </main>
