@@ -17,63 +17,12 @@ const Create = ({
 }) => {
   const inputRef = useRef()
 
-  const handleFileChange = (e) => {
-    const reader = new FileReader()
-
-    reader.onload = (e) => {
-      setImageSrc(e.target.result)
-      setUploadData(undefined)
-    }
-
-    reader.readAsDataURL(e.target.files[0])
-
-    const form = e.currentTarget
-    console.log(form, 'form Onchange')
-  }
-
-  const handleUpload = async (e) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    console.log(form)
-    const fileInput = Array.from(form.elements).find(
-      ({ name }) => name === 'file'
-    )
-    console.log(fileInput)
-
-    const formData = new FormData()
-    console.log(fileInput.files)
-
-    for (const file of fileInput.files) {
-      formData.append('file', file)
-    }
-    console.log(formData)
-
-    formData.append('upload_preset', 'my-uploads')
-
-    console.log(formData)
-
-    const data = await fetch(
-      'https://api.cloudinary.com/v1_1/doybhneia/image/upload',
-      {
-        method: 'POST',
-        body: formData,
-      }
-    ).then((r) => r.json())
-
-    setImageSrc(data.secure_url)
-    setUploadData(data)
-
-    console.log(data, 'data')
-    console.log(data.secure_url, 'Secure_url')
-  }
-
   return (
     <form
       method="post"
       className={styles.createRecipe}
       onSubmit={(e) => {
         handleSubmit(e)
-        handleUpload(e)
       }}
     >
       <label htmlFor="createRecipe">Create Recipe</label>
@@ -149,7 +98,6 @@ const Create = ({
         name="file"
         placeholder="Optional: Upload a photo for your recipe"
         //value={newRecipe.image}
-        onChange={(e) => handleFileChange(e)}
       ></input>
       {imageSrc && <img src={imageSrc} className={styles.uploadImage} />}
       <button

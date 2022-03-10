@@ -84,8 +84,8 @@ function App() {
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
-      nav_id: recipe.nav_id,
     }
+    console.log('Add Recipe Runs')
 
     axios
       .post('http://localhost:3700/api/recipes', {
@@ -108,7 +108,8 @@ function App() {
     e.preventDefault()
 
     if (!newRecipe) return
-    addRecipe(newRecipe, URL)
+    addRecipe(newRecipe)
+    console.log('Handle Submit Runs')
 
     setNewRecipe({
       id: '',
@@ -119,7 +120,6 @@ function App() {
       prepTime: '',
       cookTime: '',
       instructions: ['', ''],
-      user_id: currentUserID,
     })
   }
 
