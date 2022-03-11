@@ -106,6 +106,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(newRecipe)
 
     if (!newRecipe) return
     addRecipe(newRecipe)
