@@ -73,22 +73,6 @@ module.exports = {
     console.log(res)
   },
 
-  setImage: async (req, res) => {
-    const { id } = req.params
-    const { image } = req.body
-    console.log(id)
-    console.log(image)
-    sequelize
-      .query(
-        `update recipes
-    set column 2 = ${image} 
-    where id = ${id}`
-      )
-      .then((dbRes) => res.status(200).send(dbRes[0]))
-      .catch((err) => console.log(err))
-    console.log(res)
-  },
-
   deleteRecipe: async (req, res) => {
     const { id } = req.params
     console.log(id)

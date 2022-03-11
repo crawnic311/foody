@@ -29,8 +29,6 @@ app.get('/api/recipes', controller.getRecipe)
 
 app.get('/api/users', controller.getUserID)
 
-app.patch('/api/recipes/:id', controller.setImage)
-
 app.delete('/api/recipes/:id', controller.deleteRecipe)
 
 const BASE_URL = `https://api.cloudinary.com/v1_1/${config.CLOUD_NAME}/resources/image`
