@@ -85,7 +85,6 @@ function App() {
       instructions: recipe.instructions,
       user_id: currentUserID,
     }
-    console.log('Add Recipe Runs')
 
     axios
       .post('http://localhost:3700/api/recipes', {
@@ -111,7 +110,6 @@ function App() {
 
     if (!newRecipe) return
     addRecipe(newRecipe)
-    console.log('Handle Submit Runs')
 
     setNewRecipe({
       id: '',
