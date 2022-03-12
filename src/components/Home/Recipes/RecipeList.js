@@ -108,7 +108,10 @@ const RecipeList = ({
             onClick={() => {
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
-                  if (recipes[i].id > displayRecipe.id) {
+                  if (
+                    recipes[i].id > displayRecipe.id &&
+                    recipes[i].user_id === currentUserID
+                  ) {
                     setDisplayRecipe(recipes[i])
                     break
                   }

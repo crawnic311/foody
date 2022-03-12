@@ -57,6 +57,7 @@ function App() {
       prepTime: 0,
       cookTime: 0,
       instructions: [],
+      user_id: 0,
     },
   ])
 
