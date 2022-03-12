@@ -76,7 +76,6 @@ function App() {
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
-      id: id,
       title: recipe.title,
       image: recipe.image,
       description: recipe.description,
@@ -84,6 +83,7 @@ function App() {
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
+      user_id: currentUserID,
     }
     console.log('Add Recipe Runs')
 
@@ -96,6 +96,7 @@ function App() {
         prepTime: myNewRecipe.prepTime,
         cookTime: myNewRecipe.cookTime,
         instructions: myNewRecipe.instructions,
+        user_id: currentUserID,
       })
       .then(() => fetchRecipesDB())
       .then(() => setDisplayRecipe(recipes[0]))
