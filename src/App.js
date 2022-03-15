@@ -139,9 +139,7 @@ function App() {
   }
 
   const logout = async () => {
-    console.log(user.email)
     await signOut(auth)
-    console.log(user.email)
   }
 
   return (
