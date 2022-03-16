@@ -1,79 +1,80 @@
 import React from 'react'
+import styles from './built.module.css'
 
 const Built = () => {
   return (
-    <div className="Skill-Container">
-      <div className="Skills-Flex-Item">
+    <div className={styles.SkillContainer}>
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/JavaScript Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">JavaScript</p>
+        <p className={styles.SkillsText}>JavaScript</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/React Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">React</p>
+        <p className={styles.SkillsText}>React</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/Redux Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">Redux</p>
+        <p className={styles.SkillsText}>Redux</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/HTML Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">HTML</p>
+        <p className={styles.SkillsText}>HTML</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/CSS Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">CSS</p>
+        <p className={styles.SkillsText}>CSS</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/Express Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">Express</p>
+        <p className={styles.SkillsText}>Express</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/PostgreSQL Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">PostgreSQL</p>
+        <p className={styles.SkillsText}>PostgreSQL</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/Node Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">Node</p>
+        <p className={styles.SkillsText}>Node</p>
       </div>
-      <div className="Skills-Flex-Item">
+      <div className={styles.SkillsFlexItem}>
         <img
           src={require('../../skills-icons/C++ Icon.png')}
           alt=""
-          className="Skills-Icon"
+          className={styles.SkillsIcon}
         />
-        <p className="Skills-Text">C++</p>
+        <p className={styles.SkillsText}>C++</p>
       </div>
     </div>
   )
