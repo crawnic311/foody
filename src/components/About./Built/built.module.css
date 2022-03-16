@@ -11,4 +11,7 @@
 
 .SkillsText {
   display: inline;
+  color: aliceblue;
+  text-align: center;
+  font-size: 20px;
 }
