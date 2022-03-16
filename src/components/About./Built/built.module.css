@@ -1,0 +1,14 @@
+.SkillsFlexItem {
+  width: 160px;
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.SkillsIcon {
+  width: 140px;
+  height: 140px;
+}
+
+.SkillsText {
+  display: inline;
+}
