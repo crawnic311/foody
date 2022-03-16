@@ -14,9 +14,6 @@ const Home = ({
 }) => {
   return (
     <div className={styles.container}>
-      <p className={styles.userDisplay}>
-        Welcome, {user.email}, {currentUserID}
-      </p>
       <main className={styles.main}>
         <div className={styles.grid}>
           <RecipeList
