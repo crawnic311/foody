@@ -6,7 +6,7 @@ const Built = () => {
     <div className={styles.SkillContainer}>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/JavaScript Icon.png')}
+          src={require('../../../skills-icons/JavaScript Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -14,7 +14,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/React Icon.png')}
+          src={require('../../../skills-icons/React Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -22,7 +22,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/Redux Icon.png')}
+          src={require('../../../skills-icons/Redux Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -30,7 +30,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/HTML Icon.png')}
+          src={require('../../../skills-icons/HTML Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -38,7 +38,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/CSS Icon.png')}
+          src={require('../../../skills-icons/CSS Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -46,7 +46,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/Express Icon.png')}
+          src={require('../../../skills-icons/Express Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -54,7 +54,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/PostgreSQL Icon.png')}
+          src={require('../../../skills-icons/PostgreSQL Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -62,7 +62,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/Node Icon.png')}
+          src={require('../../../skills-icons/Node Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -70,7 +70,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../skills-icons/C++ Icon.png')}
+          src={require('../../../skills-icons/C++ Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
