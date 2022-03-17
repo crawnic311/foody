@@ -26,7 +26,7 @@ const Built = () => {
           alt=""
           className={styles.SkillsIcon}
         />
-        <p className={styles.SkillsText}>Redux</p>
+        <p className={styles.SkillsText}>Firebase</p>
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
@@ -74,7 +74,7 @@ const Built = () => {
           alt=""
           className={styles.SkillsIcon}
         />
-        <p className={styles.SkillsText}>C++</p>
+        <p className={styles.SkillsText}>Sequelize</p>
       </div>
     </div>
   )

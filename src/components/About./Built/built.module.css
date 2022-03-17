@@ -2,6 +2,7 @@
   width: 160px;
   display: inline-block;
   border: 1px solid red;
+  text-align: center;
 }
 
 .SkillsIcon {
@@ -12,6 +13,6 @@
 .SkillsText {
   display: inline;
   color: aliceblue;
-  text-align: center;
+
   font-size: 20px;
 }
