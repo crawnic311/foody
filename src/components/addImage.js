@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Timestamp, collection, addDoc } from 'firebase/firestore'
 import styles from './AddImage.module.css'
+import { toast } from 'react-toastify/dist/react-toastify.cjs.development'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db, auth } from '../firebaseConfig'
 
@@ -36,7 +37,7 @@ const addImage = () => {
     uploadImage.on(
       'state_changed',
       (snapshot) => {
-        const profressPercent = Math.round(
+        const progressPercent = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         )
         setProgress(progressPercent)
