@@ -1,7 +1,7 @@
 import React from 'react'
 import Built from './Built/built'
 import styles from './about.module.css'
-import Images from '../Images'
+import ImageList from '../ImagesList'
 import AddImage from '../AddImage'
 
 const About = ({ imageSrc, setImageSrc, uploadData, setUploadData }) => {
@@ -9,7 +9,7 @@ const About = ({ imageSrc, setImageSrc, uploadData, setUploadData }) => {
     <div>
       <p className={styles.built}>Built using: </p>
       <Built />
-      <Images />
+      <ImageList />
       <AddImage />
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { auth } from '../../firebase.config'
+import { auth } from '../../firebaseConfig'
 import styles from './loginform.module.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'

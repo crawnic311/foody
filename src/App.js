@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import LoginForm from './components/Login/loginform'
 import PageNotFound from './components/404/PageNotFound'
 import recipeData from './db.json'
-import { auth } from './firebase.config'
+import { auth } from './firebaseConfig'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
