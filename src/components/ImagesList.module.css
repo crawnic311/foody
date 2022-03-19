@@ -13,7 +13,7 @@ p {
   font-size: 20px;
 }
 
-img {
+.displayImage {
   display: block;
   margin: auto;
   height: 200px;
