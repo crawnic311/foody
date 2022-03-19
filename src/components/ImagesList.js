@@ -9,15 +9,25 @@ const ImageList = () => {
     const imagesRef = collection(db, 'RecipesImages')
     const q = query(imagesRef, orderBy('createdAt', 'desc'))
     onSnapshot(q, (snapshot) => {
-      console.log(snapshot)
+      const images = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setImages(images)
+      console.log(images)
     })
-  })
+  }, [])
   return (
     <div className={styles.imagesContainer}>
       {images.length === 0 ? (
         <p>No images found.</p>
       ) : (
-        images.map((image) => <div>div</div>)
+        images.map((image) => (
+          <div className={styles.imageDiv} key={images.id}>
+            div {images[0].Image}
+            <img src={images[0].Image}></img>
+          </div>
+        ))
       )}
     </div>
   )
