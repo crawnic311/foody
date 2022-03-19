@@ -1,0 +1,12 @@
+.addImageContainer {
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.formControl {
+  color: pink;
+}
+
+.progressBar {
+  width: 50%;
+}

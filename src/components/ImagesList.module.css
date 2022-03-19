@@ -12,3 +12,10 @@ p {
   color: aliceblue;
   font-size: 20px;
 }
+
+img {
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+}

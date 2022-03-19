@@ -24,7 +24,7 @@ const ImageList = () => {
       ) : (
         images.map((image) => (
           <div className={styles.imageDiv} key={images.id}>
-            div {images[0].Image}
+            {images[0].Description}
             <img src={images[0].Image}></img>
           </div>
         ))
