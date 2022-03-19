@@ -5,8 +5,10 @@
 
 .formControl {
   color: pink;
+  display: block;
 }
 
-.progressBar {
-  width: 50%;
+input {
+  height: 100px;
+  width: 100px;
 }

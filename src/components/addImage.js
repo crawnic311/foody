@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Timestamp, collection, addDoc } from 'firebase/firestore'
 import styles from './AddImage.module.css'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import { storage, db, auth } from '../firebaseConfig'
 
 const addImage = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ const addImage = () => {
     createdAt: Timestamp.now().toDate(),
   })
 
-  const progress = ([progress, setProgress] = useState(0))
+  const [progress, setProgress] = useState(0)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -57,9 +58,14 @@ const addImage = () => {
             description: formData.description,
             imageURL: url,
             createdAt: Timestamp.now().toDate(),
-          }).then(() => {
-            toast('Image added successfully', { type: 'success' })
           })
+            .then(() => {
+              toast('Image added successfully', { type: 'success' })
+              setProgress(0)
+            })
+            .catch((err) => {
+              toast('Error adding Image', { type: 'error' })
+            })
         })
       }
     )
@@ -95,14 +101,15 @@ const addImage = () => {
         name="image"
         accept="image/*"
         className={styles.formControl}
-        value={formData.image}
-        onChange={(e) => {
-          handleImageChange(e)
-        }}
+        onChange={(e) => handleImageChange(e)}
       />
-      <div className={styles.progress}>
-        <div className={styles.progressBar}>50%</div>
-      </div>
+      {progress === 0 ? null : (
+        <div className={styles.progress}>
+          <div className={styles.progressBar} style={{ width: `${progress}%` }}>
+            {`Uploading Image ${progress}%`}
+          </div>
+        </div>
+      )}
       <button className={styles.formControl} onClick={handleUpload}>
         Upload
       </button>
