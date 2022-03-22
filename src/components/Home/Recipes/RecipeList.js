@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ImageList from '../../ImagesList'
 import styles from './RecipeList.module.css'
 
@@ -10,6 +10,21 @@ const RecipeList = ({
   currentUserID,
   setCurrentUserID,
 }) => {
+  const [images, setImages] = useState([])
+
+  useEffect(() => {
+    const imagesRef = collection(db, 'RecipesImages')
+    const q = query(imagesRef, orderBy('createdAt', 'desc'))
+    onSnapshot(q, (snapshot) => {
+      const images = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setImages(images)
+      console.log(images)
+    })
+  }, [])
+
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -69,12 +84,10 @@ const RecipeList = ({
               </p>
             </div>
           </div>
-          {/*<ImageList />*/}
-          <img
-            src={displayRecipe.image}
-            alt=""
-            className={styles.RecipeImage}
-          />
+          images.map((image) => (
+          <div key={images.id}>
+            <img src={images[0].imageURL} className={styles.RecipeImage}></img>
+          </div>
         </div>
         <div className={styles.RecipeNavInner}>
           <button
@@ -127,6 +140,7 @@ const RecipeList = ({
           </button>
         </div>
       </div>
+      <ImageList images={images} setImages={setImages} />
     </>
   )
 }

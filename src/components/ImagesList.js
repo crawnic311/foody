@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../firebaseConfig'
 import styles from './ImagesList.module.css'
 
-const ImageList = () => {
-  const [images, setImages] = useState([])
+const ImageList = ({ images, setImages }) => {
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
     const q = query(imagesRef, orderBy('createdAt', 'desc'))
