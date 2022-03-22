@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ImageList from '../../ImagesList'
+import { db } from '../../../firebaseConfig'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import styles from './RecipeList.module.css'
 
 const RecipeList = ({
@@ -84,9 +86,20 @@ const RecipeList = ({
               </p>
             </div>
           </div>
-          images.map((image) => (
-          <div key={images.id}>
-            <img src={images[0].imageURL} className={styles.RecipeImage}></img>
+          <div className={styles.imagesContainer}>
+            {images.length === 0 ? (
+              <p>No images found.</p>
+            ) : (
+              images.map((image) => (
+                <div className={styles.imageDiv} key={images.id}>
+                  {images[0].Description}
+                  <img
+                    src={images[0].imageURL}
+                    className={styles.RecipeImage}
+                  ></img>
+                </div>
+              ))
+            )}
           </div>
         </div>
         <div className={styles.RecipeNavInner}>
@@ -140,7 +153,6 @@ const RecipeList = ({
           </button>
         </div>
       </div>
-      <ImageList images={images} setImages={setImages} />
     </>
   )
 }

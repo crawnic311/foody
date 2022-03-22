@@ -1,4 +1,4 @@
-import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+/*import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import React, { useState, useEffect } from 'react'
 import { db } from '../firebaseConfig'
 import styles from './ImagesList.module.css'
@@ -33,3 +33,4 @@ const ImageList = ({ images, setImages }) => {
 }
 
 export default ImageList
+*/

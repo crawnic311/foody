@@ -114,7 +114,6 @@ const Create = ({
           <FaPlus className={styles.FaPlus} />
         </button>
       </form>
-      <ImageList />
       <AddImage />
     </div>
   )
