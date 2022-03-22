@@ -69,7 +69,7 @@ const RecipeList = ({
               </p>
             </div>
           </div>
-          <ImageList />
+          {/*<ImageList />*/}
           <img
             src={displayRecipe.image}
             alt=""
