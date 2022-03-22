@@ -1,4 +1,5 @@
 import React from 'react'
+import ImageList from '../../ImagesList'
 import styles from './RecipeList.module.css'
 
 const RecipeList = ({
@@ -68,6 +69,7 @@ const RecipeList = ({
               </p>
             </div>
           </div>
+          <ImageList />
           <img
             src={displayRecipe.image}
             alt=""
