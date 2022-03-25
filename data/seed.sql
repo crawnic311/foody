@@ -16,6 +16,7 @@ servings integer,
 prepTime integer,
 cookTime integer,
 instructions text [],
+navID number,
 user_id integer references users
 );
 

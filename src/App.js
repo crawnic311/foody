@@ -86,6 +86,7 @@ function App() {
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
       user_id: currentUserID,
+      navID: images.length,
     }
 
     axios
