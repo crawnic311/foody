@@ -5,7 +5,7 @@ import { toast } from 'react-toastify/dist/react-toastify.cjs.development'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db, auth } from '../firebaseConfig'
 
-const addImage = (images, setImages) => {
+const addImage = ({ images, setImages }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',

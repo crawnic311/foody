@@ -14,8 +14,6 @@ const RecipeList = ({
   images,
   setImages,
 }) => {
-  
-
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
     const q = query(imagesRef, orderBy('createdAt', 'desc'))
@@ -25,7 +23,7 @@ const RecipeList = ({
         ...doc.data(),
       }))
       setImages(images)
-      console.log(images)
+      console.log(images.length, 'images')
     })
   }, [])
 
