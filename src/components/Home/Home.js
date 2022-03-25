@@ -11,6 +11,8 @@ const Home = ({
   user,
   currentUserID,
   setCurrentUserID,
+  images,
+  setImages,
 }) => {
   return (
     <div className={styles.container}>
@@ -24,6 +26,8 @@ const Home = ({
             handleDelete={handleDelete}
             currentUserID={currentUserID}
             setCurrentUserID={setCurrentUserID}
+            images={images}
+            setImages={setImages}
           />
         </div>
       </main>

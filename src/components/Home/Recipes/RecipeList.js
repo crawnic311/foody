@@ -11,8 +11,10 @@ const RecipeList = ({
   handleDelete,
   currentUserID,
   setCurrentUserID,
+  images,
+  setImages,
 }) => {
-  const [images, setImages] = useState([])
+  
 
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')

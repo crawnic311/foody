@@ -47,6 +47,7 @@ function App() {
     cookTime: 0,
     instructions: [],
   })
+  const [images, setImages] = useState([])
 
   const [recipes, setRecipes] = useState([
     {
@@ -190,6 +191,8 @@ function App() {
                 recipes={recipes}
                 currentUserID={currentUserID}
                 setCurrentUserID={setCurrentUserID}
+                images={images}
+                setImages={setImages}
               />
             }
           />
@@ -212,6 +215,8 @@ function App() {
                 user={user}
                 currentUserID={currentUserID}
                 setCurrentUserID={setCurrentUserID}
+                images={images}
+                setImages={setImages}
               />
             }
           />
