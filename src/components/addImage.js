@@ -10,6 +10,7 @@ const addImage = () => {
     title: '',
     description: '',
     image: '',
+    navID: '',
     createdAt: Timestamp.now().toDate(),
   })
 
@@ -28,6 +29,8 @@ const addImage = () => {
       alert('Please fill all the fields')
       return
     }
+    
+    formData.navID = 
     const storageRef = ref(
       storage,
       `/images/${Date.now()}${formData.image.name}`
@@ -41,6 +44,7 @@ const addImage = () => {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         )
         setProgress(progressPercent)
+        console.log(snapshot, 'Snapshot')
       },
       (err) => {
         console.log(err)
@@ -50,6 +54,7 @@ const addImage = () => {
           title: '',
           description: '',
           image: '',
+          navID: '',
         })
 
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
@@ -58,6 +63,7 @@ const addImage = () => {
             title: formData.title,
             description: formData.description,
             imageURL: url,
+            navID: '',
             createdAt: Timestamp.now().toDate(),
           })
             .then(() => {
