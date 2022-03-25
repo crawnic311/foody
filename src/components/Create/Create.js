@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './Create.module.css'
-import { useRef } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import ImageList from '../ImagesList'
 import AddImage from '../AddImage'
@@ -16,6 +15,8 @@ const Create = ({
   recipes,
   currentUserID,
   setCurrentUserID,
+  images,
+  setImages,
 }) => {
   const inputRef = useRef()
 
@@ -114,7 +115,7 @@ const Create = ({
           <FaPlus className={styles.FaPlus} />
         </button>
       </form>
-      <AddImage />
+      <AddImage images={images} setImages={setImages} />
     </div>
   )
 }

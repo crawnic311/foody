@@ -5,7 +5,7 @@ import { toast } from 'react-toastify/dist/react-toastify.cjs.development'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db, auth } from '../firebaseConfig'
 
-const addImage = () => {
+const addImage = (images, setImages) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -29,8 +29,6 @@ const addImage = () => {
       alert('Please fill all the fields')
       return
     }
-    
-    formData.navID = 
     const storageRef = ref(
       storage,
       `/images/${Date.now()}${formData.image.name}`
@@ -63,7 +61,7 @@ const addImage = () => {
             title: formData.title,
             description: formData.description,
             imageURL: url,
-            navID: '',
+            navID: images.length,
             createdAt: Timestamp.now().toDate(),
           })
             .then(() => {
