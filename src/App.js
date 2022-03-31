@@ -20,6 +20,7 @@ import './App.css'
 
 function App() {
   let navigate = useNavigate()
+  const [stayLogged, setStayLogged] = useState(0)
   const [currentUserID, setCurrentUserID] = useState()
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
@@ -73,6 +74,7 @@ function App() {
 
   useEffect(() => {
     fetchRecipesDB()
+    setStayLogged(1)
   }, [])
 
   const addRecipe = async (recipe) => {
@@ -147,7 +149,7 @@ function App() {
   return (
     <>
       <div className="App">
-        {user?.email ? (
+        {user?.email || stayLogged != 0 ? (
           <Navbar
             logout={logout}
             search={search}
