@@ -80,7 +80,7 @@ function App() {
 
   useEffect(() => {
     setStayLogged(1)
-  }, [<Home />, <Create />, <About />])
+  }, [])
 
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
@@ -149,14 +149,14 @@ function App() {
 
   const logout = async () => {
     await signOut(auth)
-    console.log('logout runs')
-    console.log(user)
+    setStayLogged(0)
+    console.log(bananas, 'bananas')
   }
 
   return (
     <>
       <div className="App">
-        {user?.email || stayLogged === 1 ? (
+        {user?.email || stayLogged == 1 ? (
           <Navbar
             logout={logout}
             search={search}
@@ -185,6 +185,8 @@ function App() {
                 signOut={signOut}
                 currentUserID={currentUserID}
                 setCurrentUserID={setCurrentUserID}
+                setStayLogged={setStayLogged}
+                stayLogged={stayLogged}
               />
             }
           />
@@ -227,8 +229,6 @@ function App() {
                 setCurrentUserID={setCurrentUserID}
                 images={images}
                 setImages={setImages}
-                setStayLogged={setStayLogged}
-                stayLogged={stayLogged}
               />
             }
           />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { auth } from '../../firebaseConfig'
 import styles from './loginform.module.css'
 import { useNavigate } from 'react-router-dom'
@@ -16,6 +16,8 @@ const LoginForm = ({
   signOut,
   currentUserID,
   setCurrentUserID,
+  setStayLogged,
+  stayLogged,
 }) => {
   let navigate = useNavigate()
 
@@ -24,6 +26,10 @@ const LoginForm = ({
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
   const [displayLogin, setDisplayLogin] = useState(true)
+
+  useEffect(() => {
+    setStayLogged(0)
+  }, [<LoginForm />])
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser)
