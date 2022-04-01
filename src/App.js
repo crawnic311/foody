@@ -74,8 +74,11 @@ function App() {
 
   useEffect(() => {
     fetchRecipesDB()
-    setStayLogged(1)
+    console.log(recipes, 'recipes')
+    console.log(recipes[0].user_id, 'user-id')
   }, [])
+
+  useEffect(() )
 
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
@@ -144,12 +147,14 @@ function App() {
 
   const logout = async () => {
     await signOut(auth)
+    console.log('logout runs')
+    console.log(user)
   }
 
   return (
     <>
       <div className="App">
-        {user?.email || stayLogged != 0 ? (
+        {user?.email ? (
           <Navbar
             logout={logout}
             search={search}
