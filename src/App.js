@@ -75,10 +75,12 @@ function App() {
   useEffect(() => {
     fetchRecipesDB()
     console.log(recipes, 'recipes')
-    console.log(recipes[0].user_id, 'user-id')
+    console.log(stayLogged, 'staylogged')
   }, [])
 
-  useEffect(() )
+  useEffect(() => {
+    setStayLogged(1)
+  }, [<Home />, <Create />, <About />])
 
   const addRecipe = async (recipe) => {
     const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
@@ -154,7 +156,7 @@ function App() {
   return (
     <>
       <div className="App">
-        {user?.email ? (
+        {user?.email || stayLogged === 1 ? (
           <Navbar
             logout={logout}
             search={search}
@@ -225,6 +227,8 @@ function App() {
                 setCurrentUserID={setCurrentUserID}
                 images={images}
                 setImages={setImages}
+                setStayLogged={setStayLogged}
+                stayLogged={stayLogged}
               />
             }
           />

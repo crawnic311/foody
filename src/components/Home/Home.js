@@ -13,6 +13,8 @@ const Home = ({
   setCurrentUserID,
   images,
   setImages,
+  stayLogged,
+  setStayLogged,
 }) => {
   return (
     <div className={styles.container}>
@@ -28,6 +30,8 @@ const Home = ({
             setCurrentUserID={setCurrentUserID}
             images={images}
             setImages={setImages}
+            stayLogged={stayLogged}
+            setStayLogged={setStayLogged}
           />
         </div>
       </main>
