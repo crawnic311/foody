@@ -112,7 +112,7 @@ const Create = ({
           className={styles.createSubmit}
           onClick={() => inputRef.current.focus()}
         >
-          <FaPlus className={styles.FaPlus} />
+          CREATE
         </button>
       </form>
       <AddImage images={images} setImages={setImages} />

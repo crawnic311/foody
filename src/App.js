@@ -35,6 +35,7 @@ function App() {
     prepTime: '',
     cookTime: '',
     instructions: ['', ''],
+    navID: '',
   })
 
   const [displayRecipe, setDisplayRecipe] = useState({
@@ -95,7 +96,7 @@ function App() {
       user_id: currentUserID,
       navID: images.length,
     }
-
+    console.log(myNewRecipe.navID, 'navID')
     axios
       .post('http://localhost:3700/api/recipes', {
         title: myNewRecipe.title,
