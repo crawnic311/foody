@@ -19,6 +19,7 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
+  let IDcarry
   let navigate = useNavigate()
   const [stayLogged, setStayLogged] = useState(0)
   const [currentUserID, setCurrentUserID] = useState()
@@ -77,9 +78,7 @@ function App() {
     fetchRecipesDB()
     console.log(recipes, 'recipes')
     console.log(stayLogged, 'staylogged')
-  }, [])
-
-  useEffect(() => {
+    console.log(IDcarry, 'IDcarry')
     setStayLogged(1)
   }, [])
 
@@ -188,6 +187,7 @@ function App() {
                 setCurrentUserID={setCurrentUserID}
                 setStayLogged={setStayLogged}
                 stayLogged={stayLogged}
+                IDcarry={IDcarry}
               />
             }
           />

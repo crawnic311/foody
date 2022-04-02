@@ -26,10 +26,6 @@ const RecipeList = ({
       console.log(images.length, 'images')
     })
   }, [])
-
-  //nedds works
-  //need so much more work man
-
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -112,8 +108,8 @@ const RecipeList = ({
               if (recipes.length > 1) {
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (
-                    recipes[i].id < displayRecipe.id &&
-                    recipes[i].user_id === currentUserID
+                    recipes[i].id < displayRecipe.id
+                    //&& recipes[i].user_id === currentUserID
                   ) {
                     setDisplayRecipe(recipes[i])
                     break
@@ -143,8 +139,8 @@ const RecipeList = ({
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
                   if (
-                    recipes[i].id > displayRecipe.id &&
-                    recipes[i].user_id === currentUserID
+                    recipes[i].id > displayRecipe.id
+                    //&& recipes[i].user_id === currentUserID
                   ) {
                     setDisplayRecipe(recipes[i])
                     break
