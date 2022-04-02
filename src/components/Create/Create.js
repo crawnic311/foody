@@ -8,13 +8,6 @@ const Create = ({
   newRecipe,
   setNewRecipe,
   handleSubmit,
-  setImageSrc,
-  imageSrc,
-  uploadData,
-  setUploadData,
-  recipes,
-  currentUserID,
-  setCurrentUserID,
   images,
   setImages,
 }) => {

@@ -84,7 +84,7 @@ function App() {
   }, [])
 
   const addRecipe = async (recipe) => {
-    const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
+    //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
       title: recipe.title,
       image: recipe.image,
@@ -199,11 +199,6 @@ function App() {
                 newRecipe={newRecipe}
                 setNewRecipe={setNewRecipe}
                 handleSubmit={handleSubmit}
-                uploadData={uploadData}
-                setUploadData={setUploadData}
-                recipes={recipes}
-                currentUserID={currentUserID}
-                setCurrentUserID={setCurrentUserID}
                 images={images}
                 setImages={setImages}
               />
