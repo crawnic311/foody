@@ -5,7 +5,7 @@ import { toast } from 'react-toastify/dist/react-toastify.cjs.development'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db, auth } from '../firebaseConfig'
 
-const addImage = ({ images, setImages }) => {
+const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -67,6 +67,7 @@ const addImage = ({ images, setImages }) => {
             .then(() => {
               toast('Image added successfully', { type: 'success' })
               setProgress(0)
+              console.log('image added succesfully')
             })
             .catch((err) => {
               toast('Error adding Image', { type: 'error' })
@@ -77,8 +78,6 @@ const addImage = ({ images, setImages }) => {
   }
   return (
     <div className={styles.addImageContainer}>
-      Upload Image
-      <h2>Upload Image</h2>
       <label htmlFor="">Title</label>
       <input
         type="text"

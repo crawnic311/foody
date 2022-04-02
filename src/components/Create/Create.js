@@ -1,7 +1,5 @@
 import React, { useRef } from 'react'
 import styles from './Create.module.css'
-import { FaPlus } from 'react-icons/fa'
-import ImageList from '../ImagesList'
 import AddImage from '../AddImage'
 
 const Create = ({
@@ -98,7 +96,6 @@ const Create = ({
           placeholder="Optional: Upload a photo for your recipe"
           //value={newRecipe.image}
         ></input>
-        {imageSrc && <img src={imageSrc} className={styles.uploadImage} />}
         <button
           type="submit"
           aria-label="Create Item"
@@ -108,7 +105,12 @@ const Create = ({
           CREATE
         </button>
       </form>
-      <AddImage images={images} setImages={setImages} />
+      <AddImage
+        newRecipe={newRecipe}
+        setNewRecipe={setNewRecipe}
+        images={images}
+        setImages={setImages}
+      />
     </div>
   )
 }
