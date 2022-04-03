@@ -14,6 +14,7 @@ const RecipeList = ({
   images,
   setImages,
 }) => {
+  const [displayFB, setDisplayFB] = useState(0)
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
     const q = query(imagesRef, orderBy('createdAt', 'desc'))
@@ -24,6 +25,7 @@ const RecipeList = ({
       }))
       setImages(images)
       console.log(images.length, 'images')
+      setDisplayFB(0)
     })
   }, [])
   return (
@@ -89,15 +91,14 @@ const RecipeList = ({
             {images.length === 0 ? (
               <p>No images found.</p>
             ) : (
-              images.map((image) => (
-                <div className={styles.imageDiv} key={images.id}>
-                  {images[0].Description}
-                  <img
-                    src={images[0].imageURL}
-                    className={styles.RecipeImage}
-                  ></img>
-                </div>
-              ))
+              //console.log(images.imageURL)
+              <div className={styles.imageDiv} key={images.id}>
+                {images[0].Description}
+                <img
+                  src={images[displayFB].imageURL}
+                  className={styles.RecipeImage}
+                ></img>
+              </div>
             )}
           </div>
         </div>
@@ -107,11 +108,9 @@ const RecipeList = ({
             onClick={() => {
               if (recipes.length > 1) {
                 for (let i = recipes.length - 1; i > -1; i--) {
-                  if (
-                    recipes[i].id < displayRecipe.id
-                    //&& recipes[i].user_id === currentUserID
-                  ) {
+                  if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
+                    setDisplayFB(displayFB - 1)
                     break
                   }
                 }
@@ -138,11 +137,9 @@ const RecipeList = ({
             onClick={() => {
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
-                  if (
-                    recipes[i].id > displayRecipe.id
-                    //&& recipes[i].user_id === currentUserID
-                  ) {
+                  if (recipes[i].id > displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
+                    setDisplayFB(displayFB + 1)
                     break
                   }
                 }
