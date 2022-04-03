@@ -45,13 +45,12 @@ module.exports = {
       prepTime,
       cookTime,
       instructions,
-      user_id,
       navID,
     } = req.body
     sequelize
       .query(
-        `insert into recipes (title, image, description, servings, prepTime, cookTime, instructions, user_id, navID)
-    values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions[0]}","${instructions[1]}"}', '${user_id}', '${navID}')`
+        `insert into recipes (title, image, description, servings, prepTime, cookTime, instructions, navID)
+    values ('${title}', '${image}', '${description}', '${servings}', '${prepTime}', '${cookTime}', '{"${instructions[0]}","${instructions[1]}"}', '${navID}')`
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err))

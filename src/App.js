@@ -61,7 +61,6 @@ function App() {
       prepTime: 0,
       cookTime: 0,
       instructions: [],
-      user_id: 0,
     },
   ])
 
@@ -92,7 +91,6 @@ function App() {
       prepTime: recipe.prepTime,
       cookTime: recipe.cookTime,
       instructions: recipe.instructions,
-      user_id: currentUserID,
       navID: images.length,
     }
     console.log(myNewRecipe.navID, 'navID')
@@ -105,7 +103,6 @@ function App() {
         prepTime: myNewRecipe.prepTime,
         cookTime: myNewRecipe.cookTime,
         instructions: myNewRecipe.instructions,
-        user_id: currentUserID,
         navID: myNewRecipe.navID,
       })
       .then(() => fetchRecipesDB())
@@ -151,7 +148,6 @@ function App() {
   const logout = async () => {
     await signOut(auth)
     setStayLogged(0)
-    console.log(bananas, 'bananas')
   }
 
   return (
