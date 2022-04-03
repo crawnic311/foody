@@ -5,7 +5,6 @@ id serial primary key,
 email text,
 password text
 );
-/* add in nav id asap*/
 
 CREATE TABLE recipes (
 id serial primary key,
