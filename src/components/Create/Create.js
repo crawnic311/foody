@@ -8,6 +8,7 @@ const Create = ({
   handleSubmit,
   images,
   setImages,
+  recipes,
 }) => {
   const inputRef = useRef()
 
@@ -62,7 +63,11 @@ const Create = ({
           placeholder="Cook Time (minutes)"
           value={newRecipe.cookTime}
           onChange={(e) =>
-            setNewRecipe({ ...newRecipe, cookTime: e.target.value })
+            setNewRecipe({
+              ...newRecipe,
+              cookTime: e.target.value,
+              navID: recipes.length,
+            })
           }
         ></input>
         <input

@@ -106,6 +106,7 @@ function App() {
         cookTime: myNewRecipe.cookTime,
         instructions: myNewRecipe.instructions,
         user_id: currentUserID,
+        navID: myNewRecipe.navID,
       })
       .then(() => fetchRecipesDB())
       .then(() => setDisplayRecipe(recipes[0]))
@@ -201,6 +202,7 @@ function App() {
                 handleSubmit={handleSubmit}
                 images={images}
                 setImages={setImages}
+                recipes={recipes}
               />
             }
           />
