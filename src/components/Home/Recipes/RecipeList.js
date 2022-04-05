@@ -14,7 +14,6 @@ const RecipeList = ({
   images,
   setImages,
 }) => {
-  const [displayFB, setDisplayFB] = useState(0)
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
     const q = query(imagesRef, orderBy('createdAt', 'desc'))
@@ -25,9 +24,22 @@ const RecipeList = ({
       }))
       setImages(images)
       console.log(images.length, 'images')
-      setDisplayFB(0)
     })
   }, [])
+
+  const [displayFB, setDisplayFB] = useState(
+    'https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2018/11/Yellow-Coconut-Curry.jpg'
+  )
+
+  const imageNavLink = () => {
+    console.log(images, 'images')
+    let imageLink = images.filter(
+      (image) => image.navID === displayRecipe.navid
+    )
+    console.log(displayRecipe.navid, 'display NavID')
+    console.log(imageLink, 'imageLink')
+    setDisplayFB(imageLink[0].imageURL)
+  }
   return (
     <>
       <div className={styles.RecipeHolder}>
@@ -94,10 +106,7 @@ const RecipeList = ({
               //console.log(images.imageURL)
               <div className={styles.imageDiv} key={images.id}>
                 {images[0].Description}
-                <img
-                  src={images[displayFB].imageURL}
-                  className={styles.RecipeImage}
-                ></img>
+                <img src={displayFB} className={styles.RecipeImage}></img>
               </div>
             )}
           </div>
@@ -109,8 +118,8 @@ const RecipeList = ({
               if (recipes.length > 1) {
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
-                    setDisplayRecipe(recipes[i])
-                    setDisplayFB(displayFB - 1)
+                    setDisplayRecipe(recipes[i], console.log(displayRecipe))
+
                     break
                   }
                 }
@@ -138,8 +147,8 @@ const RecipeList = ({
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
                   if (recipes[i].id > displayRecipe.id) {
-                    setDisplayRecipe(recipes[i])
-                    setDisplayFB(displayFB + 1)
+                    setDisplayRecipe(recipes[i], console.log(displayRecipe))
+                    imageNavLink()
                     break
                   }
                 }

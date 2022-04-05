@@ -18,7 +18,6 @@ const LoginForm = ({
   setCurrentUserID,
   setStayLogged,
   stayLogged,
-  IDcarry,
 }) => {
   let navigate = useNavigate()
 
@@ -103,8 +102,6 @@ const LoginForm = ({
           })
           console.log(currentID[0].id, 'currentID')
           setCurrentUserID(currentID[0].id)
-          IDcarry = currentID[0].id
-          console.log(IDcarry, 'IDcarry')
         })
         .catch((err) => console.log(err))
       navigate('/home')
