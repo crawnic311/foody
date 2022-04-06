@@ -102,7 +102,6 @@ const RecipeList = ({
             {images.length === 0 ? (
               <p>No images found.</p>
             ) : (
-              //console.log(images.imageURL)
               <div className={styles.imageDiv} key={images.id}>
                 {images[0].Description}
                 <img src={displayFB} className={styles.RecipeImage}></img>
