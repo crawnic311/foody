@@ -9,8 +9,6 @@ const RecipeList = ({
   setDisplayRecipe,
   recipes,
   handleDelete,
-  currentUserID,
-  setCurrentUserID,
   images,
   setImages,
 }) => {
