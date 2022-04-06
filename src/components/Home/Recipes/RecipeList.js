@@ -39,15 +39,6 @@ const RecipeList = ({
     setDisplayFB(imageLink[0].imageURL)
   }
 
-  const imageNavLinkPrev = () => {
-    console.log(images, 'images')
-    let imageLink = images.filter(
-      (image) => image.navID === displayRecipe.navid
-    )
-    console.log(displayRecipe.navid, 'display NavID')
-    console.log(imageLink, 'imageLink')
-    setDisplayFB(imageLink[0].imageURL)
-  }
   return (
     <>
       <div className={styles.RecipeHolder}>
