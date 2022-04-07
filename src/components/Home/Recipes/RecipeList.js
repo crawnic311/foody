@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import ImageList from '../../ImagesList'
 import { db } from '../../../firebaseConfig'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import styles from './RecipeList.module.css'
