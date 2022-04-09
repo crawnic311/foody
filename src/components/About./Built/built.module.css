@@ -1,8 +1,10 @@
 .SkillsFlexItem {
   width: 160px;
   display: inline-block;
-  border: 1px solid red;
+
   text-align: center;
+  margin-left: 60px;
+  margin-top: 20px;
 }
 
 .SkillsIcon {

@@ -22,7 +22,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../../skills-icons/Redux Icon.png')}
+          src={require('../../../skills-icons/Firebase Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
@@ -70,7 +70,7 @@ const Built = () => {
       </div>
       <div className={styles.SkillsFlexItem}>
         <img
-          src={require('../../../skills-icons/C++ Icon.png')}
+          src={require('../../../skills-icons/Sequelize Icon.png')}
           alt=""
           className={styles.SkillsIcon}
         />
