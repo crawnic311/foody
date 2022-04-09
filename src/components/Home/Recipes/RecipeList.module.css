@@ -3,7 +3,7 @@
   border: 2px solid aliceblue;
   height: 624px;
   background-color: aliceblue;
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 .RecipeTextHolder {
@@ -40,11 +40,11 @@
 
 .RecipeImage {
   width: 405px;
-  height: 624px;
+  height: 622px;
   align-self: center;
   overflow: hidden;
   border-bottom: 1px solid aliceblue;
-  border-radius: 7px;
+  border-radius: 0px;
   background-color: aliceblue;
   padding: 25px;
 }
