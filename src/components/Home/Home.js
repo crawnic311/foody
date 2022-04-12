@@ -6,10 +6,7 @@ const Home = ({
   displayRecipe,
   setDisplayRecipe,
   recipes,
-  setRecipes,
   handleDelete,
-  currentUserID,
-  setCurrentUserID,
   images,
   setImages,
 }) => {
@@ -21,10 +18,7 @@ const Home = ({
             displayRecipe={displayRecipe}
             setDisplayRecipe={setDisplayRecipe}
             recipes={recipes}
-            setRecipes={setRecipes}
             handleDelete={handleDelete}
-            currentUserID={currentUserID}
-            setCurrentUserID={setCurrentUserID}
             images={images}
             setImages={setImages}
           />
