@@ -8,7 +8,6 @@ const Home = ({
   recipes,
   setRecipes,
   handleDelete,
-  user,
   currentUserID,
   setCurrentUserID,
   images,
