@@ -19,7 +19,6 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  let navigate = useNavigate()
   const [stayLogged, setStayLogged] = useState(0)
   const [currentUserID, setCurrentUserID] = useState()
   const [user, setUser] = useState({})
