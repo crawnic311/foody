@@ -13,7 +13,6 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import './App.css'
