@@ -20,7 +20,7 @@ const RecipeList = ({
         ...doc.data(),
       }))
       setImages(images)
-      console.log(images.length, 'images')
+      console.log(images, 'images')
     })
   }, [])
 
