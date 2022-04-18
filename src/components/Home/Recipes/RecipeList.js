@@ -24,9 +24,7 @@ const RecipeList = ({
     })
   }, [])
 
-  const [displayFB, setDisplayFB] = useState(
-    'https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2018/11/Yellow-Coconut-Curry.jpg'
-  )
+  const [displayFB, setDisplayFB] = useState()
 
   const imageNavLink = () => {
     console.log(images, 'images')

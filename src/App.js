@@ -46,7 +46,7 @@ function App() {
     prepTime: 0,
     cookTime: 0,
     instructions: [],
-    navID: 0,
+    navID: 1,
   })
   const [images, setImages] = useState([])
 
