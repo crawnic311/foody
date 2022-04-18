@@ -26,11 +26,11 @@ const RecipeList = ({
 
   const [displayFB, setDisplayFB] = useState()
 
-  const imageNavLink = () => {
+  const imageNavLink = async () => {
     console.log(images, 'images')
-    let imageLink = images.filter(
-      (image) => image.navID === displayRecipe.navid
-    )
+    let grabNav = displayRecipe.navID
+    console.log(grabNav, 'grabNav')
+    let imageLink = images.filter((image) => image.navID === grabNav)
     console.log(displayRecipe.navid, 'display NavID')
     console.log(imageLink, 'imageLink')
     setDisplayFB(imageLink[0].imageURL)
