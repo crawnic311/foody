@@ -109,8 +109,8 @@ const RecipeList = ({
               if (recipes.length > 1) {
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
-                    setDisplayRecipe(recipes[i], console.log(displayRecipe))
-                    imageNavLink()
+                    setDisplayRecipe(recipes[i])
+                    imageNavLink(recipes[i].navid)
                     break
                   }
                 }
