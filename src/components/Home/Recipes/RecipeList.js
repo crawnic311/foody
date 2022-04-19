@@ -26,12 +26,8 @@ const RecipeList = ({
 
   const [displayFB, setDisplayFB] = useState()
 
-  const imageNavLink = async () => {
-    console.log(images, 'images')
-    let grabNav = displayRecipe.navID
-    console.log(grabNav, 'grabNav')
-    let imageLink = images.filter((image) => image.navID === grabNav)
-    console.log(displayRecipe.navid, 'display NavID')
+  const imageNavLink = (navID) => {
+    let imageLink = images.filter((image) => image.navID === navID)
     console.log(imageLink, 'imageLink')
     setDisplayFB(imageLink[0].imageURL)
   }
@@ -142,8 +138,9 @@ const RecipeList = ({
               if (recipes.length > 1)
                 for (let i = 0; recipes.length > i; i++) {
                   if (recipes[i].id > displayRecipe.id) {
-                    setDisplayRecipe(recipes[i], console.log(displayRecipe))
-                    imageNavLink()
+                    setDisplayRecipe(recipes[i])
+                    console.log(recipes[i].navid, 'passing recipe')
+                    imageNavLink(recipes[i].navid)
                     break
                   }
                 }
