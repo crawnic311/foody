@@ -79,7 +79,6 @@ function App() {
   }, [])
 
   const addRecipe = async (recipe) => {
-    //const id = recipes.length ? recipes[recipes.length - 1].id + 1 : 1
     const myNewRecipe = {
       title: recipe.title,
       image: recipe.image,
