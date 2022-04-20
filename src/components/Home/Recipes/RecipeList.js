@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../../../firebaseConfig'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import styles from './RecipeList.module.css'
-
+//Integrate Upload into Create Form
+//Fix image display when returning to home page
 const RecipeList = ({
   displayRecipe,
   setDisplayRecipe,
