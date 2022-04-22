@@ -20,11 +20,7 @@ module.exports = {
     const { id } = req.params
 
     const { email, password } = req.body
-    //Can't remember what this does??
-    /*const result = await sequelize.query(
-      `insert into users (name, email, password)
-        values ('${name}', '${email}', '${password}')`
-    )*/
+
     sequelize
       .query(
         `insert into users ( email, password)
