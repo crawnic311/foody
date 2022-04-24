@@ -7,8 +7,6 @@ import { storage, db, auth } from '../firebaseConfig'
 
 const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
     image: '',
     navID: '',
     createdAt: Timestamp.now().toDate(),
@@ -49,8 +47,6 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
       },
       () => {
         setFormData({
-          title: '',
-          description: '',
           image: '',
           navID: '',
         })
@@ -58,8 +54,6 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
           const imageRef = collection(db, 'RecipesImages')
           addDoc(imageRef, {
-            title: formData.title,
-            description: formData.description,
             imageURL: url,
             navID: images.length,
             createdAt: Timestamp.now().toDate(),
@@ -78,26 +72,6 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
   }
   return (
     <div className={styles.addImageContainer}>
-      <label htmlFor="">Title</label>
-      <input
-        type="text"
-        name="title"
-        className={styles.formControl}
-        value={formData.title}
-        onChange={(e) => {
-          handleChange(e)
-        }}
-      />
-      {/*Description*/}
-      <label htmlFor="">Description</label>
-      <textarea
-        name="description"
-        className={styles.formControl}
-        value={formData.description}
-        onChange={(e) => {
-          handleChange(e)
-        }}
-      />
       {/*Image*/}
       <label htmlFor="">Image</label>
       <input
