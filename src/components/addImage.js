@@ -14,16 +14,12 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
 
   const [progress, setProgress] = useState(0)
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
   const handleImageChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] })
   }
 
   const handleUpload = () => {
-    if (!formData.title || !formData.description || !formData.image) {
+    if (!formData.image) {
       alert('Please fill all the fields')
       return
     }
@@ -78,7 +74,7 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
         type="file"
         name="image"
         accept="image/*"
-        className={styles.formControl}
+        className={styles.chooseFile}
         onChange={(e) => handleImageChange(e)}
       />
       {progress === 0 ? null : (
@@ -88,8 +84,8 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
           </div>
         </div>
       )}
-      <button className={styles.formControl} onClick={handleUpload}>
-        Upload
+      <button className={styles.createSubmit} onClick={handleUpload}>
+        CREATE
       </button>
     </div>
   )

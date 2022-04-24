@@ -1,14 +1,47 @@
 .addImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: aliceblue;
   font-size: 20px;
 }
 
-.formControl {
-  color: pink;
+.createSubmit {
   display: block;
+  font-size: 1.75rem;
+  font-weight: 400;
+  width: 100px;
+  text-align: center;
+  align-self: center;
+  border-radius: 7px;
+  margin-top: 20px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid aliceblue;
+  background-color: #43d41a;
+  background-image: linear-gradient(to right, #b48c59, #b48c59, #fef49d);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: black;
+  cursor: pointer;
+}
+
+.createSubmit:focus,
+.createSubmit:hover {
+  color: white;
+  background-color: limegreen;
+  outline: none;
 }
 
 input {
   height: 100px;
-  width: 100px;
+}
+
+.chooseFile {
+  color: black;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
 }

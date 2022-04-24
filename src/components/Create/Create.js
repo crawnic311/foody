@@ -93,28 +93,12 @@ const Create = ({
             })
           }}
         ></input>
-
-        {/* <input
-          id={styles.photoInput}
-          type="file"
-          name="file"
-          placeholder="Optional: Upload a photo for your recipe"
-          //value={newRecipe.image}
-        ></input> */}
         <AddImage
           newRecipe={newRecipe}
           setNewRecipe={setNewRecipe}
           images={images}
           setImages={setImages}
         />
-        <button
-          type="submit"
-          aria-label="Create Item"
-          className={styles.createSubmit}
-          onClick={() => inputRef.current.focus()}
-        >
-          CREATE
-        </button>
       </form>
     </div>
   )
