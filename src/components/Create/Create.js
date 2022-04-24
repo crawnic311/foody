@@ -94,13 +94,13 @@ const Create = ({
           }}
         ></input>
 
-        <input
+        {/* <input
           id={styles.photoInput}
           type="file"
           name="file"
           placeholder="Optional: Upload a photo for your recipe"
           //value={newRecipe.image}
-        ></input>
+        ></input> */}
         <button
           type="submit"
           aria-label="Create Item"
@@ -109,13 +109,13 @@ const Create = ({
         >
           CREATE
         </button>
+        <AddImage
+          newRecipe={newRecipe}
+          setNewRecipe={setNewRecipe}
+          images={images}
+          setImages={setImages}
+        />
       </form>
-      <AddImage
-        newRecipe={newRecipe}
-        setNewRecipe={setNewRecipe}
-        images={images}
-        setImages={setImages}
-      />
     </div>
   )
 }
