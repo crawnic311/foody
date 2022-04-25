@@ -11,6 +11,7 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
     navID: '',
     createdAt: Timestamp.now().toDate(),
   })
+  const [file, setFile] = useState()
 
   const [progress, setProgress] = useState(0)
 
@@ -65,6 +66,7 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
         })
       }
     )
+    setFile('')
   }
   return (
     <div className={styles.addImageContainer}>
@@ -74,6 +76,7 @@ const addImage = ({ images, setImages, newRecipe, setNewRecipe }) => {
         type="file"
         name="image"
         accept="image/*"
+        value={file}
         className={styles.chooseFile}
         onChange={(e) => handleImageChange(e)}
       />
