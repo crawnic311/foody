@@ -5,7 +5,6 @@ import styles from './RecipeList.module.css'
 //Fix image display when returning to home page
 //Fix display for cook time and prep time
 //Clear image title on photo upload
-//COntinue working
 const RecipeList = ({
   displayRecipe,
   setDisplayRecipe,
