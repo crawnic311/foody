@@ -21,6 +21,7 @@ const RecipeList = ({
       }))
       setImages(images)
       console.log(images, 'images')
+      console.log(images[0].imageURL)
     })
   }, [])
 
@@ -106,7 +107,7 @@ const RecipeList = ({
           <button
             id={styles.recipeBack}
             onClick={() => {
-              if (recipes.length > 1) {
+              if (recipes.length >= 0) {
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
