@@ -47,10 +47,10 @@ const RecipeList = ({
                 Servings: {displayRecipe.servings}
               </span>
               <span className={styles.rTime}>
-                Prep Time: {displayRecipe.prepTime}
+                Prep Time: {displayRecipe.preptime}
               </span>
               <span className={styles.rTime}>
-                Cook Time: {displayRecipe.cookTime}
+                Cook Time: {displayRecipe.cooktime}
               </span>
             </div>
             <div className={styles.RecipeDescription}>
@@ -143,6 +143,9 @@ const RecipeList = ({
                     setDisplayRecipe(recipes[i])
                     console.log(recipes[i].navid, 'passing recipe')
                     imageNavLink(recipes[i].navid)
+                    console.log(displayRecipe, 'display recipe')
+                    console.log(displayRecipe.cooktime, 'cook time')
+                    console.log(displayRecipe.preptime, 'prep time')
                     break
                   }
                 }
