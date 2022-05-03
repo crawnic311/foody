@@ -3,7 +3,6 @@ import { db } from '../../../firebaseConfig'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import styles from './RecipeList.module.css'
 //Fix image display when returning to home page
-//Fix display for cook time and prep time
 //Clear image title on photo upload
 const RecipeList = ({
   displayRecipe,
