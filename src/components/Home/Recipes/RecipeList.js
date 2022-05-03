@@ -143,9 +143,6 @@ const RecipeList = ({
                     setDisplayRecipe(recipes[i])
                     console.log(recipes[i].navid, 'passing recipe')
                     imageNavLink(recipes[i].navid)
-                    console.log(displayRecipe, 'display recipe')
-                    console.log(displayRecipe.cooktime, 'cook time')
-                    console.log(displayRecipe.preptime, 'prep time')
                     break
                   }
                 }
