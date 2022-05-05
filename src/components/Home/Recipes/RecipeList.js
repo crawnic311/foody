@@ -99,8 +99,14 @@ const RecipeList = ({
             ) : (
               <div className={styles.imageDiv} key={images.id}>
                 {images[0].Description}
-                {image}
-                <img src={displayFB} className={styles.RecipeImage}></img>
+                {imageReturn === 0 ? (
+                  <img
+                    src="https://natashaskitchen.com/wp-content/uploads/2019/02/Meatloaf-Recipe-5.jpg"
+                    className={styles.RecipeImage}
+                  ></img>
+                ) : (
+                  <img src={displayFB} className={styles.RecipeImage}></img>
+                )}
               </div>
             )}
           </div>
