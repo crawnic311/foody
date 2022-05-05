@@ -32,6 +32,7 @@ const RecipeList = ({
     let imageLink = images.filter((image) => image.navID === navID)
     console.log(imageLink, 'imageLink')
     setDisplayFB(imageLink[0].imageURL)
+    setImageReturn(1)
   }
 
   return (
