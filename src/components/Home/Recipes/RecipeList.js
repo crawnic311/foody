@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../../../firebaseConfig'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import styles from './RecipeList.module.css'
-//Fix image display when returning to home page
+//Fix firebase images and prep for demo
 const RecipeList = ({
   displayRecipe,
   setDisplayRecipe,
