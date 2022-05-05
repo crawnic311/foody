@@ -26,6 +26,7 @@ const RecipeList = ({
   }, [])
 
   const [displayFB, setDisplayFB] = useState()
+  const [imageReturn, setImageReturn] = useState(0)
 
   const imageNavLink = (navID) => {
     let imageLink = images.filter((image) => image.navID === navID)
@@ -98,6 +99,7 @@ const RecipeList = ({
             ) : (
               <div className={styles.imageDiv} key={images.id}>
                 {images[0].Description}
+                {image}
                 <img src={displayFB} className={styles.RecipeImage}></img>
               </div>
             )}
@@ -107,7 +109,7 @@ const RecipeList = ({
           <button
             id={styles.recipeBack}
             onClick={() => {
-              if (recipes.length >= 0) {
+              if (recipes.length > 1) {
                 for (let i = recipes.length - 1; i > -1; i--) {
                   if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
