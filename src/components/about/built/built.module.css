@@ -1,0 +1,18 @@
+.SkillsFlexItem {
+  width: 160px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.SkillsIcon {
+  width: 140px;
+  height: 140px;
+}
+
+.SkillsText {
+  display: inline;
+  color: aliceblue;
+  font-size: 20px;
+}
