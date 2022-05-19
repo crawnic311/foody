@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Timestamp, collection, addDoc } from 'firebase/firestore'
-import styles from './AddImage.module.css'
+import styles from './addImage.module.css'
 import { toast } from 'react-toastify/dist/react-toastify.cjs.development'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db, auth } from '../firebaseConfig'
