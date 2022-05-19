@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styles from './Create.module.css'
-import AddImage from '../AddImage'
+import AddImage from '../addImage'
 
 const Create = ({
   newRecipe,
