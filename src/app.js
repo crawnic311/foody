@@ -15,7 +15,7 @@ import {
 } from 'firebase/auth'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
-import './App.css'
+import './app.css'
 
 function App() {
   const [stayLogged, setStayLogged] = useState(0)

@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './Home.module.css'
-import RecipeList from './Recipes/RecipeList'
+import styles from './home.module.css'
+import RecipeList from './recipes/recipeList'
 
 const Home = ({
   displayRecipe,
