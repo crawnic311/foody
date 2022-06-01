@@ -121,6 +121,7 @@ const RecipeList = ({
                   if (recipes[i].id < displayRecipe.id) {
                     setDisplayRecipe(recipes[i])
                     imageNavLink(recipes[i].navid)
+                    console.log('next')
                     break
                   }
                 }
@@ -151,6 +152,7 @@ const RecipeList = ({
                     setDisplayRecipe(recipes[i])
                     console.log(recipes[i].navid, 'passing recipe')
                     imageNavLink(recipes[i].navid)
+                    console.log('previous')
                     break
                   }
                 }
