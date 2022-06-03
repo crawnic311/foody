@@ -9,6 +9,8 @@ const Navbar = ({
   setDisplayRecipe,
   recipes,
   logout,
+  images,
+  setImages,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -41,6 +43,8 @@ const Navbar = ({
               data={recipeData}
               setDisplayRecipe={setDisplayRecipe}
               recipes={recipes}
+              images={images}
+              setImages={setImages}
             />
           </span>
           <ul

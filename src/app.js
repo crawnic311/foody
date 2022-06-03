@@ -159,6 +159,8 @@ function App() {
             setDisplayRecipe={setDisplayRecipe}
             recipes={recipes}
             recipeData={recipeData}
+            images={images}
+            setImages={setImages}
           />
         ) : (
           <div></div>
