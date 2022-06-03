@@ -9,6 +9,8 @@ const SearchRecipe = ({
   recipes,
   images,
   setImages,
+  displayFB,
+  setDisplayFB,
 }) => {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState()

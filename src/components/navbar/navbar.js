@@ -11,6 +11,8 @@ const Navbar = ({
   logout,
   images,
   setImages,
+  displayFB,
+  setDisplayFB,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -45,6 +47,8 @@ const Navbar = ({
               recipes={recipes}
               images={images}
               setImages={setImages}
+              displayFB={displayFB}
+              setDisplayFB={setDisplayFB}
             />
           </span>
           <ul
