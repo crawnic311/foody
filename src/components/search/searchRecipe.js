@@ -19,7 +19,8 @@ const SearchRecipe = ({
     const searchWord = e.target.value
     const newFilter = recipes.filter((value) => {
       console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()))
-      imageNavLink(recipes[i].navid)
+      // imageNavLink(recipes[i].navid)
+      //i is not defined
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
     if (searchWord === '') {
