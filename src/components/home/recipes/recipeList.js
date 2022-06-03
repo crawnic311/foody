@@ -10,6 +10,8 @@ const RecipeList = ({
   handleDelete,
   images,
   setImages,
+  displayFB,
+  setDisplayFB,
 }) => {
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
@@ -25,7 +27,7 @@ const RecipeList = ({
     })
   }, [])
 
-  const [displayFB, setDisplayFB] = useState()
+  //const [displayFB, setDisplayFB] = useState()
   const [imageReturn, setImageReturn] = useState(0)
 
   const imageNavLink = (navID) => {

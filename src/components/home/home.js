@@ -9,6 +9,8 @@ const Home = ({
   handleDelete,
   images,
   setImages,
+  displayFB,
+  setDisplayFB,
 }) => {
   return (
     <div className={styles.container}>
@@ -21,6 +23,8 @@ const Home = ({
             handleDelete={handleDelete}
             images={images}
             setImages={setImages}
+            displayFB={displayFB}
+            setDisplayFB={setDisplayFB}
           />
         </div>
       </main>

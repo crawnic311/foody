@@ -24,6 +24,7 @@ function App() {
   const [error, setError] = useState('')
   const [search, setSearch] = useState(null)
   const [uploadData, setUploadData] = useState()
+  const [displayFB, setDisplayFB] = useState()
   const [newRecipe, setNewRecipe] = useState({
     id: '',
     title: '',
@@ -221,6 +222,8 @@ function App() {
                 setCurrentUserID={setCurrentUserID}
                 images={images}
                 setImages={setImages}
+                displayFB={displayFB}
+                setDisplayFB={setDisplayFB}
               />
             }
           />
