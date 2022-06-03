@@ -17,6 +17,7 @@ const SearchRecipe = ({
     const searchWord = e.target.value
     const newFilter = recipes.filter((value) => {
       console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()))
+      imageNavLink(recipes[i].navid)
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
     if (searchWord === '') {
@@ -24,6 +25,13 @@ const SearchRecipe = ({
     } else {
       setFilteredData(newFilter)
     }
+  }
+
+  const imageNavLink = (navID) => {
+    let imageLink = images.filter((image) => image.navID === navID)
+    console.log(imageLink, 'imageLink')
+    setDisplayFB(imageLink[0].imageURL)
+    setImageReturn(1)
   }
 
   const clearInput = () => {
