@@ -21,6 +21,7 @@ const SearchRecipe = ({
       console.log(value.title.toLowerCase().includes(searchWord.toLowerCase()))
       // imageNavLink(recipes[i].navid)
       //i is not defined
+      //add for loop
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
     if (searchWord === '') {
