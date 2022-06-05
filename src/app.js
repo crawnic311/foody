@@ -61,6 +61,7 @@ function App() {
       cookTime: 0,
       instructions: [],
       navID: 0,
+      id: null,
     },
   ])
 
