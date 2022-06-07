@@ -24,7 +24,6 @@ const SearchRecipe = ({
 
       for (let i = 0; recipes.length > i; i++) {
         if (recipes[i].id > displayRecipe.id) {
-          //setDisplayRecipe(recipes[i])
           console.log(recipes[i].navid, 'passing recipe')
           console.log('for loop runs')
           console.log(i, 'i')
