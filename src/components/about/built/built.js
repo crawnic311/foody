@@ -76,6 +76,14 @@ const Built = () => {
         />
         <p className={styles.SkillsText}>Sequelize</p>
       </div>
+      <div className={styles.SkillsFlexItem}>
+        <img
+          src={require('../../../skills-icons/Axios Icon.png')}
+          alt=""
+          className={styles.SkillsIcon}
+        />
+        <p className={styles.SkillsText}>Axios</p>
+      </div>
     </div>
   )
 }
