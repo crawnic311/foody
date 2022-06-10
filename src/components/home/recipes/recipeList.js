@@ -12,6 +12,8 @@ const RecipeList = ({
   setImages,
   displayFB,
   setDisplayFB,
+  imageReturn,
+  setImageReturn,
 }) => {
   useEffect(() => {
     const imagesRef = collection(db, 'RecipesImages')
@@ -26,9 +28,6 @@ const RecipeList = ({
       console.log(images[0].imageURL)
     })
   }, [])
-
-  //const [displayFB, setDisplayFB] = useState()
-  const [imageReturn, setImageReturn] = useState(0)
 
   const imageNavLink = (navID) => {
     let imageLink = images.filter((image) => image.navID === navID)

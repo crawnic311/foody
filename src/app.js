@@ -50,6 +50,7 @@ function App() {
     navID: 0,
   })
   const [images, setImages] = useState([])
+  const [imageReturn, setImageReturn] = useState(0)
 
   const [recipes, setRecipes] = useState([
     {
@@ -227,6 +228,8 @@ function App() {
                 setImages={setImages}
                 displayFB={displayFB}
                 setDisplayFB={setDisplayFB}
+                imageReturn={imageReturn}
+                setImageReturn={setImageReturn}
               />
             }
           />

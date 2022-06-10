@@ -11,6 +11,8 @@ const Home = ({
   setImages,
   displayFB,
   setDisplayFB,
+  imageReturn,
+  setImageReturn,
 }) => {
   return (
     <div className={styles.container}>
@@ -25,6 +27,8 @@ const Home = ({
             setImages={setImages}
             displayFB={displayFB}
             setDisplayFB={setDisplayFB}
+            imageReturn={imageReturn}
+            setImageReturn={setImageReturn}
           />
         </div>
       </main>
