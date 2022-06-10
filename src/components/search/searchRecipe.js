@@ -80,7 +80,8 @@ const SearchRecipe = ({
                   }
                   setDisplayRecipe(targetRecipe)
                   console.log(targetRecipe, 'targetRecipe')
-                  //imageNavLink(targetRecipe)
+                  console.log(targetRecipe.navID, 'navID')
+                  imageNavLink(targetRecipe.navID)
                   clearInput()
                 }}
               >
