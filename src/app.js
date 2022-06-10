@@ -166,6 +166,8 @@ function App() {
             setImages={setImages}
             displayFB={displayFB}
             setDisplayFB={setDisplayFB}
+            imageReturn={imageReturn}
+            setImageReturn={setImageReturn}
           />
         ) : (
           <div></div>

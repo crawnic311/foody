@@ -11,6 +11,8 @@ const SearchRecipe = ({
   setImages,
   displayFB,
   setDisplayFB,
+  imageReturn,
+  setImageReturn,
 }) => {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState()

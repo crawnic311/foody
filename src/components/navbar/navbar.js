@@ -13,6 +13,8 @@ const Navbar = ({
   setImages,
   displayFB,
   setDisplayFB,
+  imageReturn,
+  setImageReturn,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -49,6 +51,8 @@ const Navbar = ({
               setImages={setImages}
               displayFB={displayFB}
               setDisplayFB={setDisplayFB}
+              imageReturn={imageReturn}
+              setImageReturn={setImageReturn}
             />
           </span>
           <ul
