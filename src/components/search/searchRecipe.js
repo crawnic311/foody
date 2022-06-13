@@ -20,19 +20,6 @@ const SearchRecipe = ({
   const handleFilter = (e) => {
     const searchWord = e.target.value
     const newFilter = recipes.filter((value) => {
-      //code to test
-
-      // for (let i = 0; recipes.length > i; i++) {
-      //   if (recipes[i].id > displayRecipe.id) {
-      //     console.log(recipes[i].navid, 'passing recipe')
-      //     console.log('for loop runs')
-      //     console.log(i, 'i')
-      //     imageNavLink(recipes[i].navid)
-      //     console.log('previous')
-      //     break
-      //   }
-      // }
-
       return value.title.toLowerCase().includes(searchWord.toLowerCase())
     })
     if (searchWord === '') {
