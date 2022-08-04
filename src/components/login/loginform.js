@@ -3,7 +3,7 @@ import { auth } from '../../firebaseConfig'
 import styles from './loginform.module.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-//Heroky has blocked github deployment right now
+
 const LoginForm = ({
   error,
   setUser,
